@@ -1838,6 +1838,9 @@ section {
   text-decoration: none;
 }
 
+
+/* NUEVO */
+
 .presentacion h1 {
   text-align: center;
   margin: 10px;
@@ -1845,6 +1848,7 @@ section {
 
 .presentacion h5 {
   margin-left: 50px;
+  font-weight: 1000;
 }
 .presentacion p {
   text-align: center;
@@ -1872,21 +1876,21 @@ section {
 
 .titulo1 {
   text-align: center;
-  margin: 10px;
+  margin: 50px;
   padding: 10px;
-  background: #5dc1b9;
+  background: #e03a3c;
 }
 
 .titulo2 {
   text-align: center;
-  margin: 10px;
+  margin: 50px;
   padding: 10px;
-  background: #5dc1b9;
+  background: #e03a3c;
 }
 
 .titulo3 {
   text-align: center;
-  margin: 10px;
+  margin: 50px;
   padding: 10px;
-  background: #5dc1b9;
+  background: #e03a3c;
 }
