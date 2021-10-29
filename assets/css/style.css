@@ -1837,3 +1837,56 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+.presentacion h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+.presentacion h5 {
+  margin-left: 50px;
+}
+.presentacion p {
+  text-align: center;
+  text-align: justify;
+  margin: 50px;
+}
+
+.mision h5 {
+  margin-left: 50px;
+}
+.mision p {
+  text-align: center;
+  text-align: justify;
+  margin: 50px;
+}
+
+.vision h5 {
+  margin-left: 50px;
+}
+.vision p {
+  text-align: center;
+  text-align: justify;
+  margin: 50px;
+}
+
+.titulo1 {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  background: #5dc1b9;
+}
+
+.titulo2 {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  background: #5dc1b9;
+}
+
+.titulo3 {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  background: #5dc1b9;
+}
