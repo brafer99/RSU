@@ -1,5 +1,7 @@
-.nosotros .presentacion .titulo1, .titulo2 , .titulo3{
-    color: white;
+.nosotros .presentacion .titulo1,
+.titulo2,
+.titulo3 {
+  color: white;
 }
 
 .col-lg-6 h3 {
@@ -7,25 +9,37 @@
     margin: 10px;
   }
   
-  .col-lg-6 h5 {
+.col-lg-6 h5 {
     margin-left: 10px;
     font-weight: 1000;
   }
-  .col-lg-6 p {
+
+.col-lg-6 p {
     text-align: center;
     text-align: justify;
     margin: 10px;
   }
 
-  a.button-contact{
-    margin-left: 0px;
-    background: #e03a3c;
-    color: #fff;
-    border-radius: 4px;
-    padding: 8px 25px;
-    white-space: nowrap;
-    transition: 0.3s;
-    font-size: 14px;
-    font-weight: 600;
-    display: inline-block;
-  }
+.col-lg-6 h5 {
+  margin-left: 10px;
+  font-weight: 1000;
+}
+.col-lg-6 p {
+  text-align: center;
+  text-align: justify;
+  margin: 10px;
+}
+
+/*--------FOOTER ---------*/
+a.button-contact{
+  margin-left: 0px;
+  background: #e03a3c;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}

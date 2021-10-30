@@ -48,9 +48,9 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="index.php">Inicio</a></li>
                     <li><a class="nav-link scrollto" href="nosotros.php">Nosotros</a></li>
-                    <li><a class="nav-link scrollto" href="index.php">Autoridades</a></li>
-                    <li><a class="nav-link scrollto " href="index.php">Noticias</a></li>
-                    <li><a class="nav-link scrollto" href="index.php">Contáctanos</a></li>
+                    <li><a class="nav-link scrollto" href="autoridades.php">Autoridades</a></li>
+                    <li><a class="nav-link scrollto " href="noticias.php">Noticias</a></li>
+                    <li><a class="nav-link scrollto" href="contacto.php">Contáctanos</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
