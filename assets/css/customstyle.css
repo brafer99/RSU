@@ -1,18 +1,20 @@
-.nosotros .presentacion .titulo1, .titulo2 , .titulo3{
-    color: white;
+.nosotros .presentacion .titulo1,
+.titulo2,
+.titulo3 {
+  color: white;
 }
 
 .col-lg-6 h3 {
-    text-align: left;
-    margin: 10px;
-  }
-  
-  .col-lg-6 h5 {
-    margin-left: 10px;
-    font-weight: 1000;
-  }
-  .col-lg-6 p {
-    text-align: center;
-    text-align: justify;
-    margin: 10px;
-  }
+  text-align: left;
+  margin: 10px;
+}
+
+.col-lg-6 h5 {
+  margin-left: 10px;
+  font-weight: 1000;
+}
+.col-lg-6 p {
+  text-align: center;
+  text-align: justify;
+  margin: 10px;
+}
