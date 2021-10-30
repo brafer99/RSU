@@ -1,0 +1,7 @@
+30/10 11:30 - PIERO 
+- FOOTER SEPARADO CAMBIADO A PHP 
+- AVANCE DE LOGOS
+FALTAN: LOGOS DE SUS OFICINAS DONDE CORRESPONDA
+
+---------------------------------------------------------
+

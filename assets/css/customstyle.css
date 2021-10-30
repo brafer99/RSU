@@ -16,3 +16,16 @@
     text-align: justify;
     margin: 10px;
   }
+
+  a.button-contact{
+    margin-left: 0px;
+    background: #e03a3c;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+  }
