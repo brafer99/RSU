@@ -1903,3 +1903,9 @@ section {
   padding: 10px;
   background: #e03a3c;
 }
+
+#img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

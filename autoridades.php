@@ -73,6 +73,16 @@ require_once("header.php");
                 </div>
 
             </div>
+            </br></br>
+            <div class="section-title">
+                <h2>Nuestro Organigrama</h2>
+            </div>
+            <div class="row">
+                <div class="imgg">
+                    <img id="img-center" src="assets/img/organigrama.jpg" class="img-fluid" alt="">
+                </div>
+
+            </div>
 
         </div>
     </section><!-- End Team Section -->
