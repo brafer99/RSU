@@ -1,3 +1,5 @@
+</main><!-- End #main -->
+
     <!-- ======= Footer ======= -->
     <footer id="footer">
 

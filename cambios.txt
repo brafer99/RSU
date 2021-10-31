@@ -2,6 +2,9 @@
 - FOOTER SEPARADO CAMBIADO A PHP 
 - AVANCE DE LOGOS
 FALTAN: LOGOS DE SUS OFICINAS DONDE CORRESPONDA
-
 ---------------------------------------------------------
 
+30/10 - PIERO 
+- AGREGADO SECCIÓN DE LOGOS Y FOOTER A TODAS LAS PAGINAS
+- SECCION INDEX TMB
+---------------------------------------------------------
