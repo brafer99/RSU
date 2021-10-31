@@ -46,11 +46,38 @@
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="index.php">Inicio</a></li>
-                    <li><a class="nav-link scrollto" href="nosotros.php">Nosotros</a></li>
-                    <li><a class="nav-link scrollto" href="autoridades.php">Autoridades</a></li>
-                    <li><a class="nav-link scrollto " href="noticias.php">Noticias</a></li>
-                    <li><a class="nav-link scrollto" href="contacto.php">Contáctanos</a></li>
+                    <?php 
+                    $urli = $_SERVER['PHP_SELF'];
+                   
+                    $url1="";
+                    $url2="";
+                    $url3="";
+                    $url4="";
+                    $url5="";
+                    switch($urli){
+                        case "/sistemarsu/index.php":
+                            $url1="active";
+                            break;
+                        case "/sistemarsu/nosotros.php":
+                            $url2="active";
+                            break;
+                        case "/sistemarsu/noticias.php":
+                            $url3="active";
+                            break;
+                        case "/sistemarsu/contacto.php":
+                            $url4="active";
+                            break;
+                        case "/sistemarsu/autoridades.php":
+                            $url5="active";
+                            break;
+                    }
+                    echo '
+                    <li><a class="nav-link scrollto '.$url1.'" href="index.php">Inicio</a></li>
+                    <li><a class="nav-link scrollto '.$url2.'" href="nosotros.php">Nosotros</a></li>
+                    <li><a class="nav-link scrollto '.$url5.'" href="autoridades.php">Autoridades</a></li>
+                    <li><a class="nav-link scrollto '.$url3.'" href="noticias.php">Noticias</a></li>
+                    <li><a class="nav-link scrollto '.$url4.'" href="contacto.php">Contáctanos</a></li>
+                    ';?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
