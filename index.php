@@ -50,7 +50,9 @@ require("logos.php");
         <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">¿QUÉ ÁREAS INTEGRAN LA DRSU?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
         <div id="faq2" class="collapse" data-bs-parent=".faq-list">
           <p>
-            - ÁREA DE EXTENSIÓN Y PROYECCIÓN CULTURAL (AEP)
+            <br>- Área de Extensión y Proyección Cultural (AEP)
+            <br>- Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés. (AVO)
+            <br>- Área de Extensión Universitaria, Proyección Social y Servicio Social. (AES)
           </p>
         </div>
       </li>
@@ -76,7 +78,6 @@ require("logos.php");
           </p>
         </div>
       </li>
-
     </ul>
 
   </div>

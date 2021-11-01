@@ -82,7 +82,7 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="#about" class="get-started-btn scrollto">Iniciar Sesión</a>
+            <a href="./areas.php" class="get-started-btn scrollto">Iniciar Sesión</a>
         </div>
     </header><!-- End Header -->
     </br></br>
