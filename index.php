@@ -24,14 +24,13 @@ require("logos.php");
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
+          <h2>PREGUNTAS FRECUENTES</h2>
         </div>
 
         <ul class="faq-list accordion" data-aos="fade-up">
 
           <li>
-            <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">Non consectetur a erat nam at lectus
-              urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">¿QUÉ ES LA DRSU? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
             <div id="faq1" class="collapse" data-bs-parent=".faq-list">
               <p>
                 Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
@@ -41,8 +40,7 @@ require("logos.php");
           </li>
 
           <li>
-            <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim
-              nunc faucibus a pellentesque? <i class="bx bx-chevron-down icon-show"></i><i
+            <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">¿QUÉ ÁREAS INTEGRAN LA DRSU?<i class="bx bx-chevron-down icon-show"></i><i
                 class="bx bx-x icon-close"></i></a>
             <div id="faq2" class="collapse" data-bs-parent=".faq-list">
               <p>
