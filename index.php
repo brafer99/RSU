@@ -50,9 +50,7 @@ require("logos.php");
         <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">¿QUÉ ÁREAS INTEGRAN LA DRSU?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
         <div id="faq2" class="collapse" data-bs-parent=".faq-list">
           <p>
-            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-            donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-            ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+            - ÁREA DE EXTENSIÓN Y PROYECCIÓN CULTURAL (AEP)
           </p>
         </div>
       </li>
