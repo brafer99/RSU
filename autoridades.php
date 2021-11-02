@@ -79,7 +79,7 @@ require_once("header.php");
             </div>
             <div class="row">
                 <div class="imgg">
-                    <img id="img-center" src="assets/img/organigrama.jpg" class="img-fluid" alt="">
+                    <img id="img-center" src="assets/img/organigrama2.jpg" class="img-fluid" alt="">
                 </div>
 
             </div>

@@ -27,3 +27,9 @@ FALTAN: LOGOS DE SUS OFICINAS DONDE CORRESPONDA
 - Se cambio noticias y contacto
 - SECCION noticias.php
 ---------------------------------------------------------
+
+01/11 - Brafer
+- Se reglamento
+- SECCION nosotros.php
+---------------------------------------------------------
+

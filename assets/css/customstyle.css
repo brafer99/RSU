@@ -5,20 +5,20 @@
 }
 
 .col-lg-6 h3 {
-    text-align: left;
-    margin: 10px;
-  }
-  
+  text-align: left;
+  margin: 10px;
+}
+
 .col-lg-6 h5 {
-    margin-left: 10px;
-    font-weight: 1000;
-  }
+  margin-left: 10px;
+  font-weight: 1000;
+}
 
 .col-lg-6 p {
-    text-align: center;
-    text-align: justify;
-    margin: 10px;
-  }
+  text-align: center;
+  text-align: justify;
+  margin: 10px;
+}
 
 .col-lg-6 h5 {
   margin-left: 10px;
@@ -31,7 +31,7 @@
 }
 
 /*--------FOOTER ---------*/
-a.button-contact{
+a.button-contact {
   margin-left: 0px;
   background: #e03a3c;
   color: #fff;
@@ -43,8 +43,6 @@ a.button-contact{
   font-weight: 600;
   display: inline-block;
 }
-
-
 
 /*CARDS SELECTION*/
 .boxesContainer {
@@ -64,7 +62,7 @@ a.button-contact{
 }
 
 .cardBox:hover .card {
-  transform: rotateY( 180deg);
+  transform: rotateY(180deg);
   border: none;
 }
 
@@ -107,7 +105,7 @@ a.button-contact{
 }
 
 .card .back {
-  transform: rotateY( 180deg);
+  transform: rotateY(180deg);
 }
 
 .card .back a {
@@ -163,19 +161,19 @@ a.button-contact{
 
 @-webkit-keyframes giro {
   from {
-    transform: rotateY( 180deg);
+    transform: rotateY(180deg);
   }
   to {
-    transform: rotateY( 0deg);
+    transform: rotateY(0deg);
   }
 }
 
 @keyframes giro {
   from {
-    transform: rotateY( 180deg);
+    transform: rotateY(180deg);
   }
   to {
-    transform: rotateY( 0deg);
+    transform: rotateY(0deg);
   }
 }
 
@@ -206,7 +204,8 @@ a.button-contact{
 #avo::before {
   content: "";
 
-  /*COPIAR ESTA LINEA TMB ARRIBA (UBIQUEN LOS COLORES) */background-image: url("../img/fondos/bg_avo.jfif");
+  /*COPIAR ESTA LINEA TMB ARRIBA (UBIQUEN LOS COLORES) */
+  background-image: url("../img/fondos/bg_avo.jfif");
   background-size: cover;
   position: absolute;
   top: 0px;
@@ -214,4 +213,8 @@ a.button-contact{
   bottom: 0px;
   left: 0px;
   opacity: 0.15;
+}
+iframe {
+  width: 100%;
+  height: 150vh;
 }
