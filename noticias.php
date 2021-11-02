@@ -94,6 +94,46 @@ require_once("header.php");
                     </div>
                 </div>
 
+                <div class="col-lg-6 col-md-6 portfolio-item filter-app"> 
+                     
+                    <div class="portfolio-wrap">   
+
+                        <img src="assets/img/noticias/noticia3.png" class="img-fluid" alt="">  
+                        
+                        <div class="portfolio-info">   
+                            
+                            
+                            
+                            <div class="portfolio-links">  
+                                
+                                <a href="assets/img/noticias/noticia3.png" data-gallery="portfolioGallery" 
+
+                                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+
+                              
+                            </div> 
+
+                        </div> 
+
+                    </div> 
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 portfolio-item filter-web">  
+
+                        <p>
+                        <b>Área de Extensión y Proyeccción Cultural</b> </br></br> <b>Fecha: </b> 07 y 08 de Octubre del 2021. <br>  </br> 
+                        <b>Lugar o Enlace de transmisión: </b> <a href="https://www.facebook.com/101475662281655/videos/2937953589753689">Click aquí</a> </br> 
+                        <b>Enlace de particiapción: </b> <a href="https://www.facebook.com/101475662281655/videos/2937953589753689">Click aquí</a>
+                       </p>
+                        
+                        <div class="portfolio-wrap">
+                        <!--<img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">-->
+                        
+    
+                    </div>
+                </div>
+                
                 <div class="col-lg-6 col-md-6 portfolio-item filter-card">
                     <div class="portfolio-wrap">
                         <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
@@ -108,6 +148,8 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
+
+                
 
                 <div class="col-lg-6 col-md-6 portfolio-item filter-web">
                    
