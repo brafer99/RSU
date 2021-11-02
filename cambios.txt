@@ -22,3 +22,8 @@ FALTAN: LOGOS DE SUS OFICINAS DONDE CORRESPONDA
 31/10 - PIERO
 -Logo agregado al header
 ---------------------------------------------------------
+
+01/11 - Brafer
+- Se cambio noticias y contacto
+- SECCION noticias.php
+---------------------------------------------------------
