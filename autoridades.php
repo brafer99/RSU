@@ -99,6 +99,77 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <p>avelardes@unjbg.edu.pe</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Antonieta Maura Velarde Sánchez </h4>
+                            <span>Directora del Grupo de Danza</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <p>ecardenasv@unjbg.edu.pe</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Elías Pedro Cárdenas Velásquez</h4>
+                            <span>Director del Grupo Folklórico</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <p>jzeag@unjbg.edu.pe</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>James Armando Zea Galindo</h4>
+                            <span>Director del Grupo Criollo Afro Peruano</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <p>ppelaeza@unjbg.edu.pe</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Paul Terense Pelaez Alférez</h4>
+                            <span>Director de la Tuna Universitaria</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <p>aepcultural@unjbg.edu.pe</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>María Elena Suarez Freitas</h4>
+                            <span>Personal Administrativo del Área de Extensión y Proyección Cultural (AEP)</span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             </br></br>
