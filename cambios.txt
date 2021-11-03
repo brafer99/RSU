@@ -33,3 +33,9 @@ FALTAN: LOGOS DE SUS OFICINAS DONDE CORRESPONDA
 - SECCION nosotros.php
 ---------------------------------------------------------
 
+
+02/11 - Brafer
+- Se actualizó cargos de las autoridades y sus áreas
+- SECCION autoriades.php
+---------------------------------------------------------
+

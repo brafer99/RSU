@@ -21,8 +21,8 @@ require_once("header.php");
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>Dra. Elizabeth Medina Soto</h4>
-                            <span>Directora de DRSU</span>
+                            <h4>Dra. Elizabeth Luisa Medina Soto</h4>
+                            <span>Dirección Académica de Responsabilidad Social Universitaria (DRSU)</span>
                         </div>
                     </div>
                 </div>
@@ -32,12 +32,12 @@ require_once("header.php");
                         <div class="member-img">
                             <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
                             <div class="social">
-                                <p>emedina@unjbg.edu.pe</p>
+                                <p>kmutterc@unjbg.edu.pe</p>
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
+                            <h4>Dra. Karimen Jetsabel Mutter Cuellar</h4>
+                            <span>Extensión y Proyección Cultural (AEP)</span>
                         </div>
                     </div>
                 </div>
@@ -47,12 +47,12 @@ require_once("header.php");
                         <div class="member-img">
                             <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
                             <div class="social">
-                                <p>emedina@unjbg.edu.pe</p>
+                                <p>eberriosq@unjbg.edu.pe</p>
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
+                            <h4>Mgr. Edgardo Javier Berrios Quina</h4>
+                            <span>Extensión Universitaria, Proyección Social y Servicio Social (AES)</span>
                         </div>
                     </div>
                 </div>
@@ -62,12 +62,40 @@ require_once("header.php");
                         <div class="member-img">
                             <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
                             <div class="social">
-                                <p>emedina@unjbg.edu.pe</p>
+                                <p>mflorr@unjbg.edu.pe</p>
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
+                            <h4>Mgr. Milton Saúl Flor Rodriguez</h4>
+                            <span>Coordinación de la RSU para la Investigación y Formación Continua (ACI)</span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <p>gvallec@unjbg.edu.pe</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Lic. Gina Maribel Valle Castro</h4>
+                            <span>Programas de Voluntariado y Vinculación con Grupos de Interés (AVO)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="assets/img/team/carmenrios.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <p>criosa@unjbg.edu.pe</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>SAP. Carmen Noemí Ríos Adrianzen</h4>
+                            <span>Secretaria de Dirección Académica de Responsabilidad Social Universitaria (DRSU)</span>
                         </div>
                     </div>
                 </div>

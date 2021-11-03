@@ -9,7 +9,7 @@ require_once("header.php");
     <div class="row">
       <div class="col-xl-6">
         <h1>DIRECCIÓN ACADÉMICA DE RESPONSABILIDAD SOCIAL UNIVERSITARIA</h1>
-        <a href="#about" class="btn-get-started scrollto">Ver noticias</a>
+        <a href="noticias.php" class="btn-get-started scrollto">Ver noticias</a>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@ require("logos.php");
     <ul class="faq-list accordion" data-aos="fade-up">
 
       <li>
-        <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">¿QUÉ ES LA DRSU? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+        <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">¿QUÉ ES LA RSU? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
         <div id="faq1" class="collapse" data-bs-parent=".faq-list">
           <p>
             Es una política de calidad ética del desempeño de la comunidad universitaria
@@ -45,36 +45,37 @@ require("logos.php");
           </p>
         </div>
       </li>
-
       <li>
-        <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">¿QUÉ ÁREAS INTEGRAN LA DRSU?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-          <p>
-            <br>- Área de Extensión y Proyección Cultural (AEP)
-            <br>- Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés. (AVO)
-            <br>- Área de Extensión Universitaria, Proyección Social y Servicio Social. (AES)
-          </p>
-        </div>
-      </li>
-
-      <li>
-        <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">¿ES IMPORTANTE LA RESPONSABILIDAD SOCIAL UNIVERSITARIA?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+        <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">¿QUÉ INCENTIVA LA RSU?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
         <div id="faq3" class="collapse" data-bs-parent=".faq-list">
           <p>
-            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
-            integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
-            Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                 - Formar estudiantes agentes del Desarrollo Humano Sostenible de su país.
+            <br> - Gestionar adecuadamente los impactos de la Universidad (laboral, ambiental, educativo, cognitivo y social)
+            <br> - Producir conocimietnos socielamente útiles.
+            <br> - Abrir la Universidad hacia la Sociedad y la Sociedad hacia la Universidad.
           </p>
         </div>
       </li>
+
+      <li>
+        <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">¿QUÉ ÁREAS INTEGRAN LA DRSU EN LA UNJBG?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+          <p>
+                - Área de Extensión y Proyección Cultural (AEP)
+            <br>- Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés. (AVO)
+            <br>- Área de Extensión Universitaria, Proyección Social y Servicio Social. (AES)
+            <br>- Área de Coordinación de la RSU en la Investigación y Formación Continua. (ACI)
+          </p>
+        </div>
+      </li>
+
+      
 
       <li>
         <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">¿DÓNDE SE ENCUENTRA LA DRSU EN LA UNJBG?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
         <div id="faq4" class="collapse" data-bs-parent=".faq-list">
           <p>
-            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-            donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-            ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+           Estamos ubicados en la Avenidad Miraflores S/N, Miraflores 23000 Tacna.
           </p>
         </div>
       </li>
