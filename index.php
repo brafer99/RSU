@@ -48,26 +48,23 @@
                 <ul>
                     <?php 
                     $urli = $_SERVER['PHP_SELF'];
-                   
-                    $url1="";
-                    $url2="";
-                    $url3="";
-                    $url4="";
-                    $url5="";
-                    switch($urli){
-                        case "/RSU-master/index.php":
+                    $array = explode('/',$urli);
+                    $ultimo = end($array);
+                    $url1="";$url2="";$url3="";$url4=""; $url5="";
+                    switch($ultimo){
+                        case "index.php":
                             $url1="active";
                             break;
-                        case "/RSU-master/public/nosotros.php":
+                        case "nosotros.php":
                             $url2="active";
                             break;
-                        case "/RSU-master/public/noticias.php":
+                        case "noticias.php":
                             $url3="active";
                             break;
-                        case "/RSU-master/public/contacto.php":
+                        case "contacto.php":
                             $url4="active";
                             break;
-                        case "/RSU-master/public/autoridades.php":
+                        case "autoridades.php":
                             $url5="active";
                             break;
                     }
