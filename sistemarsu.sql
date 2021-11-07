@@ -1,6 +1,0 @@
-/*
-
-BASE DE DATOS GENERAL DE SISTEMA RSU
-
-
-*/
