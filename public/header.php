@@ -55,19 +55,19 @@
                     $url4="";
                     $url5="";
                     switch($urli){
-                        case "/sistemarsu/index.php":
+                        case "/RSU-master/index.php":
                             $url1="active";
                             break;
-                        case "/sistemarsu/public/nosotros.php":
+                        case "/RSU-master/public/nosotros.php":
                             $url2="active";
                             break;
-                        case "/sistemarsu/public/noticias.php":
+                        case "/RSU-master/public/noticias.php":
                             $url3="active";
                             break;
-                        case "/sistemarsu/public/contacto.php":
+                        case "/RSU-master/public/contacto.php":
                             $url4="active";
                             break;
-                        case "/sistemarsu/public/autoridades.php":
+                        case "/RSU-master/public/autoridades.php":
                             $url5="active";
                             break;
                     }
