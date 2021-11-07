@@ -83,7 +83,7 @@ require_once("header.php");
 
                         <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
                             <!--IMAGEN AQUI-->
-                            <img src="assets/img/diario.jpg" alt="" class="img-fluid">
+                            <img src="../assets/img/diario.jpg" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ require_once("header.php");
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center">
                             <!--IMAGEN AQUI-->
-                            <img src="assets/img/mision.png" alt="" class="img-fluid">
+                            <img src="../assets/img/mision.png" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ require_once("header.php");
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center">
                             <!--IMAGEN AQUI-->
-                            <img src="assets/img/vision.png" alt="" class="img-fluid">
+                            <img src="../assets/img/vision.png" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@ require_once("header.php");
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center">
                             <!--IMAGEN AQUI-->
-                            <img src="assets/img/reglamento.png" alt="" class="img-fluid">
+                            <img src="../assets/img/reglamento.png" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>

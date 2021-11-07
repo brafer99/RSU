@@ -39,3 +39,8 @@ FALTAN: LOGOS DE SUS OFICINAS DONDE CORRESPONDA
 - SECCION autoriades.php
 ---------------------------------------------------------
 
+06/11 - Brafer
+- Se reestructuro el codigo en carpetas
+- SECCION todo
+---------------------------------------------------------
+

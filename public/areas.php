@@ -1,5 +1,5 @@
 <?php
-require("./header.php");
+require("header.php");
 ?>
 
 <!--CARDS SELECTION BY AREAS-->
@@ -64,6 +64,6 @@ require("./header.php");
 
 
 <?php
-require("./logos.php");
-require("./footer.php")
+require("logos.php");
+require("footer.php")
 ?>

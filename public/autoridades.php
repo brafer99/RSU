@@ -15,7 +15,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img">
-                            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-4.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>emedina@unjbg.edu.pe</p>
                             </div>
@@ -30,7 +30,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>kmutterc@unjbg.edu.pe</p>
                             </div>
@@ -45,7 +45,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="300">
                         <div class="member-img">
-                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-3.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>eberriosq@unjbg.edu.pe</p>
                             </div>
@@ -60,7 +60,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="400">
                         <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>mflorr@unjbg.edu.pe</p>
                             </div>
@@ -74,7 +74,7 @@ require_once("header.php");
                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>gvallec@unjbg.edu.pe</p>
                             </div>
@@ -88,7 +88,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/img/team/carmenrios.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/carmenrios.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>criosa@unjbg.edu.pe</p>
                             </div>
@@ -102,7 +102,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>avelardes@unjbg.edu.pe</p>
                             </div>
@@ -116,7 +116,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>ecardenasv@unjbg.edu.pe</p>
                             </div>
@@ -131,7 +131,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>jzeag@unjbg.edu.pe</p>
                             </div>
@@ -145,7 +145,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>ppelaeza@unjbg.edu.pe</p>
                             </div>
@@ -159,7 +159,7 @@ require_once("header.php");
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>aepcultural@unjbg.edu.pe</p>
                             </div>
@@ -178,7 +178,7 @@ require_once("header.php");
             </div>
             <div class="row">
                 <div class="imgg">
-                    <img id="img-center" src="assets/img/organigrama2.jpg" class="img-fluid" alt="">
+                    <img id="img-center" src="../assets/img/organigrama2.jpg" class="img-fluid" alt="">
                 </div>
 
             </div>

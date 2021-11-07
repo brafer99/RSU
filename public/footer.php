@@ -21,20 +21,20 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Enlaces de interés</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Nosotros</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Autoridades</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Noticias</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../index.php">Inicio</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="nosotros.php">Nosotros</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="autoridades.php">Autoridades</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="noticias.php">Noticias</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Nuestras Oficinas</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">AVO</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">AES</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">ACI</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">AEP</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AVO</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AES</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">ACI</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AEP</a></li>
                         </ul>
                     </div>
 
@@ -59,7 +59,7 @@
                     <!-- You can delete the links only if you purchased the pro version. -->
                     <!-- Licensing information: https://bootstrapmade.com/license/ -->
                     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/ -->
-                    Designed by <a href="index.php">DRSU TEAM</a>
+                    Designed by <a href="../index.php">DRSU TEAM</a>
                 </div>
             </div>
             <div class="social-links text-center text-md-end pt-3 pt-md-0">
@@ -76,16 +76,16 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/purecounter/purecounter.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
 
