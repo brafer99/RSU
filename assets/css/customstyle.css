@@ -79,6 +79,7 @@ a.button-contact {
 
 .card p {
   margin-bottom: 1.8em;
+  align-self: center;
 }
 
 .card .front,
