@@ -1,0 +1,74 @@
+
+.field_error{color:red;}
+.accordion .accordion__hide {
+  background: #f4f4f4;
+  height: 65px;
+  line-height: 65px;
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-family: "Poppins";
+  cursor: pointer;
+}
+.delivery input{
+  background: #c43b68;
+  color: white;
+  height: 35px;
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-family: "Poppins";
+  cursor: pointer;
+  border: none;
+}
+.checkout-method__title{
+  margin-top: 35px;
+}
+.table-content table td.product-name a {
+  font-family: "Poppins";
+}
+.wishlist-table table th{
+  font-family: 'Poppins';
+}
+.wishlist-table table td {
+  font-family: 'Poppins';
+  font-weight: 300;
+}
+.accordion .accordion__body {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-top: -30px;
+}
+.title__line{
+  font-family: 'Sofia';
+  font-size: 28px;
+}
+.sort_op, .ht__select{
+  font-size: 16px;
+}
+.ptb--100{
+  padding-top: 30px;
+}
+.fade.in{
+  padding-top: 40px;
+}
+.title-top{
+  font-size: 24px; 
+  font-family: 'Poppins'; 
+  font-weight: 800; 
+  margin: 0px; 
+
+}
