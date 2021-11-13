@@ -94,7 +94,7 @@ $totalProduct = $obj->totalProduct();
                                             </div>';
                                     } else {
                                         echo '<div class="header__account">
-                                            <a href="login.php">Ingresar</a></div>';
+                                            <a href="./admin/login.php">Ingresar</a></div>';
                                     }
                                     ?>
 

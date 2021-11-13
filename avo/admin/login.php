@@ -5,26 +5,25 @@ $msg = '';
 if (isset($_POST['submit'])) {
    $username = get_safe_value($con, $_POST['username']);
    $password = get_safe_value($con, $_POST['password']);
-   $sql = "select * from admin_users where username='$username' and password='$password'";
+   $sql = "SELECT * FROM users where email = '$username'";
    $res = mysqli_query($con, $sql);
    $count = mysqli_num_rows($res);
+
    if ($count > 0) {
-      if ($username== USERNAME && $password == PASSWORD){
-         $_SESSION['ADMIN_LOGIN'] = 'yes';
-         $_SESSION['ADMIN_USERNAME'] = 'username';
-         header('location:categories.php');
-         die();
-      } else{
-         $_SESSION['ADMIN_LOGIN'] = 'yes';
-         $_SESSION['ADMIN_USERNAME'] = 'username';
-         header('location:e_order_master.php');
-         die();
-      }
+         $row = mysqli_fetch_assoc($res);
+         $dbpassword = $row['password'];
+         if (password_verify($password, $dbpassword)) {
+            $_SESSION['ADMIN_LOGIN'] = 'yes';
+            $_SESSION['ADMIN_LOGIN'] = 'admin';
+            header('location:categories.php');
+         }
    } else {
       $msg = "Por favor ingrese los detalles de inicio de sesión correctos";
    }
 }
 ?>
+
+
 <!doctype html>
 <html class="no-js" lang="">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -52,8 +51,8 @@ if (isset($_POST['submit'])) {
             <div class="login-form mt-150">
                <form method="post">
                   <div class="form-group">
-                     <label>Usuario</label>
-                     <input type="text" name="username" class="form-control" placeholder="Usuario" required>
+                     <label>E-MAIL</label>
+                     <input type="text" name="username" class="form-control" placeholder="E-mail" required>
                   </div>
                   <div class="form-group">
                      <label>Contraseña</label>

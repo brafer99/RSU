@@ -55,14 +55,14 @@
         <!-- End Single Slide -->
     </div>
 </div>
-<!-- Start Slider Area -->
+
 <!-- Start Category Area -->
 <section class="htc__category__area ptb--100" id="mainbanner01">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <div class="section__title--2 text-center">
-                    <h2 class="title__line">Recomendaciones del CHEF</h2>
+                    <h2 class="title__line"></h2>
                     <p></p>
                 </div>
             </div>
@@ -74,7 +74,6 @@
                     $get_favorites = get_favorites($con);
                     foreach ($get_favorites as $list) {
                     ?>
-                        <!-- Start Single Category -->
                         <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
                             <div class="category">
                                 <div class="ht__cat__thumb">
@@ -96,7 +95,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Category -->
                     <?php } ?>
                 </div>
             </div>
@@ -106,6 +104,5 @@
 <!-- End Category Area -->
 
 <?php 
-    require('../public/logos.php');
-    require('../public/footer.php'); 
+    require('footer.php'); 
 ?>

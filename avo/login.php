@@ -90,12 +90,6 @@ if(isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN']=='yes'){
 									</div>
 									<div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="text" name="mobile" id="mobile" placeholder="Celular" style="width:100%">
-										</div>
-										<span class="field_error" id="mobile_error"></span>
-									</div>
-									<div class="single-contact-form">
-										<div class="contact-box name">
 											<input type="password" name="password" id="password" placeholder="Contraseña" style="width:100%">
 										</div>
 										<span class="field_error" id="password_error"></span>

@@ -4,9 +4,9 @@
         <div class="container">
             <div class="row">
                 <!-- Start Single Footer Widget -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="footer">
-                        <h2 class="title__line--2">Sobre nosotros</h2>
+                        <h2 class="title__line--2">Contáctenos</h2>
                         <div class="ft__details">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</p>
                             <div class="ft__social__link">
@@ -27,37 +27,36 @@
                 </div>
                 <!-- End Single Footer Widget -->
                 <!-- Start Single Footer Widget -->
-                <div class="col-md-2 col-sm-6 col-xs-12 xmt-40">
+                <div class="col-md-4 col-sm-6 col-xs-12 xmt-40">
                     <div class="footer">
-                        <h2 class="title__line--2">Información</h2>
+                        <h2 class="title__line--2">Enlaces de interés</h2>
                         <div class="ft__inner">
                             <ul class="ft__list">
-                                <li><a href="#">Food Style</a></li>
-                                <li><a href="#">Delivery Info</a></li>
-                                <li><a href="#">Políticas De Datos Personales</a></li>
-                                <li><a href="#">Términos Y Condiciones</a></li>
+                                <li><a href="#">Inicio</a></li>
+                                <li><a href="#">Noticias</a></li>
+                                <li><a href="#">Autoridades</a></li>
+                                <li><a href="#">Contacto</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <!-- End Single Footer Widget -->
                 <!-- Start Single Footer Widget -->
-                <div class="col-md-2 col-sm-6 col-xs-12 xmt-40 smt-40">
+                <div class="col-md-4 col-sm-6 col-xs-12 xmt-40 smt-40">
                     <div class="footer">
-                        <h2 class="title__line--2">Mi cuenta</h2>
+                        <h2 class="title__line--2">Oficinas de DRSU</h2>
                         <div class="ft__inner">
                             <ul class="ft__list">
-                                <li><a href="#">Mi Cuenta</a></li>
-                                <li><a href="cart.html">Mi Carrito</a></li>
-                                <li><a href="login.php">Inciar Sesión</a></li>
-                                <li><a href="wishlist.html">Lista De Deseados</a></li>
-                                <li><a href="checkout.html">Caja</a></li>
+                                <li><a href="#">AVO</a></li>
+                                <li><a href="#">AES</a></li>
+                                <li><a href="#">ACI</a></li>
+                                <li><a href="#">AEP</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <!-- End Single Footer Widget -->
-                <!-- Start Single Footer Widget -->
+                <!-- Start Single Footer Widget 
                 <div class="col-md-2 col-sm-6 col-xs-12 xmt-40 smt-40">
                     <div class="footer">
                         <h2 class="title__line--2">Nuestro Servicio</h2>
@@ -70,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Single Footer Widget -->
+                End Single Footer Widget -->
             </div>
         </div>
     </div>

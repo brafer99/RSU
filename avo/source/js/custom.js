@@ -87,7 +87,7 @@ function user_login() {
 				}
 				if (result == 'valid') {
 					alert('Bienvenido a FOOD STYLE Restaurante');
-					window.location.href = window.location.href;
+					window.location = "./admin/login.php";
 				}
 			}
 		});

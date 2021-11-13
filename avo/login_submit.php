@@ -19,5 +19,5 @@ if ($check_user > 0) {
 	echo "Ingrese su contraseña correcta";
 	}
 } else {
-	echo "wrong";
+	echo "Ingrese bien su correo";
 }
