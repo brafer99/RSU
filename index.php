@@ -128,7 +128,7 @@
 </section><!-- End OFICINAS UNJBG ASOCIADAS -->
 <!-- ======= PREGUNTAS FRECUENTES ======= -->
 <section id="faq" class="faq">
-  <div class="container" data-aos="fade-up">
+  <div class="container" >
 
     <div class="section-title">
       <h2>PREGUNTAS FRECUENTES</h2>
