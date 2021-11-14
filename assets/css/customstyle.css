@@ -219,3 +219,7 @@ iframe {
   width: 100%;
   height: 150vh;
 }
+
+.cambio_boton input{
+  width: 80%;
+}

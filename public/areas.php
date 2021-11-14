@@ -33,11 +33,11 @@ require("header.php");
     <div class="cardBox">
         <div class="card">
             <div class="front">
-                <h3>AES</h3>
-                <p>Área de Extensión Universitaria, Proyección Social y Servicio Social</p>
+                <h3>DRSU</h3>
+                <p>Dirección Académica de Responsabilidad Social Universitaria</p>
             </div>
             <div class="back">
-                <a href="#">Ingresar</a>
+                <a href="../drsu/noticia.php">Ir</a>
             </div>
         </div>
     </div>

@@ -1,3 +1,16 @@
+    
+<?php
+session_start();
+  if(!isset($_SESSION['valida_usuario'])){
+    header("Location:index.php");
+  }
+  else{
+    if($_SESSION['valida_usuario']=="ok"){
+      $nombre_usuario=$_SESSION["nombre_usuario"];
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,6 +39,8 @@
     <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -41,7 +56,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center">
-            <h1 class="logo me-auto"><a href="index.html"><img src="../assets/img/rrsu.png" alt="logo">  DRSU</a></h1>
+            <h1 class="logo me-auto"><a href="../index.php"><img src="../assets/img/rrsu.png" alt="logo">  DRSU</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
             <nav id="navbar" class="navbar order-last order-lg-0">
@@ -52,13 +67,13 @@
                     $ultimo = end($array);
                     $url1="";$url2="";$url3="";$url4="";$url5="";
                     switch($ultimo){
-                        case "index.php":
+                        case "noticia.php":
                             $url1="active";
                             break;
-                        case "nosotros.php":
+                        case "usuario.php":
                             $url2="active";
                             break;
-                        case "noticias.php":
+                        /*case "noticias.php":
                             $url3="active";
                             break;
                         case "contacto.php":
@@ -66,20 +81,24 @@
                             break;
                         case "autoridades.php":
                             $url5="active";
-                            break;
+                            break; */
                     }
                     echo '
-                    <li><a class="nav-link scrollto '.$url1.'" href="../index.php">Inicio</a></li>
-                    <li><a class="nav-link scrollto '.$url2.'" href="nosotros.php">Nosotros</a></li>
-                    <li><a class="nav-link scrollto '.$url5.'" href="autoridades.php">Autoridades</a></li>
-                    <li><a class="nav-link scrollto '.$url3.'" href="noticias.php">Noticias</a></li>
-                    <li><a class="nav-link scrollto '.$url4.'" href="contacto.php">Contáctanos</a></li>
+                    <li><a class="nav-link scrollto '.$url1.'" href="noticia.php">Noticias</a></li>
+                    <li><a class="nav-link scrollto '.$url2.'" href="usuario.php">Usuarios</a></li>
+                    <li><a class="nav-link scrollto '.$url3.'" href="../index.php">Ir a Página web</a></li>
                     ';?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="areas.php" class="get-started-btn scrollto">Iniciar Sesión</a>
+            <a href="cerrar.php" class="get-started-btn scrollto">Cerrar Sesión</a>
         </div>
     </header><!-- End Header -->
     </br></br>
+
+
+
+
+
+

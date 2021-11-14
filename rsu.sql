@@ -96,8 +96,9 @@ INSERT INTO estado(sql_estado_nombre) VALUES
     ('Finalizado');
 
 INSERT INTO noticia(sql_noticia_titulo,sql_noticia_imagen,sql_noticia_fecha,sql_noticia_hora,sql_noticia_enlace,sql_noticia_area_id,sql_noticia_estado_id) VALUES
-    ('Canto andino de voluntarios','cantoandino.jpg','12 de septiembre de 2021','19:00 horas','https://github.com/brafer99/RSU',1,2),
-    ('concurso bailarines de voluntarios','concursobailarines.jpg','20 de noviembre de 2021','14:00 horas','https://github.com/brafer99/RSU',3,1);
+    ('Estado Situacional del Covid en la region Tacna y vacunación','1636913727_noticia1.jpg','03 de Septiembre de 2021','19:00 horas','https://www.google.com/',2,2),
+    ('La voz Basadrina','1636918900_noticia2.jpg','20 de Agosto de 2020','12:00 horas','https://www.youtube.com/',2,1),
+    ('XX Juegos Florales Basadrinos 2021','1636918983_noticia3.png','07 y 08 de Octubre de 2020','15:00 horas','https://www.google.com/',3,1);
 
 /*registros de Piero*/
 

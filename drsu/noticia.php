@@ -253,111 +253,101 @@ if(isset($var_noticia_estado_id_2)){
     <!-- ======= Team Section ======= -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact ">
-        <div class="container" data-aos="fade-up">
-
+    <section id="contact" class="contact">
+        <div class="container">
             <div class="section-title">
                 <h2>Adiministrar Noticias</h2>
             </div>
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
                 <div class="col-lg-5">
-                   
-                        
-                    <form method="POST" enctype="multipart/form-data" role="form">
-                    <div class = "form-group">
-                        <input type="hidden" required readonly class="form-control"  value="<?php echo $var_noticia_id; ?>" name="noticia_id" id="noticia_id"  placeholder="ID">
-                    </div>
-
-                    <div class = "form-group">
-                        <label for="noticia_titulo">Título:</label>
-                        <input type="text" required class="form-control" value="<?php echo $var_noticia_titulo; ?>" name="noticia_titulo" id="noticia_titulo"  placeholder="Título">
-                    </div>
-                    <br/> 
-
-                   
-
-
-                    <!-- Imagenes: -->
-                    <div class = "form-group">
-                        <label for="noticia_imagen">Imagen:</label><br/> 
-                        <?php if($var_noticia_imagen!=""){ ?>
-                            <img class="img-thumbnail rounded" src="../assets/img/noticias/<?php echo $var_noticia_imagen;?>" width="50" alt="">    
-                        <?php } ?>
-                        <input type="file" class="form-control" name="noticia_imagen" id="noticia_imagen" placeholder="ID">
-                    </div>
-                    <br/> 
-
                     <div class="row">
-                            <div class="col form-group">
-                                <label for="noticia_fecha">Fecha:</label>
-                                <input type="text" required class="form-control" value="<?php echo $var_noticia_fecha; ?>" name="noticia_fecha" id="noticia_fecha"  placeholder="Fecha">
+                        <div class="col-md-12">
+                            <div class="info-box2"> 
+
+                                <h3>Agregar nueva Noticia</h3>
+
+                                <form method="POST" enctype="multipart/form-data" role="form">
+                                <div class = "form-group">
+                                    <input type="hidden" required readonly class="form-control"  value="<?php echo $var_noticia_id; ?>" name="noticia_id" id="noticia_id"  placeholder="ID">
+                                </div>
+
+                                <div class = "form-group">
+                                    <label for="noticia_titulo">Título:</label>
+                                    <input type="text" required class="form-control" value="<?php echo $var_noticia_titulo; ?>" name="noticia_titulo" id="noticia_titulo"  placeholder="Título">
+                                </div>
+                         
+
+                                <!-- Imagenes: -->
+                                <div class = "form-group">
+                                    <label for="noticia_imagen">Imagen:</label><br/> 
+                                    <?php if($var_noticia_imagen!=""){ ?>
+                                        <img class="img-thumbnail rounded" src="../assets/img/noticias/<?php echo $var_noticia_imagen;?>" width="200" alt="">    
+                                    <?php } ?>
+                                    <input type="file" class="form-control" name="noticia_imagen" id="noticia_imagen" placeholder="ID">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col form-group">
+                                        <label for="noticia_fecha">Fecha:</label>
+                                        <input type="text" required class="form-control" value="<?php echo $var_noticia_fecha; ?>" name="noticia_fecha" id="noticia_fecha"  placeholder="Fecha">
+                                    </div>
+
+                                    <div class="col form-group">
+                                        <label for="noticia_hora">Hora:</label>
+                                        <input type="text" required class="form-control" value="<?php echo $var_noticia_hora; ?>" name="noticia_hora" id="noticia_hora"  placeholder="Hora">
+                                    </div>
+                                </div>                
+
+                                <div class = "form-group">
+                                    <label for="noticia_enlace">Enlace:</label>
+                                    <input type="text" required class="form-control" value="<?php echo $var_noticia_enlace; ?>" name="noticia_enlace" id="noticia_enlace"  placeholder="Hora">
+                                </div>
+
+                                <!-- Lista con areas: -->
+                                <div class = "form-group">
+                                    <label for="areas">Área:</label>
+                                    <select name="noticia_area_id" id="noticia_area_id" required>
+                                        <?php if(isset($var_noticia_area_id_2)) { ?>
+                                            <option selected="" value="<?php echo $var_noticia_area_id_2; ?>" ><?php echo $var_area_sigla; ?></option> 
+                                        <?php } else{?>
+                                            <option value="" selected disabled hidden>Selecciona una opción</option> 
+                                        <?php }?>
+                                        <?php foreach($lista_areas as $area){ ?>
+                                            <option value="<?php echo $area['sql_area_id']; ?>"> <?php echo $area['sql_area_sigla']; ?></option> 
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <!-- Lista con estado: -->
+                                <div class = "form-group">
+                                    <label for="estado">Estado:</label>
+                                    <select name="noticia_estado_id" id="noticia_estado_id" required>
+                                        <?php if(isset($var_noticia_estado_id_2)) { ?>
+                                            <option selected="" value="<?php echo $var_noticia_estado_id_2; ?>" ><?php echo $var_estado_nombre; ?></option> 
+                                        <?php } else{?>
+                                            <option value="" selected disabled hidden>Selecciona una opción</option> 
+                                        <?php }?>
+                                        <?php foreach($lista_estados as $estado){ ?>
+                                            <option value="<?php echo $estado['sql_estado_id']; ?>"> <?php echo $estado['sql_estado_nombre']; ?></option> 
+                                        <?php } ?>
+                                    </select> 
+                                </div> 
+                                <div class="btn-group" role="group" aria-label="">
+                                    <button type="submit" name="accion" <?php echo ($var_accion=="Seleccionar")? "disabled":""?> value= "Agregar" class="btn btn-success">Agregar</button>
+                                    <button type="submit" name="accion" <?php echo ($var_accion!="Seleccionar")? "disabled":""?> value= "Modificar" class="btn btn-warning">Modificar</button>
+                                    <a href="noticia.php"><button type="button" class="btn btn-info" ">Cancelar</button></a>
+                                </div>
+                                </form>
                             </div>
-
-                            <div class="col form-group">
-                                <label for="noticia_hora">Hora:</label>
-                        <input type="text" required class="form-control" value="<?php echo $var_noticia_hora; ?>" name="noticia_hora" id="noticia_hora"  placeholder="Hora">
+                        </div> 
                     </div>
-                        </div>
-
-                        <br/> 
-
-                    <div class = "form-group">
-                        <label for="noticia_enlace">Enlace:</label>
-                        <input type="text" required class="form-control" value="<?php echo $var_noticia_enlace; ?>" name="noticia_enlace" id="noticia_enlace"  placeholder="Hora">
-                    </div>
-                    <br/> 
-
-                     <!-- Lista con areas: -->
-                    <div class = "form-group">
-                        <label for="areas">Área:</label>
-                        <select name="noticia_area_id" id="noticia_area_id" required>
-                            <?php if(isset($var_noticia_area_id_2)) { ?>
-                                <option selected="" value="<?php echo $var_noticia_area_id_2; ?>" ><?php echo $var_area_sigla; ?></option> 
-                            <?php } else{?>
-                                <option value="" selected disabled hidden>Selecciona una opción</option> 
-                            <?php }?>
-                            <?php foreach($lista_areas as $area){ ?>
-                                <option value="<?php echo $area['sql_area_id']; ?>"> <?php echo $area['sql_area_sigla']; ?></option> 
-                            <?php } ?>
-                        </select>
-                    </div>
-                    <br/> 
-
-                   <!-- Lista con estado: -->
-                    <div class = "form-group">
-                        <label for="estado">Estado:</label>
-                        <select name="noticia_estado_id" id="noticia_estado_id" required>
-                            <?php if(isset($var_noticia_estado_id_2)) { ?>
-                                <option selected="" value="<?php echo $var_noticia_estado_id_2; ?>" ><?php echo $var_estado_nombre; ?></option> 
-                            <?php } else{?>
-                                <option value="" selected disabled hidden>Selecciona una opción</option> 
-                            <?php }?>
-                            <?php foreach($lista_estados as $estado){ ?>
-                                <option value="<?php echo $estado['sql_estado_id']; ?>"> <?php echo $estado['sql_estado_nombre']; ?></option> 
-                            <?php } ?>
-                        </select> 
-                    </div><br/> 
-
-                    <div class="btn-group" role="group" aria-label="">
-                        <button type="submit" name="accion" <?php echo ($var_accion=="Seleccionar")? "disabled":""?> value= "Agregar" class="btn btn-success">Agregar</button>
-                        <button type="submit" name="accion" <?php echo ($var_accion!="Seleccionar")? "disabled":""?> value= "Modificar" class="btn btn-warning">Modificar</button>
-                        <a href="noticia.php"><button type="button" class="btn btn-info" ">Cancelar</button></a>
-                    </div>
-
-              
-
-                    </form>
-                   
                 </div>
-
+                <!-- TABLA -->                                    
                 <div class="col-lg-7">
                     <div class="row">
-
                         <div class="col-md-12">
-
                             <div class="info-box">          
-                                <h3>Noticias</h3>
-
+                                <h3>Lista de Noticias</h3>
+                                <br/>
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -378,27 +368,23 @@ if(isset($var_noticia_estado_id_2)){
     
                                     <td>
                                         <form method="post">
+                                            <div class="cambio_boton">
                                             <input type="hidden" name="noticia_id" id="noticia_id" value="<?php echo $noti['sql_noticia_id'] ?>"/>
                                             <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>
-                                            <input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>
+                                            <input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>                                                
+                                            </div>
+
                                         </form>
                                     </td>
                                     </tr>
                                     <?php  } ?>
                                     </tbody>
                                 </table>
-
-                    
                             </div>
                         </div>
-
-               
-                     
                     </div>
                 </div>
             </div>
-
-
         </div>
     </section><!-- End Contact Section -->
 
