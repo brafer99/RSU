@@ -8,12 +8,9 @@ require_once("header.php");
 
             <div class="section-title">
                 <h2>Contáctanos</h2>
-                
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-
                 <div class="col-lg-6">
                     <form method="post" role="form" class="php-email-form">
                         <div class="row">
@@ -76,8 +73,8 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
-
             </div>
+
 
         </div>
     </section><!-- End Contact Section -->
