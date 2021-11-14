@@ -1,7 +1,7 @@
 <?php
 require('top.inc.php');
 
-if(isset($_GET['type']) && $_GET['type']!=''){
+/*if(isset($_GET['type']) && $_GET['type']!=''){
 	$type=get_safe_value($con,$_GET['type']);
 	if($type=='status'){
 		$operation=get_safe_value($con,$_GET['operation']);
@@ -20,9 +20,12 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 		$delete_sql="delete from product where id='$id'";
 		mysqli_query($con,$delete_sql);
 	}
-}
+}*/
 
-$sql="select product.*,categories.categories from product,categories where product.categories_id=categories.id order by categories.categories asc";
+/*$sql="select product.*,categories.categories from product,categories where product.categories_id=categories.id order by categories.categories asc";*/
+$sql = "SELECT voluntarios.id, voluntarios.nombres, voluntarios.apellidos, tipo_voluntario.t_nombre, facultad.f_siglas, escuela.e_siglas 
+		FROM voluntarios, tipo_voluntario, escuela, facultad
+ 		WHERE (voluntarios.tipo = tipo_voluntario.id AND voluntarios.id_escuela = escuela.id AND escuela.id_facultad = facultad.id)";
 $res=mysqli_query($con,$sql);
 ?>
 <div class="content pb-0">
@@ -31,8 +34,8 @@ $res=mysqli_query($con,$sql);
 		  <div class="col-xl-12">
 			 <div class="card">
 				<div class="card-body">
-				   <h4 class="box-title">Productos </h4>
-				   <h4 class="box-link"><button class="add-cat"><a href="manage_product.php"> + Agregar</a> </h4></button>
+				   <h4 class="box-title">Voluntarios </h4>
+				   <h4 class="box-link"><button class="add-cat"><a href="manage_voluntario.php"> + Agregar</a> </h4></button>
 				</div>
 				<div class="card-body--">
 				   <div class="table-stats order-table ov-h">
@@ -40,10 +43,11 @@ $res=mysqli_query($con,$sql);
 						 <thead>
 							<tr>
 							   <th class="serial">#</th>
-							   <th>Categoría(s)</th>
-							   <th>Nombre</th>
-							   <th>Imagen</th>
-							   <th>Precio</th>
+							   <th>Tipo</th>
+							   <th>Nombres</th>
+							   <th>Apellidos</th>
+							   <th>Escuela</th>
+							   <th>Facultad</th>
 							   <th></th>
 							</tr>
 						 </thead>
@@ -53,21 +57,15 @@ $res=mysqli_query($con,$sql);
 							while($row=mysqli_fetch_assoc($res)){?>
 							<tr>
 							   <td class="serial"><?php echo $i?></td>
-							   <td><?php echo $row['categories']?></td>
-							   <td><?php echo $row['name']?></td>
-							   <td><img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$row['image']?>"/></td>
-							   <td><?php echo $row['price']?></td>
+							   <td><?php echo $row['t_nombre']?></td>
+							   <td><?php echo $row['nombres']?></td>
+							   <td><?php echo $row['apellidos']?></td>
+							   <td><?php echo $row['e_siglas']?></td>
+							   <td><?php echo $row['f_siglas']?></td>
 							   <td>
 								<?php
-								if($row['status']==1){
-									echo "<span class='badge badge-complete'><a href='?type=status&operation=deactive&id=".$row['id']."'>Activo</a></span>&nbsp;";
-								}else{
-									echo "<span class='badge badge-pending'><a href='?type=status&operation=active&id=".$row['id']."'>No activo</a></span>&nbsp;";
-								}
-								echo "<span class='badge badge-edit'><a href='manage_product.php?id=".$row['id']."'>Editar</a></span>&nbsp;";
-								
-								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['id']."'>ELIMINAR</a></span>";
-								
+								echo "<span class='badge badge-edit'><a href='manage_voluntario.php?id=".$row['id']."'>Editar</a></span>&nbsp;";								
+								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['id']."'>ELIMINAR</a></span>";								
 								?>
 							   </td>
 							</tr>
