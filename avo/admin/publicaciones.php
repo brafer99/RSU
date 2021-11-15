@@ -5,13 +5,13 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 	$type=get_safe_value($con,$_GET['type']);	
 	if($type=='delete'){
 		$id=get_safe_value($con,$_GET['id']);
-		$delete_sql="DELETE FROM publicacion WHERE id='$id'";
+		$delete_sql="DELETE FROM avo_publicacion WHERE id='$id'";
 		mysqli_query($con,$delete_sql);
 	}
 }
 
-$sql="SELECT publicacion.*, tipo_publicacion.nombre FROM publicacion,tipo_publicacion
-		WHERE publicacion.id_tipo=tipo_publicacion.id order by publicacion.fecha DESC";
+$sql="SELECT avo_publicacion.*, avo_tipo_publicacion.nombre FROM avo_publicacion,avo_tipo_publicacion
+		WHERE avo_publicacion.id_tipo=avo_tipo_publicacion.id order by avo_publicacion.fecha DESC";
 $res=mysqli_query($con,$sql);
 
 ?>

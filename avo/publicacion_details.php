@@ -5,9 +5,9 @@ if (isset($_GET['id'])) {
     $publicacion_id = mysqli_real_escape_string($con, $_GET['id']);
     if ($publicacion_id > 0) {
         /*SQL DE PUBLICACIONES*/
-        $sql = "SELECT publicacion.*, tipo_publicacion.nombre 
-                FROM publicacion, tipo_publicacion
-                WHERE (publicacion.id_tipo = tipo_publicacion.id AND publicacion.id = $publicacion_id)";
+        $sql = "SELECT avo_publicacion.*, avo_tipo_publicacion.nombre 
+                FROM avo_publicacion, avo_tipo_publicacion
+                WHERE (avo_publicacion.id_tipo = avo_tipo_publicacion.id AND avo_publicacion.id = $publicacion_id)";
         $res = mysqli_query($con, $sql);
         $data = array();
         while ($row = mysqli_fetch_assoc($res)) {

@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-require('connection.inc.php');
+require('../config/connection.inc.php');
 require('functions.inc.php');
 ?>
 

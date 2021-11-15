@@ -12,7 +12,7 @@ $image_required='required';
 if(isset($_GET['id']) && $_GET['id']!=''){
 	$image_required='';
 	$id=get_safe_value($con,$_GET['id']);
-	$res=mysqli_query($con,"SELECT * FROM publicacion WHERE id='$id'");
+	$res=mysqli_query($con,"SELECT * FROM avo_publicacion WHERE id='$id'");
 	$check=mysqli_num_rows($res);
 	if($check>0){
 		$row=mysqli_fetch_assoc($res);
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
 	$descripcion=get_safe_value($con,$_POST['descripcion']);
 	$fecha=get_safe_value($con,$_POST['fecha']);
 	
-	$res=mysqli_query($con,"SELECT * FROM publicacion WHERE titulo='$titulo'");
+	$res=mysqli_query($con,"SELECT * FROM avo_publicacion WHERE titulo='$titulo'");
 	$check=mysqli_num_rows($res);
 	if($check>0){
 		if(isset($_GET['id']) && $_GET['id']!=''){
@@ -65,17 +65,17 @@ if(isset($_POST['submit'])){
 			if($_FILES['image']['name']!=''){
 				$image=rand(111111111,999999999).'_'.$_FILES['image']['name'];
 				move_uploaded_file($_FILES['image']['tmp_name'],PRODUCT_IMAGE_SERVER_PATH.$image);
-				$update_sql="update publicacion set id_tipo='$id_tipo', titulo='$titulo', descripcion='$descripcion',
+				$update_sql="update avo_publicacion set id_tipo='$id_tipo', titulo='$titulo', descripcion='$descripcion',
 							fecha='$fecha',image='$image' where id='$id'";
 			}else{
-				$update_sql="update publicacion set id_tipo='$id_tipo', titulo='$titulo', descripcion='$descripcion',
+				$update_sql="update avo_publicacion set id_tipo='$id_tipo', titulo='$titulo', descripcion='$descripcion',
 							fecha='$fecha' where id='$id'";
 			}
 			mysqli_query($con,$update_sql);
 		}else{
 			$image=rand(111111111,999999999).'_'.$_FILES['image']['name'];
 			move_uploaded_file($_FILES['image']['tmp_name'],PRODUCT_IMAGE_SERVER_PATH.$image);
-			mysqli_query($con,"INSERT INTO publicacion(id_tipo,titulo,descripcion,image,fecha) 
+			mysqli_query($con,"INSERT INTO avo_publicacion(id_tipo,titulo,descripcion,image,fecha) 
 						VALUES ('$id_tipo','$titulo','$descripcion','$image','$fecha')");
 		}
 		?>
@@ -100,7 +100,7 @@ if(isset($_POST['submit'])){
 									<select class="form-control" name="id_tipo">
 										<option>Seleccione tipo de publicación</option>
 										<?php
-										$res=mysqli_query($con,"SELECT id,nombre FROM tipo_publicacion ORDER BY nombre DESC");
+										$res=mysqli_query($con,"SELECT id,nombre FROM avo_tipo_publicacion ORDER BY nombre DESC");
 										while($row=mysqli_fetch_assoc($res)){
 											if($row['id']==$id_tipo){
 												echo "<option selected value=".$row['id'].">".$row['nombre']."</option>";

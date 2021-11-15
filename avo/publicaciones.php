@@ -1,10 +1,10 @@
 <?php
 require('top.php');
 /*SQL DE PUBLICACIONES*/
-$sql = "SELECT publicacion.id, publicacion.id_tipo, publicacion.titulo, publicacion.fecha, publicacion.image
-		FROM publicacion, tipo_publicacion
- 		WHERE publicacion.id_tipo = tipo_publicacion.id 
-        ORDER BY publicacion.fecha DESC";
+$sql = "SELECT avo_publicacion.id, avo_publicacion.id_tipo, avo_publicacion.titulo, avo_publicacion.fecha, avo_publicacion.image
+		FROM avo_publicacion, avo_tipo_publicacion
+ 		WHERE avo_publicacion.id_tipo = avo_tipo_publicacion.id 
+        ORDER BY avo_publicacion.fecha DESC";
 $res = mysqli_query($con, $sql);
 $data = array();
 while ($row = mysqli_fetch_assoc($res)) {

@@ -2,9 +2,11 @@
 require('top.inc.php');
 
 /*$sql="select product.*,categories.categories from product,categories where product.categories_id=categories.id order by categories.categories asc";*/
-$sql = "SELECT voluntarios.id, voluntarios.nombres, voluntarios.apellidos, tipo_voluntario.t_nombre, facultad.f_siglas, escuela.e_siglas 
-		FROM voluntarios, tipo_voluntario, escuela, facultad
- 		WHERE (voluntarios.tipo = tipo_voluntario.id AND voluntarios.id_escuela = escuela.id AND escuela.id_facultad = facultad.id)";
+$sql = "SELECT avo_voluntarios.id, avo_voluntarios.nombres, avo_voluntarios.apellidos, avo_tipo_voluntario.t_nombre, avo_facultad.f_siglas, 
+			avo_escuela.e_siglas 
+		FROM avo_voluntarios, avo_tipo_voluntario, avo_escuela, avo_facultad
+ 		WHERE (avo_voluntarios.tipo = avo_tipo_voluntario.id AND avo_voluntarios.id_escuela = avo_escuela.id 
+		AND avo_escuela.id_facultad = avo_facultad.id)";
 $res=mysqli_query($con,$sql);
 
 ?>

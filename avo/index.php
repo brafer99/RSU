@@ -35,9 +35,6 @@
                                 <h2>Área de Programas de Voluntariado Basadrino y </h2>
                                 <h2>Vinculación con Grupos de Interés</h2>
                                 <h1>AVO</h1>
-                                <!--<div class="cr__btn">
-                                    <a href="index.php#mainbanner01">EMPEZAR A PEDIR</a>
-                                </div>-->
                             </div>
                         </div>
                     </div>

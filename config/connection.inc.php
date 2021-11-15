@@ -1,7 +1,7 @@
 <?php
 session_start();
 /*$con = mysqli_connect('demopievi.mysql.database.azure.com','demo_pievi@demopievi', 'Pierovm001','ecom_food');*/
-$con = mysqli_connect('127.0.0.1','root', '','ecom_food');
+$con = mysqli_connect('127.0.0.1','root', '','rsu');
 define('SERVER_PATH',$_SERVER['DOCUMENT_ROOT'].'/DRSU/avo/');
 define('SITE_PATH','http://127.0.0.1/DRSU/avo/');
 

@@ -16,7 +16,7 @@ $msg = '';
 if (isset($_GET['id']) && $_GET['id'] != '') {
 
 	$id = get_safe_value($con, $_GET['id']);
-	$res = mysqli_query($con, "select * from voluntarios where id='$id'");
+	$res = mysqli_query($con, "select * from avo_voluntarios where id='$id'");
 	$check = mysqli_num_rows($res);
 	if ($check > 0) {
 		$row = mysqli_fetch_assoc($res);
@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 	$email = get_safe_value($con, $_POST['email']);
 	$tipo = get_safe_value($con, $_POST['tipo']);
 
-	$res = mysqli_query($con, "SELECT * FROM voluntarios WHERE dni='$dni'");
+	$res = mysqli_query($con, "SELECT * FROM avo_voluntarios WHERE dni='$dni'");
 	$check = mysqli_num_rows($res);
 	if ($check > 0) {
 		if (isset($_GET['id']) && $_GET['id'] != '') {
@@ -62,11 +62,11 @@ if (isset($_POST['submit'])) {
 	}
 		if ($msg == '') {
 			if (isset($_GET['id']) && $_GET['id'] != '') {
-				$update_sql = "UPDATE voluntarios SET id_escuela='$id_escuela',nombres='$nombres',apellidos='$apellidos',
+				$update_sql = "UPDATE avo_voluntarios SET id_escuela='$id_escuela',nombres='$nombres',apellidos='$apellidos',
 				dni='$dni',fecha_nac='$fecha_nac',direccion='$direccion',celular='$celular',email='$email',tipo='$tipo' WHERE id='$id'";
 				mysqli_query($con, $update_sql);
 			} else {
-				mysqli_query($con, "INSERT INTO voluntarios(id_escuela,nombres,apellidos,dni,fecha_nac,direccion,celular,email,tipo) 
+				mysqli_query($con, "INSERT INTO avo_voluntarios(id_escuela,nombres,apellidos,dni,fecha_nac,direccion,celular,email,tipo) 
 				VALUES('$id_escuela','$nombres','$apellidos','$dni','$fecha_nac',$direccion,'$celular','$email','$tipo')");
 			}	
 			?>
@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
 								<select class="form-control" name="id_escuela">
 									<option>Seleccione Escuela Profesional</option>
 									<?php
-									$res = mysqli_query($con, "select id,e_nombre from escuela order by e_nombre asc");
+									$res = mysqli_query($con, "select id,e_nombre from avo_escuela order by e_nombre asc");
 									while ($row = mysqli_fetch_assoc($res)) {
 										if ($row['id'] == $id_escuela) {
 											echo "<option selected value=" . $row['id'] . ">" . $row['e_nombre'] . "</option>";
@@ -109,7 +109,7 @@ if (isset($_POST['submit'])) {
 								<select class="form-control" name="tipo">
 									<option>Seleccione tipo de voluntario</option>
 									<?php
-									$res = mysqli_query($con, "select id,t_nombre from tipo_voluntario order by t_nombre asc");
+									$res = mysqli_query($con, "select id,t_nombre from avo_tipo_voluntario order by t_nombre asc");
 									while ($row = mysqli_fetch_assoc($res)) {
 										if ($row['id'] == $tipo) {
 											echo "<option selected value=" . $row['id'] . ">" . $row['t_nombre'] . "</option>";

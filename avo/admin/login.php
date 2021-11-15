@@ -1,11 +1,11 @@
 <?php
-require('connection.inc.php');
+require('../../config/connection.inc.php');
 require('functions.inc.php');
 $msg = '';
 if (isset($_POST['submit'])) {
    $username = get_safe_value($con, $_POST['username']);
    $password = get_safe_value($con, $_POST['password']);
-   $sql = "SELECT * FROM users where email = '$username'";
+   $sql = "SELECT * FROM avo_users where email = '$username'";
    $res = mysqli_query($con, $sql);
    $count = mysqli_num_rows($res);
 
