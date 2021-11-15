@@ -13,9 +13,6 @@
                             <div class="slider__inner">
                                 <h2>Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés</h2>
                                 <h1>AVO</h1>
-                                <!--<div class="cr__btn">
-                                    <a href="index.php#mainbanner01">VER NOTICIAS</a>
-                                </div>-->
                             </div>
                         </div>
                     </div>
@@ -57,49 +54,8 @@
 </div>
 
 <!-- Start Category Area -->
-<section class="htc__category__area ptb--100" id="mainbanner01">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="section__title--2 text-center">
-                    <h2 class="title__line"></h2>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-        <div class="htc__product__container">
-            <div class="row">
-                <div class="product__list clearfix mt--30">
-                    <?php
-                    $get_favorites = get_favorites($con);
-                    foreach ($get_favorites as $list) {
-                    ?>
-                        <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-                            <div class="category">
-                                <div class="ht__cat__thumb">
-                                    <a href="product.php?id=<?php echo $list['id'] ?>">
-                                        <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" alt="product images">
-                                    </a>
-                                </div>
-                                <div class="fr__hover__info">
-                                    <ul class="product__action">
-                                        <input type="hidden" id="qty" value="1"></option>
-                                        <li><a href="javascript:void(0)" onclick="manage_cart('<?php echo $list['id'] ?>','add')"><i class="icon-handbag icons"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="fr__product__inner">
-                                    <h4><a href="product-details.html"><?php echo $list['name'] ?></a></h4>
-                                    <ul class="fr__pro__prize">
-                                        <li><?php echo "S/. " . $list['price'] ?></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="htc__category__area ptb--10">
+ 
 </section>
 <!-- End Category Area -->
 

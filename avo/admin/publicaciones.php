@@ -1,8 +1,19 @@
 <?php
 require('top.inc.php');
+
+if(isset($_GET['type']) && $_GET['type']!=''){
+	$type=get_safe_value($con,$_GET['type']);	
+	if($type=='delete'){
+		$id=get_safe_value($con,$_GET['id']);
+		$delete_sql="DELETE FROM publicacion WHERE id='$id'";
+		mysqli_query($con,$delete_sql);
+	}
+}
+
 $sql="SELECT publicacion.*, tipo_publicacion.nombre FROM publicacion,tipo_publicacion
 		WHERE publicacion.id_tipo=tipo_publicacion.id order by publicacion.fecha DESC";
 $res=mysqli_query($con,$sql);
+
 ?>
 <div class="content pb-0">
 	<div class="orders">

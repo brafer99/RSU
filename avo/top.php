@@ -2,15 +2,6 @@
 error_reporting(0);
 require('connection.inc.php');
 require('functions.inc.php');
-require('add_to_cart.inc.php');
-require("user_auth.php");
-$cat_res = mysqli_query($con, "select * from categories where status=1 order by categories asc");
-$cat_arr = array();
-while ($row = mysqli_fetch_assoc($cat_res)) {
-    $cat_arr[] = $row;
-}
-$obj = new add_to_cart();
-$totalProduct = $obj->totalProduct();
 ?>
 
 <!doctype html>
@@ -52,13 +43,8 @@ $totalProduct = $obj->totalProduct();
                                 <nav class="main__menu__nav hidden-xs hidden-sm">
                                     <ul class="main__menu">
                                         <li class="drop"><a href="index.php">Inicio</a></li>
-                                        <?php
-                                        foreach ($cat_arr as $list) {
-                                        ?>
-                                            <li><a href="categories.php?id=<?php echo $list['id'] ?>"><?php echo $list['categories'] ?></a></li>
-                                        <?php
-                                        }
-                                        ?>
+                                        <li class="drop"><a href="publicaciones.php">Noticias y eventos</a></li>
+                                        <li><a href="contact.php">Autoridades</a></li>
                                         <li><a href="contact.php">Contacto</a></li>
                                     </ul>
                                 </nav>
@@ -66,41 +52,20 @@ $totalProduct = $obj->totalProduct();
                                     <nav id="mobile_dropdown">
                                         <ul>
                                             <li><a href="index.php">Inicio</a></li>
-                                            <?php
-                                            foreach ($cat_arr as $list) {
-                                            ?>
-                                                <li><a href="categories.php?id=<?php echo $list['id'] ?>"><?php echo $list['categories'] ?></a></li>
-                                            <?php
-                                            }
-                                            ?>
+                                            <li><a href="publicaciones.php">Noticias y Eventos</a></li>
+                                            <li><a href="contact.php">Autoridades</a></li>
                                             <li><a href="contact.php">Contacto</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-lg-4 col-sm-4 col-xs-4" >
+                            <div class="col-md-3 col-lg-4 col-sm-4 col-xs-4">
                                 <div class="header__right">
                                     <div class="header__search search search__open">
                                         <a href="#"><i class="icon-magnifier icons"></i></a>
                                     </div>
-                                    <?php if (isset($_SESSION['USER_LOGIN'])) {
-
-
-                                        echo '  <div class="header__account">
-                                                    <a  href="logout.php">Salir</a>
-                                                </div>
-                                            <div class="header__account">
-                                                <a href="my_order.php">Pedidos</a>
-                                            </div>';
-                                    } else {
-                                        echo '<div class="header__account">
-                                            <a href="./admin/login.php">Ingresar</a></div>';
-                                    }
-                                    ?>
-
-                                    <div class="htc__shopping__cart">
-                                        <a class="cart__menu"><i class="icon-handbag icons"></i></a>
-                                        <a href="cart.php"><span class="htc__qua"><?php echo $totalProduct ?></span></a>
+                                    <div class="header__account">
+                                        <a href="./admin/login.php">Ingresar</a>
                                     </div>
                                 </div>
                             </div>

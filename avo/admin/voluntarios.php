@@ -1,32 +1,12 @@
 <?php
 require('top.inc.php');
 
-/*if(isset($_GET['type']) && $_GET['type']!=''){
-	$type=get_safe_value($con,$_GET['type']);
-	if($type=='status'){
-		$operation=get_safe_value($con,$_GET['operation']);
-		$id=get_safe_value($con,$_GET['id']);
-		if($operation=='active'){
-			$status='1';
-		}else{
-			$status='0';
-		}
-		$update_status_sql="update product set status='$status' where id='$id'";
-		mysqli_query($con,$update_status_sql);
-	}
-	
-	if($type=='delete'){
-		$id=get_safe_value($con,$_GET['id']);
-		$delete_sql="delete from product where id='$id'";
-		mysqli_query($con,$delete_sql);
-	}
-}*/
-
 /*$sql="select product.*,categories.categories from product,categories where product.categories_id=categories.id order by categories.categories asc";*/
 $sql = "SELECT voluntarios.id, voluntarios.nombres, voluntarios.apellidos, tipo_voluntario.t_nombre, facultad.f_siglas, escuela.e_siglas 
 		FROM voluntarios, tipo_voluntario, escuela, facultad
  		WHERE (voluntarios.tipo = tipo_voluntario.id AND voluntarios.id_escuela = escuela.id AND escuela.id_facultad = facultad.id)";
 $res=mysqli_query($con,$sql);
+
 ?>
 <div class="content pb-0">
 	<div class="orders">

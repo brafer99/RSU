@@ -15,14 +15,13 @@ if (isset($_POST['submit'])) {
          if (password_verify($password, $dbpassword)) {
             $_SESSION['ADMIN_LOGIN'] = 'yes';
             $_SESSION['ADMIN_LOGIN'] = 'admin';
-            header('location:categories.php');
+            header('location:voluntarios.php');
          }
    } else {
       $msg = "Por favor ingrese los detalles de inicio de sesión correctos";
    }
 }
 ?>
-
 
 <!doctype html>
 <html class="no-js" lang="">
@@ -70,5 +69,4 @@ if (isset($_POST['submit'])) {
    <script src="assets/js/plugins.js" type="text/javascript"></script>
    <script src="assets/js/main.js" type="text/javascript"></script>
 </body>
-
 </html>
