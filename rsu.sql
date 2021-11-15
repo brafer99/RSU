@@ -19,45 +19,41 @@ USE rsu;
 
 /*tablas de Brafer*/
 
-CREATE TABLE rol(
+CREATE TABLE drsu_rol(
 	sql_rol_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    sql_rol_nombre VARCHAR(80) UNIQUE NOT NULL
+    sql_rol_nombre VARCHAR(20) UNIQUE NOT NULL
 );
 
-CREATE TABLE usuario(
+CREATE TABLE drsu_usuario(
 	sql_usuario_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    sql_usuario_email VARCHAR(80) UNIQUE NOT NULL,
+    sql_usuario_email VARCHAR(100) UNIQUE NOT NULL,
 	sql_usuario_pass VARCHAR(100) NOT NULL,
     sql_usuario_rol_id INTEGER UNSIGNED NOT NULL,
-	FOREIGN KEY (sql_usuario_rol_id) REFERENCES rol(sql_rol_id) 
+	FOREIGN KEY (sql_usuario_rol_id) REFERENCES drsu_rol(sql_rol_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-CREATE TABLE area(
+CREATE TABLE drsu_area(
     sql_area_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    sql_area_nombre VARCHAR(500) NOT NULL,
-    sql_area_sigla VARCHAR(50) NOT NULL
+    sql_area_nombre VARCHAR(250) NOT NULL,
+    sql_area_sigla VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE estado(
-    sql_estado_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    sql_estado_nombre VARCHAR(500) NOT NULL
-);
-
-CREATE TABLE noticia(
+CREATE TABLE drsu_noticia(
 	sql_noticia_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	sql_noticia_titulo VARCHAR(200) NOT NULL,
-    sql_noticia_imagen VARCHAR(200) NOT NULL,
+	sql_noticia_titulo VARCHAR(250) NOT NULL,
+    sql_noticia_imagen VARCHAR(250) NOT NULL,
+    sql_noticia_descripcion TEXT NULL,
 	sql_noticia_fecha VARCHAR(200) NULL,
 	sql_noticia_hora VARCHAR(200) NULL,
-    sql_noticia_enlace VARCHAR(500) NULL,
+    sql_noticia_enlace VARCHAR(200) NULL,
+    sql_noticia_lugar VARCHAR(200) NULL,
 
 	sql_noticia_area_id INTEGER UNSIGNED NOT NULL,
-    sql_noticia_estado_id INTEGER UNSIGNED NOT NULL,
 
-	FOREIGN KEY (sql_noticia_area_id) REFERENCES area(sql_area_id) 
+	FOREIGN KEY (sql_noticia_area_id) REFERENCES drsu_area(sql_area_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE,
-	FOREIGN KEY (sql_noticia_estado_id) REFERENCES estado(sql_estado_id) 
+	FOREIGN KEY (sql_noticia_estado_id) REFERENCES drsu_estado(sql_estado_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
