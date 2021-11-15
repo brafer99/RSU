@@ -271,10 +271,14 @@ if(isset($var_noticia_estado_id_2)){
                                     <input type="hidden" required readonly class="form-control"  value="<?php echo $var_noticia_id; ?>" name="noticia_id" id="noticia_id"  placeholder="ID">
                                 </div>
 
+
+
                                 <div class = "form-group">
-                                    <label for="noticia_titulo">Título:</label>
-                                    <input type="text" required class="form-control" value="<?php echo $var_noticia_titulo; ?>" name="noticia_titulo" id="noticia_titulo"  placeholder="Título">
+                                    <textarea class="form-control" name="noticia_titulo" rows="5" placeholder="Mensaje"
+                                    required><?php echo $var_noticia_titulo; ?></textarea>
                                 </div>
+
+
                          
 
                                 <!-- Imagenes: -->
@@ -289,18 +293,18 @@ if(isset($var_noticia_estado_id_2)){
                                 <div class="row">
                                     <div class="col form-group">
                                         <label for="noticia_fecha">Fecha:</label>
-                                        <input type="text" required class="form-control" value="<?php echo $var_noticia_fecha; ?>" name="noticia_fecha" id="noticia_fecha"  placeholder="Fecha">
+                                        <input type="text" class="form-control" value="<?php echo $var_noticia_fecha; ?>" name="noticia_fecha" id="noticia_fecha"  placeholder="Fecha">
                                     </div>
 
                                     <div class="col form-group">
                                         <label for="noticia_hora">Hora:</label>
-                                        <input type="text" required class="form-control" value="<?php echo $var_noticia_hora; ?>" name="noticia_hora" id="noticia_hora"  placeholder="Hora">
+                                        <input type="text" class="form-control" value="<?php echo $var_noticia_hora; ?>" name="noticia_hora" id="noticia_hora"  placeholder="Hora">
                                     </div>
                                 </div>                
 
                                 <div class = "form-group">
-                                    <label for="noticia_enlace">Enlace:</label>
-                                    <input type="text" required class="form-control" value="<?php echo $var_noticia_enlace; ?>" name="noticia_enlace" id="noticia_enlace"  placeholder="Hora">
+                                    <label for="noticia_enlace">Enlace: (opcional)</label>
+                                    <input type="text" class="form-control" value="<?php echo $var_noticia_enlace; ?>" name="noticia_enlace" id="noticia_enlace"  placeholder="Hora">
                                 </div>
 
                                 <!-- Lista con areas: -->

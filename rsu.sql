@@ -48,9 +48,9 @@ CREATE TABLE noticia(
 	sql_noticia_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	sql_noticia_titulo VARCHAR(200) NOT NULL,
     sql_noticia_imagen VARCHAR(200) NOT NULL,
-	sql_noticia_fecha VARCHAR(200) NOT NULL,
-	sql_noticia_hora VARCHAR(200) NOT NULL,
-    sql_noticia_enlace VARCHAR(500) NOT NULL,
+	sql_noticia_fecha VARCHAR(200) NULL,
+	sql_noticia_hora VARCHAR(200) NULL,
+    sql_noticia_enlace VARCHAR(500) NULL,
 
 	sql_noticia_area_id INTEGER UNSIGNED NOT NULL,
     sql_noticia_estado_id INTEGER UNSIGNED NOT NULL,
