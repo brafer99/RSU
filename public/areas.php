@@ -25,7 +25,7 @@ require("header.php");
                 <p>Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés</p>
             </div>
             <div class="back">
-                <a href="https://www.google.com">Ingresar</a>
+                <a href="../avo/index.php">Ingresar</a>
             </div>
         </div>
     </div>
