@@ -3,6 +3,42 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
 
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Enlaces de interés</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../index.php">Inicio</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="nosotros.php">Nosotros</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="autoridades.php">Autoridades</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="noticias.php">Noticias</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nuestras Oficinas</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AVO</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AES</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">ACI</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AEP</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Regresar a página web DRSU</h4>
+        
+                        <a href="../index.php" class="button-contact">Regresar</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <div class="container d-md-flex py-4">
 
             <div class="me-md-auto text-center text-md-start">
