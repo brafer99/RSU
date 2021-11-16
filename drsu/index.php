@@ -10,29 +10,30 @@ $var_login_pass=(isset($_POST['login_pass']))?$_POST['login_pass']:"";
 
 if($_POST){
 
+    if($var_login_email!='' && $var_login_pass!=''){
+
+        $sentencia_sql= $conexion->prepare("SELECT * from drsu_usuario WHERE sql_usuario_email=:param_usuario_email");
+        $sentencia_sql->bindParam(':param_usuario_email',$var_login_email);
+        $sentencia_sql->execute();
+        $usuario=$sentencia_sql->fetch(PDO::FETCH_LAZY);
+        $hash = $usuario['sql_usuario_pass'];
+        if(password_verify($var_login_pass,$hash)){
+        $_SESSION['valida_usuario']="ok";
+        $_SESSION['nombre_usuario']=$var_login_email;
+         header('Location:usuario.php');
+         }else{
+        $mensaje="Error: El usuario ó contraseña son incorrectos";
+        }
+
+    }else{
+        $mensaje2="No ingresó Datos";
+    }
+
     //se usa esta forma, lo ideal seria hacer consulta a la base de datos
     
     //una vez validada la informacion le damos estos valores para que pueda usarse en otras plantilla
-        $sentenciaSQL= $conexion->prepare("SELECT * FROM usuario WHERE sql_usuario_email=:param_usuario_email AND sql_usuario_pass=:param_usuario_pass");
-        $sentenciaSQL->bindParam(':param_usuario_email',$var_login_email);
-        $sentenciaSQL->bindParam(':param_usuario_pass',$var_login_pass);
-        $sentenciaSQL->execute();
-        $usuario=$sentenciaSQL->fetch(PDO::FETCH_LAZY);
-
-        if(isset($usuario['sql_usuario_email'])){
-        
-        $_SESSION['valida_usuario']="ok";
-        $_SESSION['nombre_usuario']=$var_login_email;
-        header('Location:noticia.php');
-
-    }else{
-        $mensaje="Error: El usuario ó contraseña son incorrectos";
     }
-
-    }
-
 ?>
-
 <!doctype html>
 <html lang="es">
   <head>
@@ -66,16 +67,21 @@ if($_POST){
                             <?php echo $mensaje; ?>
                         </div>
                         <?php } ?>
+                        <?php if(isset($mensaje2)){ ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $mensaje2; ?>
+                        </div>
+                        <?php } ?>
                         <form method="POST">
 
                         <div class = "form-group">
                             <label>Usuario</label>
-                            <input type="email" class="form-control" name="login_email" id="login_email" placeholder="Escribe tu email">
+                            <input required type="email" class="form-control" name="login_email" id="login_email" placeholder="Escribe tu email">
                         </div>
                         
                         <div class="form-group">
                             <label>Contraseña:</label>
-                            <input type="password" class="form-control" name="login_pass" id="login_pass" placeholder="Escribe tu contraseña">
+                            <input required type="password" class="form-control" name="login_pass" id="login_pass" placeholder="Escribe tu contraseña">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Entrar al Adiministrador</button>
