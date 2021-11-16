@@ -220,6 +220,16 @@ iframe {
   height: 150vh;
 }
 
-.cambio_boton input{
+.cambio_boton input {
   width: 80%;
+}
+
+/*estilo de boton ver contraseña xd*/
+.juntar {
+  position: relative;
+  display: flex;
+}
+.boton_ver {
+  position: absolute;
+  right: 0;
 }

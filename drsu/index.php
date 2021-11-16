@@ -1,4 +1,4 @@
-<?php include("./config/db.php");?>
+<?php include("../config/db.php");?>
 <?php
 
 session_start();
@@ -7,32 +7,48 @@ $var_login_id=(isset($_POST['login_id']))?$_POST['login_id']:"";
 $var_login_email=(isset($_POST['login_email']))?$_POST['login_email']:"";
 $var_login_pass=(isset($_POST['login_pass']))?$_POST['login_pass']:"";
 
+$validacion_usuario=false;
+$validacion_pas=false;
+
 
 if($_POST){
 
     if($var_login_email!='' && $var_login_pass!=''){
 
-        $sentencia_sql= $conexion->prepare("SELECT * from drsu_usuario WHERE sql_usuario_email=:param_usuario_email");
-        $sentencia_sql->bindParam(':param_usuario_email',$var_login_email);
+        $sentencia_sql= $conexion->prepare("SELECT * from drsu_usuario");
         $sentencia_sql->execute();
-        $usuario=$sentencia_sql->fetch(PDO::FETCH_LAZY);
-        $hash = $usuario['sql_usuario_pass'];
-        if(password_verify($var_login_pass,$hash)){
-        $_SESSION['valida_usuario']="ok";
-        $_SESSION['nombre_usuario']=$var_login_email;
-         header('Location:usuario.php');
-         }else{
-        $mensaje="Error: El usuario ó contraseña son incorrectos";
+        $lista_usuarios=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
+        
+
+        //$hash = $usuario['sql_usuario_pass'];
+         $hash = "";
+        foreach($lista_usuarios as $usuario) {
+            if($usuario['sql_usuario_email']==$var_login_email){
+                $validacion_usuario=true;
+                $hash = $usuario['sql_usuario_pass'];
+                $usuario_validado=$usuario['sql_usuario_email'];
+            }
         }
 
-    }else{
-        $mensaje2="No ingresó Datos";
-    }
 
-    //se usa esta forma, lo ideal seria hacer consulta a la base de datos
-    
-    //una vez validada la informacion le damos estos valores para que pueda usarse en otras plantilla
-    }
+        if($validacion_usuario==true){
+
+            if(password_verify($var_login_pass,$hash)){
+                $validacion_pas=true;
+                $_SESSION['valida_usuario']="ok";
+                $_SESSION['nombre_usuario']=$var_login_email;
+                header('Location:usuario.php');
+            } else{
+                $mensaje1="Contraseña Incorrecta";
+            }
+        } else{
+            $mensaje2="Email incorrecto";
+        }
+    } else{
+            $mensaje3="No ingresó Datos";
+    }  //se usa esta forma, lo ideal seria hacer consulta a la base de datos  
+}
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -62,16 +78,24 @@ if($_POST){
                         Login
                     </div>
                     <div class="card-body">
-                        <?php if(isset($mensaje)){ ?>
+                        <?php if(isset($mensaje1)){ ?>
                         <div class="alert alert-danger" role="alert">
-                            <?php echo $mensaje; ?>
+                            <?php echo $mensaje1; ?>
                         </div>
                         <?php } ?>
+
                         <?php if(isset($mensaje2)){ ?>
                         <div class="alert alert-danger" role="alert">
                             <?php echo $mensaje2; ?>
                         </div>
                         <?php } ?>
+
+                        <?php if(isset($mensaje3)){ ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $mensaje3; ?>
+                        </div>
+                        <?php } ?>
+
                         <form method="POST">
 
                         <div class = "form-group">

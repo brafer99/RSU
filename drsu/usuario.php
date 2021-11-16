@@ -116,14 +116,14 @@ switch($var_accion){
 
         //Seleccionamos informacion mediante INNER JOIN:
         $sentencia_sql= $conexion->prepare("SELECT 
-        usuario.sql_usuario_id, 
-        usuario.sql_usuario_email, 
-        usuario.sql_usuario_pass, 
-        usuario.sql_usuario_rol_id,
-        rol.sql_rol_nombre
+        drsu_usuario.sql_usuario_id, 
+        drsu_usuario.sql_usuario_email, 
+        drsu_usuario.sql_usuario_pass, 
+        drsu_usuario.sql_usuario_rol_id,
+        drsu_rol.sql_rol_nombre
 
         FROM drsu_usuario
-        JOIN drsu_rol ON usuario.sql_usuario_rol_id=rol.sql_rol_id 
+        JOIN drsu_rol ON drsu_usuario.sql_usuario_rol_id=drsu_rol.sql_rol_id 
 
         WHERE sql_usuario_id=:param_usuario_id;");
         
@@ -148,18 +148,18 @@ switch($var_accion){
 }
 
 $sentencia_sql= $conexion->prepare("SELECT 
-    usuario.sql_usuario_id, 
-    usuario.sql_usuario_email, 
-    usuario.sql_usuario_pass,
-    usuario.sql_usuario_rol_id,
-    rol.sql_rol_nombre
+    drsu_usuario.sql_usuario_id, 
+    drsu_usuario.sql_usuario_email, 
+    drsu_usuario.sql_usuario_pass,
+    drsu_usuario.sql_usuario_rol_id,
+    drsu_rol.sql_rol_nombre
 
     FROM drsu_usuario 
-    JOIN drsu_rol ON usuario.sql_usuario_rol_id=rol.sql_rol_id 
-    ORDER BY usuario.sql_usuario_id ASC;");
+    JOIN drsu_rol ON drsu_usuario.sql_usuario_rol_id=drsu_rol.sql_rol_id 
+    ORDER BY drsu_usuario.sql_usuario_id ASC;");
 
-$sentencia_sql->execute();
-$lista_usuarios=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
+    $sentencia_sql->execute();
+    $lista_usuarios=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($var_usuario_rol_id_2)){
 
