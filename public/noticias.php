@@ -61,7 +61,7 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                     <img src="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen']; ?>" class="img-fluid" alt="">
                     <div class="portfolio-info">                                                 
                         <div class="portfolio-links">
-                            <a href="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen']; ?>" data-gallery="portfolioGallery"
+                            <a href="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen'];?>" data-gallery="portfolioGallery"
                                 class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>                           
                         </div>
                     </div>

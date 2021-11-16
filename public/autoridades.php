@@ -12,7 +12,7 @@ require_once("header.php");
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-4.jpg" class="img-fluid" alt="">
@@ -27,7 +27,7 @@ require_once("header.php");
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
@@ -42,22 +42,22 @@ require_once("header.php");
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
-                            <img src="../assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                            <img src="../assets/img/team/berrios.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <p>eberriosq@unjbg.edu.pe</p>
                             </div>
                         </div>
                         <div class="member-info">
                             <h4>Mgr. Edgardo Javier Berrios Quina</h4>
-                            <span>Extensión Universitaria, Proyección Social y Servicio Social (AES)</span>
+                            <span>Extensión Universitaria, Proyección Social <br/> y Servicio Social (AES)</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
@@ -71,7 +71,7 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
-                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
@@ -85,7 +85,7 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/carmenrios.jpg" class="img-fluid" alt="">
@@ -99,7 +99,7 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
@@ -113,7 +113,7 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
@@ -128,7 +128,7 @@ require_once("header.php");
                     </div>
                 </div>
                 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
@@ -142,7 +142,7 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
@@ -156,7 +156,7 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
                             <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
