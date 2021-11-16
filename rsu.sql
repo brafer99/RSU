@@ -21,14 +21,14 @@ USE rsu;
 
 CREATE TABLE drsu_rol(
 	sql_rol_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    sql_rol_nombre VARCHAR(20) UNIQUE NOT NULL
+  sql_rol_nombre VARCHAR(20) UNIQUE NOT NULL
 );
 
 CREATE TABLE drsu_usuario(
 	sql_usuario_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    sql_usuario_email VARCHAR(100) UNIQUE NOT NULL,
+  sql_usuario_email VARCHAR(100) UNIQUE NOT NULL,
 	sql_usuario_pass VARCHAR(100) NOT NULL,
-    sql_usuario_rol_id INTEGER UNSIGNED NOT NULL,
+  sql_usuario_rol_id INTEGER UNSIGNED NOT NULL,
 	FOREIGN KEY (sql_usuario_rol_id) REFERENCES drsu_rol(sql_rol_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE
 );
@@ -48,20 +48,35 @@ CREATE TABLE drsu_estado(
 CREATE TABLE drsu_noticia(
 	sql_noticia_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	sql_noticia_titulo TEXT NOT NULL,
-    sql_noticia_imagen VARCHAR(250) NOT NULL,
-    sql_noticia_descripcion TEXT NULL,
+  sql_noticia_imagen VARCHAR(250) NOT NULL,
+  sql_noticia_descripcion TEXT NULL,
 	sql_noticia_fecha VARCHAR(200) NULL,
 	sql_noticia_hora VARCHAR(200) NULL,
-    sql_noticia_enlace VARCHAR(200) NULL,
-    sql_noticia_lugar VARCHAR(200) NULL,
+  sql_noticia_enlace VARCHAR(200) NULL,
+  sql_noticia_lugar VARCHAR(200) NULL,
 	sql_noticia_area_id INTEGER UNSIGNED NOT NULL,
-    sql_noticia_estado_id INTEGER UNSIGNED NOT NULL,
-
+  sql_noticia_estado_id INTEGER UNSIGNED NOT NULL,
 	FOREIGN KEY (sql_noticia_area_id) REFERENCES drsu_area(sql_area_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE,
 	FOREIGN KEY (sql_noticia_estado_id) REFERENCES drsu_estado(sql_estado_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE
 );
+
+CREATE TABLE drsu_autoridad(
+  sql_autoridad_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  sql_autoridad_nombre VARCHAR (250) NOT NULL,
+  sql_autoridad_imagen VARCHAR (250) NULL,
+  sql_autoridad_area_id INTEGER UNSIGNED NOT NULL,
+  FOREIGN KEY (sql_autoridad_area_id) REFERENCES drsu_area(sql_area_id) 
+		ON DELETE RESTRICT ON UPDATE CASCADE,
+);
+
+CREATE TABLE drsu_nosotros(
+  sql_nosotros_id
+  sql_nosotros_titulo
+  sql_nosotros_descripcion
+  sql_imagen
+)
 
 
 
