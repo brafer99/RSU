@@ -65,6 +65,12 @@ CREATE TABLE noticia(
 
 /*tablas de Piero*/
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `avo_escuela`
+--
+
 CREATE TABLE `avo_escuela` (
   `id` int(11) NOT NULL,
   `id_facultad` int(2) NOT NULL,
@@ -79,7 +85,7 @@ CREATE TABLE `avo_escuela` (
 INSERT INTO `avo_escuela` (`id`, `id_facultad`, `e_nombre`, `e_siglas`) VALUES
 (1, 1, 'ESCUELA PROFESIONAL DE CIENCIAS DE LA COMUNICACIÓN', 'ESCC'),
 (2, 1, 'ESCUELA PROFESIONAL DE HISTORIA', 'ESHI'),
-(3, 1, 'IDIOMA EXTRANJERO', 'IETI'),
+(3, 1, 'IDIOMA EXTRANJERO', 'IDEX'),
 (4, 1, 'LENGUA Y LITERATURA', 'LEGE'),
 (5, 1, 'MATEMÁTICA, COMPUTACIÓN E INFORMÁTICA', 'MACI'),
 (6, 1, 'CIENCIAS DE LA NATURALEZA Y PROMOCIÓN EDUCATIVA AMBIENTAL', 'NATA'),
@@ -110,7 +116,8 @@ INSERT INTO `avo_escuela` (`id`, `id_facultad`, `e_nombre`, `e_siglas`) VALUES
 (31, 7, 'ESCUELA PROFESIONAL DE ARQUITECTURA', 'ESAQ'),
 (32, 7, 'ESCUELA PROFESIONAL DE ARTES', 'ESAR'),
 (33, 7, 'ESCUELA PROFESIONAL DE INGENIERÍA GEOLÓGICA - GEOTÉCNIA', 'ESGE'),
-(34, 7, 'ESCUELA PROFESIONAL DE INGENIERÍA CIVIL', 'ESIC');
+(34, 7, 'ESCUELA PROFESIONAL DE INGENIERÍA CIVIL', 'ESIC'),
+(35, 8, 'ADMINISTRATIVOS', 'ADM');
 
 -- --------------------------------------------------------
 
@@ -135,7 +142,8 @@ INSERT INTO `avo_facultad` (`id`, `f_nombre`, `f_siglas`) VALUES
 (4, 'FACULTAD DE INGENIERÍA', 'FAIN'),
 (5, 'FACULTAD DE CIENCIAS AGROPECUARIAS', 'FCAG'),
 (6, 'FACULTAD DE CIENCIAS JURÍDICAS Y EMPRESARIALES', 'FCJE'),
-(7, 'FACULTAD DE INGENIERIA CIVIL, ARQUITECTURA, GEOLOGÍA GEOTECNIA', 'FIAG');
+(7, 'FACULTAD DE INGENIERIA CIVIL, ARQUITECTURA, GEOLOGÍA GEOTECNIA', 'FIAG'),
+(8, 'ADMINISTRATIVOS', 'ADM');
 
 -- --------------------------------------------------------
 
@@ -233,12 +241,11 @@ INSERT INTO `avo_users` (`id`, `name`, `password`, `email`, `added_on`) VALUES
 
 CREATE TABLE `avo_voluntarios` (
   `id` int(4) NOT NULL,
-  `id_escuela` int(2) DEFAULT NULL,
+  `id_escuela` int(2) NOT NULL,
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `dni` int(8) NOT NULL,
   `fecha_nac` date NOT NULL,
-  `direccion` varchar(100) NOT NULL,
   `celular` varchar(15) NOT NULL,
   `email` varchar(50) NOT NULL,
   `tipo` int(1) NOT NULL DEFAULT 1
@@ -248,8 +255,22 @@ CREATE TABLE `avo_voluntarios` (
 -- Volcado de datos para la tabla `avo_voluntarios`
 --
 
-INSERT INTO `avo_voluntarios` (`id`, `id_escuela`, `nombres`, `apellidos`, `dni`, `fecha_nac`, `direccion`, `celular`, `email`, `tipo`) VALUES
-(1, 8, 'PIERO SEBASTIAN', 'VILLANUEVA MAMANI', 71322890, '2000-06-11', 'ASOCIACION DE VIVIENDA CYNTHIA MZ H LOTE 15', '959453043', 'pienico076@gmail.com', 1);
+INSERT INTO `avo_voluntarios` (`id`, `id_escuela`, `nombres`, `apellidos`, `dni`, `fecha_nac`, `celular`, `email`, `tipo`) VALUES
+(1, 35, 'Jose Luis', 'Copari Yupanqui', 41886073, '1983-07-15', '952527959', 'josecopari@hotmail.com', 3),
+(2, 25, 'Dennys', 'Sihuayro Larico', 45775992, '1989-06-17', '901163722', 'dsihuayrol@unjbg.edu.pe', 2),
+(3, 35, 'Carmen Noemí', 'Rios Adrianzen', 410407, '1960-04-02', '969726090', 'crios@unjbg.edu.pe', 3),
+(4, 14, 'Jackeline Rosemary', 'Flores Flores', 493579, '1972-04-23', '952967131', 'jrflores@unjbg.edu.pe', 2),
+(5, 35, 'Alberto Miguel', 'Palacios Morales', 484192, '1966-04-15', '952990302', 'hindualberto55@gmail.com', 3),
+(6, 15, 'Manuel Enrique', 'Atahualpa Alarico', 41548577, '1982-06-15', '952915736', 'matahualpaa@unjbg.esu.pe', 2),
+(7, 35, 'Yesica marlene', 'Machaca tarqui', 42626918, '1984-10-01', '999014153', 'marle_143@hotmail.com', 3),
+(8, 35, 'Anacelly', 'Valera López', 33265759, '1976-10-17', '942417385', 'avaleral@unjbg.edu.pe', 3),
+(9, 35, 'Betty Maribel', 'Mamani Huarcaya', 40118218, '1978-07-19', '952844797', 'bmamanih@unjbg.edu.pe', 3),
+(10, 14, 'Marleni Mary', 'Ayma Jiménez', 521649, '1977-12-16', '981797835', 'maymaj@unjbg.edu.pe', 2),
+(11, 29, 'Miguel Alexis', 'Piaggo Canivillo', 794759, '1975-12-04', '952304006', 'mpiaggoc@unjbg.edu.pe', 2),
+(12, 3, 'Ruthy Merla', 'Pilco Velasquez', 499664, '1971-02-11', '952296679', 'rmpilcov@unjbg.edu', 2),
+(13, 5, 'Lourdes Susana del Carmen', 'Fernández Barahona', 516609, '1978-03-27', '952396097', 'lfernandezb@unjbg.edu.pe', 2),
+(14, 32, 'Sara America', 'Mercado Rodriguez', 23921334, '1971-10-12', '952710143', 'smercador@unjbg.edu.pe', 2),
+(15, 33, 'Gloria Marina', 'Choque Machaca', 41031766, '1981-09-07', '951692897', 'gchoquem@unjbg.edu.pe', 2);
 
 --
 -- Índices para tablas volcadas
@@ -305,13 +326,13 @@ ALTER TABLE `avo_voluntarios`
 -- AUTO_INCREMENT de la tabla `avo_escuela`
 --
 ALTER TABLE `avo_escuela`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `avo_facultad`
 --
 ALTER TABLE `avo_facultad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `avo_publicacion`
@@ -341,7 +362,7 @@ ALTER TABLE `avo_users`
 -- AUTO_INCREMENT de la tabla `avo_voluntarios`
 --
 ALTER TABLE `avo_voluntarios`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 

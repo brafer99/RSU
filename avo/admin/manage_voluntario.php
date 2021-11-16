@@ -1,12 +1,12 @@
 <?php
 require('top.inc.php');
 
-$id_escuela = '';
+$id_escuela = 'NULL';
 $nombres = '';
 $apellidos = '';
 $dni = '';
 $fecha_nac = '';
-$direccion = '';
+$codigo = '';
 $celular = '';
 $email = '';
 $tipo = '';
@@ -25,7 +25,7 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
 		$apellidos = $row['apellidos'];
 		$dni = $row['dni'];
 		$fecha_nac = $row['fecha_nac'];
-		$direccion = $row['direccion'];
+		$codigo = $row['codigo'];
 		$celular = $row['celular'];
 		$email = $row['email'];
 		$tipo = $row['tipo'];
@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 	$apellidos = get_safe_value($con, $_POST['apellidos']);
 	$dni = get_safe_value($con, $_POST['dni']);
 	$fecha_nac = get_safe_value($con, $_POST['fecha_nac']);
-	$direccion = get_safe_value($con, $_POST['direccion']);
+	$codigo = get_safe_value($con, $_POST['codigo']);
 	$celular = get_safe_value($con, $_POST['celular']);
 	$email = get_safe_value($con, $_POST['email']);
 	$tipo = get_safe_value($con, $_POST['tipo']);
@@ -63,11 +63,11 @@ if (isset($_POST['submit'])) {
 		if ($msg == '') {
 			if (isset($_GET['id']) && $_GET['id'] != '') {
 				$update_sql = "UPDATE avo_voluntarios SET id_escuela='$id_escuela',nombres='$nombres',apellidos='$apellidos',
-				dni='$dni',fecha_nac='$fecha_nac',direccion='$direccion',celular='$celular',email='$email',tipo='$tipo' WHERE id='$id'";
+				dni='$dni',fecha_nac='$fecha_nac',celular='$celular',email='$email',tipo='$tipo' WHERE id='$id'";
 				mysqli_query($con, $update_sql);
 			} else {
-				mysqli_query($con, "INSERT INTO avo_voluntarios(id_escuela,nombres,apellidos,dni,fecha_nac,direccion,celular,email,tipo) 
-				VALUES('$id_escuela','$nombres','$apellidos','$dni','$fecha_nac',$direccion,'$celular','$email','$tipo')");
+				mysqli_query($con, "INSERT INTO avo_voluntarios(id_escuela,nombres,apellidos,dni,fecha_nac,celular,email,tipo) 
+				VALUES('$id_escuela','$nombres','$apellidos','$dni','$fecha_nac','$celular','$email','$tipo')");					
 			}	
 			?>
 			<script>
@@ -92,12 +92,12 @@ if (isset($_POST['submit'])) {
 								<select class="form-control" name="id_escuela">
 									<option>Seleccione Escuela Profesional</option>
 									<?php
-									$res = mysqli_query($con, "select id,e_nombre from avo_escuela order by e_nombre asc");
+									$res = mysqli_query($con, "select id,e_nombre,e_siglas from avo_escuela order by e_nombre asc");
 									while ($row = mysqli_fetch_assoc($res)) {
 										if ($row['id'] == $id_escuela) {
 											echo "<option selected value=" . $row['id'] . ">" . $row['e_nombre'] . "</option>";
 										} else {
-											echo "<option value=" . $row['id'] . ">" . $row['e_nombre'] . "</option>";
+											echo "<option value=" . $row['id'] . ">" . "[".$row['e_siglas'] . "] ". $row['e_nombre'] . "</option>";
 										}
 									}
 									?>
@@ -139,11 +139,6 @@ if (isset($_POST['submit'])) {
 							<div class="form-group">
 								<label for="categories" class=" form-control-label">Fecha de Nacimiento</label>
 								<input type="date" name="fecha_nac" min="1900-01-01" max="2020-12-31" class="form-control" required value="<?php echo $fecha_nac ?>">
-							</div>
-
-							<div class="form-group">
-								<label for="categories" class=" form-control-label">Dirección</label>
-								<input type="text" name="direccion" placeholder="Ingrese la dirección del voluntario" class="form-control" required value="<?php echo $direccion ?>">
 							</div>
 
 							<div class="form-group">
