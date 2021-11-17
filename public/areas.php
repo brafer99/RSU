@@ -12,7 +12,7 @@ require("header.php");
                 <p>Área de Extensión y Proyección Cultural</p>
             </div>
             <div class="back">
-                <a href="#">Ingresar</a>
+                <a href="../aep">Ir</a>
             </div>
         </div>
     </div>
