@@ -24,6 +24,11 @@ CREATE TABLE drsu_rol(
   sql_rol_nombre VARCHAR(20) UNIQUE NOT NULL
 );
 
+CREATE TABLE drsu_categoria(
+	sql_categoria_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  sql_categoria_nombre VARCHAR(50) UNIQUE NOT NULL
+);
+
 CREATE TABLE drsu_usuario(
 	sql_usuario_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   sql_usuario_email VARCHAR(100) UNIQUE NOT NULL,
@@ -36,7 +41,8 @@ CREATE TABLE drsu_usuario(
 CREATE TABLE drsu_area(
     sql_area_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     sql_area_nombre VARCHAR(250) NOT NULL,
-    sql_area_sigla VARCHAR(20) NOT NULL
+    sql_area_sigla VARCHAR(20) NOT NULL,
+    sql_area_jefatura INTEGER(5) NULL        
 );
 
 CREATE TABLE drsu_estado(
@@ -65,18 +71,26 @@ CREATE TABLE drsu_noticia(
 CREATE TABLE drsu_autoridad(
   sql_autoridad_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   sql_autoridad_nombre VARCHAR (250) NOT NULL,
+  sql_autoridad_email VARCHAR (250) NOT NULL,
   sql_autoridad_imagen VARCHAR (250) NULL,
   sql_autoridad_area_id INTEGER UNSIGNED NOT NULL,
   FOREIGN KEY (sql_autoridad_area_id) REFERENCES drsu_area(sql_area_id) 
-		ON DELETE RESTRICT ON UPDATE CASCADE,
+		ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 CREATE TABLE drsu_nosotros(
-  sql_nosotros_id
-  sql_nosotros_titulo
-  sql_nosotros_descripcion
-  sql_imagen
-)
+  sql_nosotros_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  sql_nosotros_titulo VARCHAR (250) NOT NULL,
+  sql_nosotros_descripcion TEXT NOT NULL,
+  sql_nosotros_imagen VARCHAR (250) NOT NULL,
+  sql_nosotros_titulo2 VARCHAR (250) NULL,
+  sql_nosotros_descripcion2 TEXT  NULL,
+  sql_nosotros_categoria_id INTEGER UNSIGNED NOT NULL,
+
+  FOREIGN KEY (sql_nosotros_categoria_id) REFERENCES drsu_categoria(sql_categoria_id) 
+    ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
 
 
 
@@ -396,17 +410,24 @@ INSERT INTO drsu_rol(sql_rol_nombre) VALUES
     ('Administrador'),
     ('Usuario');
 
+INSERT INTO drsu_categoria(sql_categoria_nombre) VALUES
+    ('Presentación'),
+    ('Misión'),
+    ('Visión'),
+    ('Reglamento');
+
 INSERT INTO drsu_usuario(sql_usuario_email,sql_usuario_pass,sql_usuario_rol_id) VALUES
     ('sistema@gmail.com','$2y$10$NY0eD.NBCsMzTKvRi3xTpOnk8kWrh4STjUhl6DzoVtUnJS1uoAHDS',1);
 
 
-
-INSERT INTO drsu_area(sql_area_nombre,sql_area_sigla) VALUES
-    ('Dirección Académica de Responsabilidad Social Universitaria','DRSU'),
-    ('Área de Extensión y Proyeción Cultural','AEP'),
-    ('Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés','AVO'),
-    ('Área de Extensión Univesitaria, Proyección Social y Servicio Social','AES'),
-    ('Área de Coordinación de la RSU en la Investigación y Formación Continua','ACI');
+INSERT INTO drsu_area(sql_area_nombre,sql_area_sigla,sql_area_jefatura) VALUES
+    ('Dirección Académica de Responsabilidad Social Universitaria','DRSU'1),
+    ('Área de Extensión y Proyeción Cultural','AEP'1),
+    ('Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés','AVO',1),
+    ('Área de Extensión Univesitaria, Proyección Social y Servicio Social','AES',1),
+    ('Área de Coordinación de la RSU en la Investigación y Formación Continua','ACI',1),
+    ('Secretaria de Dirección Académica de Responsabilidad Social Universitaria','SDRSU',0),
+    ('Analista Administrativo de la Dirección Académica de Responsabilidad Social Universitaria','ADRSU',0);
 
 INSERT INTO drsu_estado(sql_estado_nombre) VALUES
     ('En proceso'),
@@ -416,6 +437,14 @@ INSERT INTO drsu_noticia(sql_noticia_titulo,sql_noticia_imagen,sql_noticia_fecha
     ('Estado Situacional del Covid en la region Tacna y vacunación','1636913727_noticia1.jpg','03 de Septiembre de 2021','19:00 horas','https://www.google.com/',2,2),
     ('La voz Basadrina','1636918900_noticia2.jpg','20 de Agosto de 2020','12:00 horas','https://www.youtube.com/',2,1),
     ('XX Juegos Florales Basadrinos 2021','1636918983_noticia3.png','07 y 08 de Octubre de 2020','15:00 horas','https://www.google.com/',3,1);
+
+INSERT INTO drsu_autoridad(sql_autoridad_nombre,sql_autoridad_email,sql_autoridad_imagen,sql_autoridad_area_id) VALUES
+    ('Dra. Elizabeth Luisa Medina Soto','emedina@unjbg.edu.pe','imagen.jpg',1),
+    ('Dra. Karimen Jetsabel Mutter Cuellar','kmutterc@unjbg.edu.pe','imagen.jpg',2);
+
+INSERT INTO drsu_nosotros(sql_nosotros_titulo,sql_nosotros_descripcion,sql_nosotros_imagen,sql_nosotros_titulo2,sql_nosotros_descripcion2,sql_nosotros_categoria_id) VALUES
+    ('LEY UNIVERSITARIA PERUANA Nº 30220 (2014)','Descipcion_LEY','imagen.jpg','Titulo 2,Definicion de la RSU','Descipcion2',1)
+
 
 /*registros de Piero*/
 
