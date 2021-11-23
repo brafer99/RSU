@@ -70,8 +70,8 @@ CREATE TABLE drsu_noticia(
 
 CREATE TABLE drsu_autoridad(
   sql_autoridad_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  sql_autoridad_nombre VARCHAR (250) NOT NULL,
-  sql_autoridad_email VARCHAR (250) NOT NULL,
+  sql_autoridad_nombre VARCHAR (250) NULL,
+  sql_autoridad_email VARCHAR (250) NULL,
   sql_autoridad_imagen VARCHAR (250) NULL,
   sql_autoridad_area_id INTEGER UNSIGNED NOT NULL,
   FOREIGN KEY (sql_autoridad_area_id) REFERENCES drsu_area(sql_area_id) 
@@ -421,8 +421,8 @@ INSERT INTO drsu_usuario(sql_usuario_email,sql_usuario_pass,sql_usuario_rol_id) 
 
 
 INSERT INTO drsu_area(sql_area_nombre,sql_area_sigla,sql_area_jefatura) VALUES
-    ('Dirección Académica de Responsabilidad Social Universitaria','DRSU'1),
-    ('Área de Extensión y Proyeción Cultural','AEP'1),
+    ('Dirección Académica de Responsabilidad Social Universitaria','DRSU',1),
+    ('Área de Extensión y Proyeción Cultural','AEP',1),
     ('Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés','AVO',1),
     ('Área de Extensión Univesitaria, Proyección Social y Servicio Social','AES',1),
     ('Área de Coordinación de la RSU en la Investigación y Formación Continua','ACI',1),
@@ -440,7 +440,12 @@ INSERT INTO drsu_noticia(sql_noticia_titulo,sql_noticia_imagen,sql_noticia_fecha
 
 INSERT INTO drsu_autoridad(sql_autoridad_nombre,sql_autoridad_email,sql_autoridad_imagen,sql_autoridad_area_id) VALUES
     ('Dra. Elizabeth Luisa Medina Soto','emedina@unjbg.edu.pe','imagen.jpg',1),
-    ('Dra. Karimen Jetsabel Mutter Cuellar','kmutterc@unjbg.edu.pe','imagen.jpg',2);
+    ('Dra. Karimen Jetsabel Mutter Cuellar','kmutterc@unjbg.edu.pe','imagen.jpg',2),
+    ('Mgr. Gina Maribel Valle Castro','gvallec@unjbg.edu.pe','imagen.jpg',3),
+    ('Mgr. Edgardo Javier Berrios Quina','eberriosq@unjbg.edu.pe','imagen.jpg',4),
+    ('Mgr. Milton Saúl Flor Rodriguez','mflorr@unjbg.edu.pe','imagen.jpg',5),
+    ('SAP. Carmen Noemí Ríos Adrianzen','criosa@unjbg.edu.pe','imagen.jpg',6),
+    ('Lic. Sandra Monasterio Pazos','smonasteriop@unjbg.edu.pe','imagen.jpg',7);
 
 INSERT INTO drsu_nosotros(sql_nosotros_titulo,sql_nosotros_descripcion,sql_nosotros_imagen,sql_nosotros_titulo2,sql_nosotros_descripcion2,sql_nosotros_categoria_id) VALUES
     ('LEY UNIVERSITARIA PERUANA Nº 30220 (2014)','Descipcion_LEY','imagen.jpg','Titulo 2,Definicion de la RSU','Descipcion2',1)

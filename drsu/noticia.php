@@ -12,7 +12,7 @@ $var_noticia_hora = (isset($_POST['noticia_hora']))?$_POST['noticia_hora']:"";
 $var_noticia_enlace = (isset($_POST['noticia_enlace']))?$_POST['noticia_enlace']:"";
 $var_noticia_lugar = (isset($_POST['noticia_lugar']))?$_POST['noticia_lugar']:"";
 $var_noticia_descripcion = (isset($_POST['noticia_descripcion']))?$_POST['noticia_descripcion']:"";
-$var_noticia_autor_id = (isset($_POST['noticia_area_id']))?$_POST['noticia_area_id']:"";
+$var_noticia_area_id = (isset($_POST['noticia_area_id']))?$_POST['noticia_area_id']:"";
 $var_noticia_estado_id = (isset($_POST['noticia_estado_id']))?$_POST['noticia_estado_id']:"";
 
 //opciones de tabla
@@ -61,7 +61,7 @@ switch($var_accion){
         $sentencia_sql->bindParam(':param_noticia_enlace',$var_noticia_enlace);
         $sentencia_sql->bindParam(':param_noticia_descripcion',$var_noticia_descripcion);
         $sentencia_sql->bindParam(':param_noticia_lugar',$var_noticia_lugar);
-        $sentencia_sql->bindParam(':param_noticia_area_id',$var_noticia_autor_id);
+        $sentencia_sql->bindParam(':param_noticia_area_id',$var_noticia_area_id);
         $sentencia_sql->bindParam(':param_noticia_estado_id',$var_noticia_estado_id);
 
         //Ejecutamos:
@@ -94,7 +94,7 @@ switch($var_accion){
         $sentencia_sql->bindParam(':param_noticia_enlace',$var_noticia_enlace);
         $sentencia_sql->bindParam(':param_noticia_descripcion',$var_noticia_descripcion);
         $sentencia_sql->bindParam(':param_noticia_lugar',$var_noticia_lugar);
-        $sentencia_sql->bindParam(':param_noticia_area_id',$var_noticia_autor_id);
+        $sentencia_sql->bindParam(':param_noticia_area_id',$var_noticia_area_id);
         $sentencia_sql->bindParam(':param_noticia_estado_id',$var_noticia_estado_id);    
         $sentencia_sql->execute();
 
@@ -237,7 +237,7 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
 if(isset($var_noticia_area_id_2)){
 
     $sentencia_sql_2= $conexion->prepare("SELECT * FROM drsu_area
-    WHERE sql_area_id NOT IN ( 
+    WHERE sql_area_jefatura=1 AND sql_area_id NOT IN ( 
     SELECT sql_area_id FROM drsu_area
     WHERE sql_area_id=:param_area_id)");
     $sentencia_sql_2->bindParam(':param_area_id',$var_noticia_area_id_2);
@@ -245,7 +245,7 @@ if(isset($var_noticia_area_id_2)){
     $lista_areas=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
 
 }else{
-    $sentencia_sql_2= $conexion->prepare("SELECT * FROM drsu_area");
+    $sentencia_sql_2= $conexion->prepare("SELECT * FROM drsu_area WHERE sql_area_jefatura=1");
     $sentencia_sql_2->execute();
     $lista_areas=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
     
