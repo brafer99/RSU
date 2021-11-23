@@ -7,8 +7,7 @@ $var_nosotros_id = (isset($_POST['nosotros_id']))?$_POST['nosotros_id']:"";
 $var_nosotros_titulo = (isset($_POST['nosotros_titulo']))?$_POST['nosotros_titulo']:"";
 $var_nosotros_descripcion = (isset($_POST['nosotros_descripcion']))?$_POST['nosotros_descripcion']:"";
 $var_nosotros_imagen = (isset($_FILES['nosotros_imagen']['name'])) ? $_FILES['nosotros_imagen']['name'] :"";
-$var_nosotros_titulo2 = (isset($_POST['nosotros_titulo2']))?$_POST['nosotros_titulo2']:"";
-$var_nosotros_descripcion2 = (isset($_POST['nosotros_descripcion2']))?$_POST['nosotros_descripcion2']:"";
+$var_nosotros_pdf = (isset($_FILES['nosotros_pdf']['name'])) ? $_FILES['nosotros_pdf']['name'] :"";
 $var_nosotros_categoria_id = (isset($_POST['nosotros_categoria_id']))?$_POST['nosotros_categoria_id']:"";
 
 
@@ -26,18 +25,14 @@ switch($var_accion){
         $sentencia_sql= $conexion->prepare("UPDATE drsu_nosotros SET
 
         sql_nosotros_titulo=:param_nosotros_titulo,
-        sql_nosotros_descripcion=:param_nosotros_descripcion,
-        sql_nosotros_titulo2=:param_nosotros_titulo2,
-        sql_nosotros_descripcion2=:param_nosotros_descripcion2
+        sql_nosotros_descripcion=:param_nosotros_descripcion
             
 
         WHERE sql_nosotros_id=:param_nosotros_id;"); 
 
         $sentencia_sql->bindParam(':param_nosotros_id',$var_nosotros_id);
         $sentencia_sql->bindParam(':param_nosotros_titulo',$var_nosotros_titulo);
-        $sentencia_sql->bindParam(':param_nosotros_descripcion',$var_nosotros_descripcion);
-        $sentencia_sql->bindParam(':param_nosotros_titulo2',$var_nosotros_titulo2);
-        $sentencia_sql->bindParam(':param_nosotros_descripcion2',$var_nosotros_descripcion2);    
+        $sentencia_sql->bindParam(':param_nosotros_descripcion',$var_nosotros_descripcion);   
         $sentencia_sql->execute();
         //Modificacion imagen
         if ($var_nosotros_imagen!=""){
@@ -68,38 +63,40 @@ switch($var_accion){
             $sentencia_sql->execute();
             
         }
+
+        if ($var_nosotros_pdf!=""){
+
+            //AÑADIMOS EL NUEVO ARCHIVO CON (similar a agregar)
+            $fecha=new DateTime();
+            $nombre_pdf=($var_nosotros_pdf!="") ? $fecha->getTimestamp()."_".$_FILES["nosotros_pdf"]['name'] :"imagen.jpg";           
+            $temporal_pdf = $_FILES["nosotros_pdf"]["tmp_name"];
+            move_uploaded_file($temporal_pdf,"../assets/pdfs/".$nombre_pdf); 
+            
+            //ahora eliminamos el FILE (similar a DELETE)
+            $sentencia_sql = $conexion->prepare("SELECT sql_nosotros_pdf FROM drsu_nosotros WHERE sql_nosotros_id=:param_nosotros_id;");
+            $sentencia_sql->bindParam(':param_nosotros_id',$var_nosotros_id);
+            $sentencia_sql->execute();
+            $nosotros = $sentencia_sql->fetch(PDO::FETCH_LAZY);
+
+            if(isset($nosotros["sql_nosotros_pdf"]) && ($nosotros["sql_nosotros_pdf"]!="imagen.jpg")){
+                if(file_exists("../assets/pdfs/".$nosotros["sql_nosotros_pdf"])){
+                    unlink("../assets/pdfs/".$nosotros["sql_nosotros_pdf"]);
+                }
+            }        
+
+            //ACTUALIZAMOS LOS NUEVOS PARAMETROS
+            $sentencia_sql = $conexion->prepare("UPDATE drsu_nosotros SET sql_nosotros_pdf=:param_nosotros_pdf  WHERE sql_nosotros_id=:param_nosotros_id;");
+            //IGUAL QUE EN agregar, utilizamos la varibale modificada $nombre_archivo...
+            $sentencia_sql->bindParam(':param_nosotros_pdf',$nombre_pdf);
+            $sentencia_sql->bindParam(':param_nosotros_id',$var_nosotros_id);
+            $sentencia_sql->execute();
+            
+        }        
         
         //fin modificacion imagen
 
         header("Location:nosotros.php");    
         break;
-
-
-    case "Borrar":
-
-        //Borrado de imagenes de /img...
-        $sentencia_sql = $conexion->prepare("SELECT sql_nosotros_imagen FROM drsu_nosotros WHERE sql_nosotros_id=:param_nosotros_id;");
-        $sentencia_sql->bindParam(':param_nosotros_id',$var_nosotros_id);
-        $sentencia_sql->execute();
-        $nosotros = $sentencia_sql->fetch(PDO::FETCH_LAZY);
-
-        if(isset($nosotros["sql_nosotros_imagen"]) && ($nosotros["sql_nosotros_imagen"]!="imagen.jpg")){
-            if(file_exists("../assets/img/nosotros/".$nosotros["sql_nosotros_imagen"])){
-                unlink("../assets/img/nosotros/".$nosotros["sql_nosotros_imagen"]);
-            }
-
-        }
-        //FIN borrado de imagen...
-
-        //Borrado de datos en BD mediante DELETE y id:
-        $sentencia_sql = $conexion->prepare("DELETE FROM drsu_nosotros WHERE sql_nosotros_id=:param_nosotros_id;");
-        $sentencia_sql->bindParam(':param_nosotros_id',$var_nosotros_id);
-        $sentencia_sql->execute();
-        //echo "Presionado Boton Borrar";
-        //header("Location:productos.php");
-        header("Location:nosotros.php");
-        break;
-
 
     case "Seleccionar":
 
@@ -108,8 +105,7 @@ switch($var_accion){
         drsu_nosotros.sql_nosotros_titulo,
         drsu_nosotros.sql_nosotros_descripcion,
         drsu_nosotros.sql_nosotros_imagen,
-        drsu_nosotros.sql_nosotros_titulo2,
-        drsu_nosotros.sql_nosotros_descripcion2,
+        drsu_nosotros.sql_nosotros_pdf,
         drsu_nosotros.sql_nosotros_categoria_id,
         drsu_categoria.sql_categoria_id,
         drsu_categoria.sql_categoria_nombre
@@ -129,8 +125,7 @@ switch($var_accion){
         $var_nosotros_titulo=$nosotros['sql_nosotros_titulo'];
         $var_nosotros_descripcion=$nosotros['sql_nosotros_descripcion'];
         $var_nosotros_imagen=$nosotros['sql_nosotros_imagen'];
-        $var_nosotros_titulo2=$nosotros['sql_nosotros_titulo2'];
-        $var_nosotros_descripcion2=$nosotros['sql_nosotros_descripcion2'];
+        $var_nosotros_pdf=$nosotros['sql_nosotros_pdf'];
 
         //boton select de area:
         $var_nosotros_categoria_id_2=$nosotros['sql_nosotros_categoria_id'];
@@ -145,9 +140,8 @@ $sentencia_sql= $conexion->prepare("SELECT
     drsu_nosotros.sql_nosotros_id,
     drsu_nosotros.sql_nosotros_titulo, 
     drsu_nosotros.sql_nosotros_descripcion, 
-    drsu_nosotros.sql_nosotros_imagen, 
-    drsu_nosotros.sql_nosotros_titulo2, 
-    drsu_nosotros.sql_nosotros_descripcion2,
+    drsu_nosotros.sql_nosotros_imagen,
+    drsu_nosotros.sql_nosotros_pdf, 
     drsu_categoria.sql_categoria_nombre
     FROM drsu_nosotros
     JOIN drsu_categoria ON drsu_nosotros.sql_nosotros_categoria_id=drsu_categoria.sql_categoria_id 
@@ -185,23 +179,9 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
 
 
-
-                                <div class = "form-group">
-                                    <label for="titulo">Título:</label>
-                                    <textarea class="form-control" name="nosotros_titulo" rows="2" placeholder="Ingrese aquí el Título"
-                                    required><?php echo $var_nosotros_titulo; ?></textarea>
-                                </div>
-                                
-                                <div class = "form-group">
-                                    <label for="descripcion">Descripción:</label>
-                                    <textarea class="form-control" name="nosotros_descripcion" rows="2" placeholder="Ingrese aquí la descripción"
-                                    required><?php echo $var_nosotros_descripcion; ?></textarea>
-                                </div>
-
-
                                 <div class="row">
                                     <div class="col form-group">
-                                        <label for="nosotros_categoria_id">Categoría:</label>
+                                        <label for="nosotros_categoria_id">Título:</label>
                                         <input readonly type="text" class="form-control" value="<?php 
                                         if(isset($var_nosotros_categoria_id_2)) {
                                             echo $var_categoria_nombre;
@@ -210,6 +190,20 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                                     </div>  
                                 </div> 
 
+                                <div class = "form-group">
+                                    <label for="titulo">Título 2 (Opcional):</label>
+                                    <textarea class="form-control" name="nosotros_titulo" rows="2" placeholder="Ingrese aquí un título"
+                                    ><?php echo $var_nosotros_titulo; ?></textarea>
+                                </div>
+                                
+                                <div class = "form-group">
+                                    <label for="descripcion">Descripción:</label>
+                                    <textarea class="form-control" name="nosotros_descripcion" rows="5" placeholder="Ingrese aquí la descripción"
+                                    required><?php echo $var_nosotros_descripcion; ?></textarea>
+                                </div>
+
+
+
                                 <!-- Imagenes: -->
                                 <div class = "form-group">
                                     <label for="nosotros_imagen">Imagen:</label><br/> 
@@ -217,25 +211,24 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                                         <img class="img-thumbnail rounded" src="../assets/img/nosotros/<?php echo $var_nosotros_imagen;?>" width="200" alt="">    
                                     <?php } ?>
                                     <input type="file" class="form-control" name="nosotros_imagen" id="nosotros_imagen" placeholder="ID">
-                                </div><br/>    
+                                </div><br/>   
 
                                 <div class = "form-group">
-                                    <label for="titulo2">Título 2 (Opcional):</label>
-                                    <textarea class="form-control" name="nosotros_titulo2" rows="2" placeholder="Ingrese aquí la descripción"
-                                    required><?php echo $var_nosotros_titulo2; ?></textarea>
-                                </div>
-
-                                <div class = "form-group">
-                                    <label for="descripcion2">Descripción 2 (Opcional):</label>
-                                    <textarea class="form-control" name="nosotros_descripcion2" rows="2" placeholder="Ingrese aquí la descripción"
-                                    required><?php echo $var_nosotros_descripcion2; ?></textarea>
-                                </div>
+                                    <label for="nosotros_pdf">PDF (Solo para Reglamento):</label><br/> 
+                                    <?php if($var_nosotros_pdf!=""){ 
+                                         echo $var_nosotros_pdf."<br/>"; 
+                                     } ?>
+                                     <br/>
+                                    <input type="file" class="form-control" name="nosotros_pdf" id="nosotros_pdf" placeholder="ID">
+                                </div><br/>                                  
+                                
 
                                 <div class="btn-group" role="group" aria-label="">                                 
                                     <button type="submit" name="accion" <?php echo ($var_accion!="Seleccionar")? "disabled":""?> value= "Modificar" class="btn btn-warning">Modificar</button>
                                     <a href="nosotros.php"><button type="button" class="btn btn-info">Cancelar</button></a>
                                 </div>                    
                                 </form>
+
                             </div>
                         </div> 
                     </div>
@@ -252,7 +245,7 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Categoría</th>
+                                            <th>Título</th>
                                             <th>Accion</th>
                                         </tr>
                                     </thead>

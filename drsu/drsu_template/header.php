@@ -89,7 +89,7 @@ session_start();
                     <li><a class="nav-link scrollto '.$url1.'" href="autoridad.php">Administrar <br/> Autoridades</a></li>
                     <li><a class="nav-link scrollto '.$url2.'" href="noticia.php">Administrar <br/> Noticias</a></li>
                     <li><a class="nav-link scrollto '.$url3.'" href="usuario.php">Administrar <br/>Usuarios</a></li>
-                    <li><a class="nav-link scrollto '.$url4.'" href="nosotros.php">Nosotros</a></li>
+                    <li><a class="nav-link scrollto '.$url4.'" href="nosotros.php">Administrar <br/>Nosotros</a></li>
                     <li><a class="nav-link scrollto '.$url5.'" href="../index.php">Ir a Página web</a></li>
                     
                     ';?>
