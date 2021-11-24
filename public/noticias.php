@@ -61,13 +61,15 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                     <img src="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen']; ?>" class="img-fluid" alt="">
                     <div class="portfolio-info">                                                 
                         <div class="portfolio-links">
-                            <a href="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen']; ?>" data-gallery="portfolioGallery"
+                            <a href="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen'];?>" data-gallery="portfolioGallery"
                                 class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>                           
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 portfolio-item filter-web">
+                        <h2><?php echo $noticia['sql_noticia_titulo']?></h2>
+                        <br/>
                         <p>
                         <b><?php echo $noticia['sql_area_nombre']; ?></b> </br></br> <b>Fecha: </b> <?php echo $noticia['sql_noticia_fecha']; ?> </br><b>Hora: </b> <?php echo $noticia['sql_noticia_hora']; ?> </br>
                         <b>Estado de Evento: </b> <?php echo $noticia['sql_estado_nombre']; ?> </br> 

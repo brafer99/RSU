@@ -21,14 +21,19 @@ USE rsu;
 
 CREATE TABLE drsu_rol(
 	sql_rol_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    sql_rol_nombre VARCHAR(20) UNIQUE NOT NULL
+  sql_rol_nombre VARCHAR(20) UNIQUE NOT NULL
+);
+
+CREATE TABLE drsu_categoria(
+	sql_categoria_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  sql_categoria_nombre VARCHAR(50) UNIQUE NOT NULL
 );
 
 CREATE TABLE drsu_usuario(
 	sql_usuario_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    sql_usuario_email VARCHAR(100) UNIQUE NOT NULL,
+  sql_usuario_email VARCHAR(100) UNIQUE NOT NULL,
 	sql_usuario_pass VARCHAR(100) NOT NULL,
-    sql_usuario_rol_id INTEGER UNSIGNED NOT NULL,
+  sql_usuario_rol_id INTEGER UNSIGNED NOT NULL,
 	FOREIGN KEY (sql_usuario_rol_id) REFERENCES drsu_rol(sql_rol_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE
 );
@@ -36,7 +41,8 @@ CREATE TABLE drsu_usuario(
 CREATE TABLE drsu_area(
     sql_area_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     sql_area_nombre VARCHAR(250) NOT NULL,
-    sql_area_sigla VARCHAR(20) NOT NULL
+    sql_area_sigla VARCHAR(20) NOT NULL,
+    sql_area_jefatura INTEGER(5) NULL        
 );
 
 CREATE TABLE drsu_estado(
@@ -48,20 +54,42 @@ CREATE TABLE drsu_estado(
 CREATE TABLE drsu_noticia(
 	sql_noticia_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	sql_noticia_titulo TEXT NOT NULL,
-    sql_noticia_imagen VARCHAR(250) NOT NULL,
-    sql_noticia_descripcion TEXT NULL,
+  sql_noticia_imagen VARCHAR(250) NOT NULL,
+  sql_noticia_descripcion TEXT NULL,
 	sql_noticia_fecha VARCHAR(200) NULL,
 	sql_noticia_hora VARCHAR(200) NULL,
-    sql_noticia_enlace VARCHAR(200) NULL,
-    sql_noticia_lugar VARCHAR(200) NULL,
+  sql_noticia_enlace VARCHAR(200) NULL,
+  sql_noticia_lugar VARCHAR(200) NULL,
 	sql_noticia_area_id INTEGER UNSIGNED NOT NULL,
-    sql_noticia_estado_id INTEGER UNSIGNED NOT NULL,
-
+  sql_noticia_estado_id INTEGER UNSIGNED NOT NULL,
 	FOREIGN KEY (sql_noticia_area_id) REFERENCES drsu_area(sql_area_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE,
 	FOREIGN KEY (sql_noticia_estado_id) REFERENCES drsu_estado(sql_estado_id) 
 		ON DELETE RESTRICT ON UPDATE CASCADE
 );
+
+CREATE TABLE drsu_autoridad(
+  sql_autoridad_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  sql_autoridad_nombre VARCHAR (250) NULL,
+  sql_autoridad_email VARCHAR (250) NULL,
+  sql_autoridad_imagen VARCHAR (250) NULL,
+  sql_autoridad_area_id INTEGER UNSIGNED NOT NULL,
+  FOREIGN KEY (sql_autoridad_area_id) REFERENCES drsu_area(sql_area_id) 
+		ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+CREATE TABLE drsu_nosotros(
+  sql_nosotros_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  sql_nosotros_titulo VARCHAR (250) NULL,
+  sql_nosotros_descripcion TEXT NOT NULL,
+  sql_nosotros_imagen VARCHAR (250) NOT NULL,
+  sql_nosotros_pdf VARCHAR (250)NULL,
+  sql_nosotros_categoria_id INTEGER UNSIGNED NOT NULL,
+
+  FOREIGN KEY (sql_nosotros_categoria_id) REFERENCES drsu_categoria(sql_categoria_id) 
+    ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
 
 
 
@@ -381,26 +409,48 @@ INSERT INTO drsu_rol(sql_rol_nombre) VALUES
     ('Administrador'),
     ('Usuario');
 
+INSERT INTO drsu_categoria(sql_categoria_nombre) VALUES
+    ('PRESENTACIÓN'),
+    ('MISIÓN'),
+    ('VISIÓN'),
+    ('REGLAMENTO');
+
 INSERT INTO drsu_usuario(sql_usuario_email,sql_usuario_pass,sql_usuario_rol_id) VALUES
     ('sistema@gmail.com','$2y$10$NY0eD.NBCsMzTKvRi3xTpOnk8kWrh4STjUhl6DzoVtUnJS1uoAHDS',1);
 
 
-
-INSERT INTO drsu_area(sql_area_nombre,sql_area_sigla) VALUES
-    ('Dirección Académica de Responsabilidad Social Universitaria','DRSU'),
-    ('Área de Extensión y Proyeción Cultural','AEP'),
-    ('Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés','AVO'),
-    ('Área de Extensión Univesitaria, Proyección Social y Servicio Social','AES'),
-    ('Área de Coordinación de la RSU en la Investigación y Formación Continua','ACI');
+INSERT INTO drsu_area(sql_area_nombre,sql_area_sigla,sql_area_jefatura) VALUES
+    ('Dirección Académica de Responsabilidad Social Universitaria','DRSU',1),
+    ('Área de Extensión y Proyeción Cultural','AEP',1),
+    ('Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés','AVO',1),
+    ('Área de Extensión Univesitaria, Proyección Social y Servicio Social','AES',1),
+    ('Área de Coordinación de la RSU en la Investigación y Formación Continua','ACI',1),
+    ('Secretaria de Dirección Académica de Responsabilidad Social Universitaria','DRSU',0),
+    ('Analista Administrativo de la Dirección Académica de Responsabilidad Social Universitaria','DRSU',0);
 
 INSERT INTO drsu_estado(sql_estado_nombre) VALUES
     ('En proceso'),
     ('Finalizado');
 
-INSERT INTO drsu_noticia(sql_noticia_titulo,sql_noticia_imagen,sql_noticia_fecha,sql_noticia_hora,sql_noticia_enlace,sql_noticia_area_id,sql_noticia_estado_id) VALUES
-    ('Estado Situacional del Covid en la region Tacna y vacunación','1636913727_noticia1.jpg','03 de Septiembre de 2021','19:00 horas','https://www.google.com/',2,2),
-    ('La voz Basadrina','1636918900_noticia2.jpg','20 de Agosto de 2020','12:00 horas','https://www.youtube.com/',2,1),
-    ('XX Juegos Florales Basadrinos 2021','1636918983_noticia3.png','07 y 08 de Octubre de 2020','15:00 horas','https://www.google.com/',3,1);
+INSERT INTO `drsu_noticia` (`sql_noticia_id`, `sql_noticia_titulo`, `sql_noticia_imagen`, `sql_noticia_descripcion`, `sql_noticia_fecha`, `sql_noticia_hora`, `sql_noticia_enlace`, `sql_noticia_lugar`, `sql_noticia_area_id`, `sql_noticia_estado_id`) VALUES
+(1, 'Estado Situacional del Covid en la region Tacna y vacunación', '1636913727_noticia1.jpg', NULL, '03 de Septiembre de 2021', '19:00 horas', 'https://www.google.com/', NULL, 2, 2),
+(2, 'La voz Basadrina', '1636918900_noticia2.jpg', NULL, '20 de Agosto de 2020', '12:00 horas', 'https://www.youtube.com/', NULL, 2, 1),
+(3, 'XX Juegos Florales Basadrinos 2021', '1636918983_noticia3.png', '', '07 y 08 de Octubre de 2020', '15:00 horas', 'https://www.google.com/', '', 3, 1);
+
+INSERT INTO `drsu_autoridad` (`sql_autoridad_id`, `sql_autoridad_nombre`, `sql_autoridad_email`, `sql_autoridad_imagen`, `sql_autoridad_area_id`) VALUES
+(1, 'Dra. Elizabeth Luisa Medina Soto', 'emedinas@unjbg.edu.pe', '1637192645_team-4.jpg', 1),
+(2, 'Dra. Karimen Jetsabel Mutter Cuellar', 'kmutterc@unjbg.edu.pe', '1637366227_team-2.jpg', 2),
+(3, 'Mgr. Gina Maribel Valle Castro', 'gvallec@unjbg.edu.pe', '1637366246_team-2.jpg', 3),
+(4, 'Mgr. Edgardo Javier Berrios Quina', 'eberriosq@unjbg.edu.pe', '1637634119_berrios.jpg', 4),
+(5, 'Mgr. Milton Saúl Flor Rodriguez', 'mflorr@unjbg.edu.pe', '1637634177_team-1.jpg', 5),
+(6, 'SAP. Carmen Noemí Ríos Adrianzen', 'criosa@unjbg.edu.pe', '1637634195_carmenrios.jpg', 6),
+(7, 'Lic. Sandra Monasterio Pazos', 'smonasteriop@unjbg.edu.pe', '1637634206_team-4.jpg', 7);
+
+INSERT INTO `drsu_nosotros` (`sql_nosotros_id`, `sql_nosotros_titulo`, `sql_nosotros_descripcion`, `sql_nosotros_imagen`, `sql_nosotros_pdf`, `sql_nosotros_categoria_id`) VALUES
+(1, 'LEY UNIVERSITARIA PERUANA Nº 30220 (2014)', 'Artículo 124. Responsabilidad social universitaria La responsabilidad social universitaria es la gestión ética y eficaz del impacto generado por la universidad en la sociedad debido al ejercicio de sus funciones: académica, de investigación y de servicios de extensión y participación en el desarrollo nacional en sus diferentes niveles y dimensiones; incluye la gestión del impacto producido por las relaciones entre los miembros de la comunidad universitaria, sobre el ambiente, y sobre otras organizaciones públicas y privadas que se constituyen en partes interesadas. La responsabilidad social universitaria es fundamento de la vida universitaria, contribuye al desarrollo sostenible y al bienestar de la sociedad. Compromete a toda la comunidad universitaria.', '1637644599_diario.jpg','',1),
+(2, '', 'Direccionar la transversalización de la responsabilidad social universitaria en la gestión institucional y en la investigación y formación académica, guiando la participación y compromiso social de la universidad en la construcción de una comunidad sostenible.', '1637675515_mision.png','',2),
+(3, '', 'Ser referentes de responsabilidad social universitaria a nivel nacional e internacional, mediante la gestión de políticas performativas y la articulación de acciones coherentes que fortalezcan el gobierno institucional, orienten la continua generación de conocimientos transdisciplinarios y dinamicen el desarrollo de competencias personales, profesionales y ciudadanas.', '1637675536_vision.png','', 3),
+(4, '', 'Para ingresar a nuestro reglamento.', '1637675545_reglamento.png','1637677488_ReglamentoDRSU.pdf', 4);
 
 /*registros de Piero*/
 

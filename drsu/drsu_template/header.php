@@ -67,26 +67,31 @@ session_start();
                     $ultimo = end($array);
                     $url1="";$url2="";$url3="";$url4="";$url5="";
                     switch($ultimo){
-                        case "noticia.php":
+                        case "autoridad.php":
                             $url1="active";
                             break;
-                        case "usuario.php":
+                        case "noticia.php":
                             $url2="active";
                             break;
-                        /*case "noticias.php":
+                        case "usuario.php":
                             $url3="active";
                             break;
-                        case "contacto.php":
+                        
+                        case "nosotros.php":
                             $url4="active";
                             break;
+                        /*
                         case "autoridades.php":
                             $url5="active";
                             break; */
                     }
                     echo '
-                    <li><a class="nav-link scrollto '.$url1.'" href="noticia.php">Noticias</a></li>
-                    <li><a class="nav-link scrollto '.$url2.'" href="usuario.php">Usuarios</a></li>
-                    <li><a class="nav-link scrollto '.$url3.'" href="../index.php">Ir a Página web</a></li>
+                    <li><a class="nav-link scrollto '.$url1.'" href="autoridad.php">Administrar <br/> Autoridades</a></li>
+                    <li><a class="nav-link scrollto '.$url2.'" href="noticia.php">Administrar <br/> Noticias</a></li>
+                    <li><a class="nav-link scrollto '.$url3.'" href="usuario.php">Administrar <br/>Usuarios</a></li>
+                    <li><a class="nav-link scrollto '.$url4.'" href="nosotros.php">Administrar <br/>Nosotros</a></li>
+                    <li><a class="nav-link scrollto '.$url5.'" href="../index.php">Ir a Página web</a></li>
+                    
                     ';?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
