@@ -37,7 +37,7 @@ if($_POST){
                 $validacion_pas=true;
                 $_SESSION['valida_usuario']="ok";
                 $_SESSION['nombre_usuario']=$var_login_email;
-                header('Location:usuario.php');
+                header('Location:noticia.php');
             } else{
                 $mensaje1="Contraseña Incorrecta";
             }

@@ -410,10 +410,10 @@ INSERT INTO drsu_rol(sql_rol_nombre) VALUES
     ('Usuario');
 
 INSERT INTO drsu_categoria(sql_categoria_nombre) VALUES
-    ('Presentación'),
-    ('Misión'),
-    ('Visión'),
-    ('Reglamento');
+    ('PRESENTACIÓN'),
+    ('MISIÓN'),
+    ('VISIÓN'),
+    ('REGLAMENTO');
 
 INSERT INTO drsu_usuario(sql_usuario_email,sql_usuario_pass,sql_usuario_rol_id) VALUES
     ('sistema@gmail.com','$2y$10$NY0eD.NBCsMzTKvRi3xTpOnk8kWrh4STjUhl6DzoVtUnJS1uoAHDS',1);

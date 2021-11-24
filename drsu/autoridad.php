@@ -171,31 +171,16 @@ $lista_autoridades=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                 <h2>Adiministrar Autoridades</h2>
             </div>
             <div class="row">
-
-
-
                 <div class="col-lg-5">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="info-box2"> 
-
                                 <h3>Modificar Autoridad</h3>
-
-
                                 <form method="POST" enctype="multipart/form-data" role="form">
                                 <div class = "form-group">
                                     <input type="hidden" required readonly class="form-control"  value="<?php echo $var_autoridad_id; ?>" name="autoridad_id" id="autoridad_id"  placeholder="ID">
                                 </div>
 
-
-
-                                <div class = "form-group">
-                                    <label for="nombre">Nombre:</label>
-                                    <textarea class="form-control" name="autoridad_nombre" rows="2" placeholder="Ingrese aquí el nombre de Autoridad"
-                                    required><?php echo $var_autoridad_nombre; ?></textarea>
-                                </div>
-
-                                
                                 <div class = "form-group">
                                     <label for="nombre">Área:</label>
                                     <textarea readonly class="form-control" name="autoridad_area_id" rows="2" ><?php 
@@ -204,6 +189,15 @@ $lista_autoridades=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                                     }                                  
                                     ?></textarea>
                                 </div>
+
+                                <div class = "form-group">
+                                    <label for="nombre">Nombre:</label>
+                                    <textarea class="form-control" name="autoridad_nombre" rows="2" placeholder="Ingrese aquí el nombre de Autoridad"
+                                    required><?php echo $var_autoridad_nombre; ?></textarea>
+                                </div>
+
+                                
+
 
                                 <!-- Imagenes: -->
                                 <div class = "form-group">
