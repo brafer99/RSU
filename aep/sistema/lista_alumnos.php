@@ -17,7 +17,7 @@ require_once 'includes/Modals/modal_alumnos.php';
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="#">Lista de alumnos</a></li>
+          <li class="breadcrumb-item"><a href="importar.php">Importar excel de alumnos</a></li>
         </ul>
       </div>
 
