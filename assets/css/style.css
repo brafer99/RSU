@@ -783,6 +783,7 @@ section {
 }
 .portfolio .portfolio-wrap img {
   transition: all ease-in-out 0.3s;
+  width: 100%;
 }
 .portfolio .portfolio-wrap .portfolio-info {
   opacity: 0;
@@ -1103,6 +1104,12 @@ section {
   position: relative;
   overflow: hidden;
 }
+
+.member-img img {
+  height: 416px;
+  width: 416px;
+}
+
 .team .member .social {
   position: absolute;
   left: 0;
@@ -1231,7 +1238,6 @@ asdasdasd
   margin-bottom: 0;
   text-align: center;
 }
-
 
 /*
 asdasd
@@ -1946,4 +1952,13 @@ asdasd
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+/*estilo de boton ver contraseña xd*/
+.juntar {
+  position: relative;
+  display: flex;
+}
+.boton_ver {
+  position: absolute;
+  right: 0;
 }

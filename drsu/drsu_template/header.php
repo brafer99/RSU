@@ -7,6 +7,7 @@ session_start();
   else{
     if($_SESSION['valida_usuario']=="ok"){
       $nombre_usuario=$_SESSION["nombre_usuario"];
+      $var_rol_usuario=$_SESSION["rol_usuario"];
     }
   }
 ?>
@@ -62,6 +63,8 @@ session_start();
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <?php 
+                    if($var_rol_usuario==1){
+
                     $urli = $_SERVER['PHP_SELF'];
                     $array = explode('/',$urli);
                     $ultimo = end($array);
@@ -92,8 +95,44 @@ session_start();
                     <li><a class="nav-link scrollto '.$url4.'" href="nosotros.php">Administrar <br/>Nosotros</a></li>
                     <li><a class="nav-link scrollto '.$url5.'" href="../index.php">Ir a Página web</a></li>
                     
-                    ';?>
+                    ';
+                        
+                    }
+                    if($var_rol_usuario==2){
+                    $urli = $_SERVER['PHP_SELF'];
+                    $array = explode('/',$urli);
+                    $ultimo = end($array);
+                    $url1="";$url2="";$url3="";$url4="";$url5="";
+                    switch($ultimo){
+                        case "autoridad.php":
+                            $url1="active";
+                            break;
+                        case "noticia.php":
+                            $url2="active";
+                            break;            
+                        case "nosotros.php":
+                            $url4="active";
+                            break;
+                        /*
+                        case "autoridades.php":
+                            $url5="active";
+                            break; */
+                    }
+                    echo '
+                    <li><a class="nav-link scrollto '.$url1.'" href="autoridad.php">Administrar <br/> Autoridades</a></li>
+                    <li><a class="nav-link scrollto '.$url2.'" href="noticia.php">Administrar <br/> Noticias</a></li>
+                    <li><a class="nav-link scrollto '.$url4.'" href="nosotros.php">Administrar <br/>Nosotros</a></li>
+                    <li><a class="nav-link scrollto '.$url5.'" href="../index.php">Ir a Página web</a></li>
+                    
+                    ';                        
+
+                    }
+                    ?>
                 </ul>
+
+
+
+
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 

@@ -27,6 +27,7 @@ if($_POST){
                 $validacion_usuario=true;
                 $hash = $usuario['sql_usuario_pass'];
                 $usuario_validado=$usuario['sql_usuario_email'];
+                $usuario_rol=$usuario['sql_usuario_rol_id'];
             }
         }
 
@@ -37,6 +38,7 @@ if($_POST){
                 $validacion_pas=true;
                 $_SESSION['valida_usuario']="ok";
                 $_SESSION['nombre_usuario']=$var_login_email;
+                $_SESSION['rol_usuario']=$usuario_rol;
                 header('Location:noticia.php');
             } else{
                 $mensaje1="Contraseña Incorrecta";
@@ -57,6 +59,8 @@ if($_POST){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
   </head>
   <body>
       
@@ -105,8 +109,24 @@ if($_POST){
                         
                         <div class="form-group">
                             <label>Contraseña:</label>
-                            <input required type="password" class="form-control" name="login_pass" id="login_pass" placeholder="Escribe tu contraseña">
+
+                            <div class="juntar">                            
+                                <input required type="password" class="form-control" name="login_pass" id="login_pass" placeholder="Escribe tu contraseña">
+                                <span class="boton_ver"><button class="btn btn-primary" type="button" id="boton2">ver</button></span>  
+                            </div>                        
                         </div>
+                            <script type="text/javascript">
+
+                                var ver = document.getElementById('boton2');
+                                ver.addEventListener('click',mostrarContraseña);
+                                function mostrarContraseña(){
+                                    if(document.getElementById("login_pass").type == "password"){
+                                        document.getElementById("login_pass").type = "text";
+                                    }else{
+                                        document.getElementById("login_pass").type = "password";
+                                    }
+                                }
+                            </script>                         
 
                         <button type="submit" class="btn btn-primary">Entrar al Adiministrador</button>
                         </form>
