@@ -1106,8 +1106,14 @@ section {
 }
 
 .member-img img {
-  height: 416px;
-  width: 416px;
+  height: 300px;
+  width: 100%;
+  max-width: 350px;
+}
+.div-tam{
+  max-width: 350px;
+  height: auto;
+  padding: 0px 12px 0px 12px;
 }
 
 .team .member .social {
