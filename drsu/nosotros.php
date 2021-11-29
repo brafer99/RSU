@@ -1,4 +1,4 @@
-<?php include("./drsu_template/header.php");?>
+<?php require('./drsu_template/header.php');?>
 <?php 
 
 //variables obteniendo varlor POST de formulario:
@@ -14,7 +14,6 @@ $var_nosotros_categoria_id = (isset($_POST['nosotros_categoria_id']))?$_POST['no
 //opciones de tabla
 $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
 
-include("../config/db.php");
 
 switch($var_accion){
 
@@ -285,5 +284,5 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
 
 
 <?php
-require("./drsu_template/footer.php");
+require('./drsu_template/footer.php');
 ?>

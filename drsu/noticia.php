@@ -1,4 +1,4 @@
-<?php include("./drsu_template/header.php");?>
+<?php require('./drsu_template/header.php');?>
 
 <?php 
 
@@ -18,7 +18,6 @@ $var_noticia_estado_id = (isset($_POST['noticia_estado_id']))?$_POST['noticia_es
 //opciones de tabla
 $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
 
-include("../config/db.php");
 
 switch($var_accion){
     case "Agregar":
@@ -446,5 +445,5 @@ if(isset($var_noticia_estado_id_2)){
 
 
 <?php
-require("./drsu_template/footer.php");
+require('./drsu_template/footer.php');
 ?>

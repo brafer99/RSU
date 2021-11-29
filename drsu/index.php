@@ -1,12 +1,12 @@
-<?php include("../config/db.php");?>
+<?php require('../config/db.php');?>
 <?php
-
-session_start();
-
+  if(isset($_SESSION['valida_usuario']) && $_SESSION['valida_usuario']=="ok"){
+    header('Location:noticia.php');
+  }
+  else{ 
 $var_login_id=(isset($_POST['login_id']))?$_POST['login_id']:"";
 $var_login_email=(isset($_POST['login_email']))?$_POST['login_email']:"";
 $var_login_pass=(isset($_POST['login_pass']))?$_POST['login_pass']:"";
-
 $validacion_usuario=false;
 $validacion_pas=false;
 
@@ -50,7 +50,7 @@ if($_POST){
             $mensaje3="No ingresó Datos";
     }  //se usa esta forma, lo ideal seria hacer consulta a la base de datos  
 }
-
+}
 ?>
 <!doctype html>
 <html lang="es">

@@ -1,4 +1,4 @@
-<?php include("./drsu_template/header.php");?>
+<?php require('./drsu_template/header.php');?>
 
 
 <?php 
@@ -17,7 +17,6 @@ $validacion=true;
 //opciones de tabla
 $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
 
-include("../config/db.php");
 
 switch($var_accion){
     case "Agregar":
@@ -361,4 +360,4 @@ if(isset($var_usuario_rol_id_2)){
     </section><!-- End Contact Section -->
 
 
-<?php include("./drsu_template/footer.php");?>
+<?php include('./drsu_template/footer.php');?>

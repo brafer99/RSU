@@ -1,4 +1,4 @@
-<?php include("./drsu_template/header.php");?>
+<?php require('./drsu_template/header.php');?>
 
 <?php 
 
@@ -14,7 +14,6 @@ $var_autoridad_area_id = (isset($_POST['autoridad_area_id']))?$_POST['autoridad_
 //opciones de tabla
 $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
 
-include("../config/db.php");
 
 switch($var_accion){
 
@@ -285,5 +284,5 @@ $lista_autoridades=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
 
 
 <?php
-require("./drsu_template/footer.php");
+require('./drsu_template/footer.php');
 ?>
