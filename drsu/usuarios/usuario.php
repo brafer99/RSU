@@ -1,4 +1,4 @@
-<?php include("./drsu_template/header.php");?>
+<?php require('../drsu_template/header.php');?>
 
 
 <?php 
@@ -17,7 +17,6 @@ $validacion=true;
 //opciones de tabla
 $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
 
-include("../config/db.php");
 
 switch($var_accion){
     case "Agregar":
@@ -184,7 +183,10 @@ if(isset($var_usuario_rol_id_2)){
 <div class="container">
 
 <div class="section-title">
+    <br/>
+    <br/>
     <h2>Adiministrar Usuarios</h2>
+    
 </div>
 
 <div class="row">
@@ -195,6 +197,7 @@ if(isset($var_usuario_rol_id_2)){
                 <div class="info-box2"> 
 
                     <h3>Agregar nuevo Usuario</h3>
+                    <br/>
                 <form method="POST" enctype="multipart/form-data"> <!-- propiedad enctype para recibir archivos en el formulario-->
 
                     <!-- datos generales del formulario -->
@@ -211,19 +214,20 @@ if(isset($var_usuario_rol_id_2)){
                    <?php }} ?>
 
                     <div class = "form-group">
-                        <label for="usuario_email">Émail:</label>
+                        <label for="usuario_email"><b>Émail:</b></label>
                         <input <?php if($var_usuario_email!="" && $validacion==true){$readonly="readonly"; echo $readonly;}?>
                         type="email" required class="form-control" value="<?php echo $var_usuario_email; ?>" name="usuario_email" id="usuario_email"  placeholder="Email">
                     </div>
+                    <br/>
 
-
+                            
                                        
                     <?php 
                     if($var_usuario_email!="" && $validacion_2==true) {             
                     ?>
                     <div class = "form-group">
                             <div class="form-group">
-                                <label for="usuario_pass">Contraseña:</label>
+                                <label for="usuario_pass"><b>Contraseña:</b></label>
                                 <button class="btn btn-primary btn-sm" type="submit" id="boton" value="cambio_contra" name="cambio_contra">Cambiar Contraseña</button>                          
                                 <div class="juntar">
                                 <input hidden required class="form-control" value="<?php echo $var_usuario_pass; ?>" type="password" name="usuario_pass" id="contraseña2" placeholder="Nueva contraseña">
@@ -254,16 +258,16 @@ if(isset($var_usuario_rol_id_2)){
                     <?php } if (($var_usuario_email=="" && $validacion_2==true) ||($var_usuario_email!="" && $validacion_2==false)) {  ?>
 
                     <div class = "form-group">
-                        <label for="usuario_pass">Contraseña:</label>
+                        <label for="usuario_pass"><b>Contraseña:</b></label>
                         <input required class="form-control" value="<?php echo $var_usuario_pass; ?>" type="password" name="usuario_pass" id="contraseña" placeholder="Contraseña">
                     </div>
                     <?php } ?>
 
-                     
+                     <br/>
 
                      <!-- Lista con areas: -->
                     <div class = "form-group">
-                        <label for="roles">Asignar Rol:</label>
+                        <label for="roles"><b>Asignar rol:</b></label>
                         <select name="usuario_rol_id" id="usuario_rol_id" required>
                             <?php if(isset($var_usuario_rol_id_2)) { ?>
                                 <option selected="" value="<?php echo $var_usuario_rol_id_2; ?>" ><?php echo $var_rol_nombre; ?></option> 
@@ -302,7 +306,7 @@ if(isset($var_usuario_rol_id_2)){
                                 <h3>Lista de Usuarios</h3>
                                 <br/>
         
-        <table class="table table-bordered">
+        <table class="table table-hover">
             
             <?php if(isset($validacion_borrar)){
                 if($validacion_borrar==false){ ?>
@@ -313,7 +317,7 @@ if(isset($var_usuario_rol_id_2)){
                 
             <?php }} ?>
 
-            <thead>
+            <thead class="thead-light " >
                 <tr>
                     
                     <th>Email</th>
@@ -347,7 +351,7 @@ if(isset($var_usuario_rol_id_2)){
 
                     
         </div>
-                        </div>
+             </div>
 
                
                      
@@ -356,9 +360,6 @@ if(isset($var_usuario_rol_id_2)){
             </div>
             </div>
 
-
         </div>
     </section><!-- End Contact Section -->
-
-
-<?php include("./drsu_template/footer.php");?>
+<?php include('../drsu_template/footer.php');?>

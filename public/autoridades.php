@@ -33,18 +33,26 @@ $lista_autoridades=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
 
                 <?php foreach($lista_autoridades as $auto) { ?>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
-                            <img src="../assets/img/autoridades/<?php echo $auto['sql_autoridad_imagen'] ?>" class="img-fluid" alt="">
-                            <div class="social">
+                            <img src="../assets/img/autoridades/<?php echo $auto['sql_autoridad_imagen'] ?>" class="img-fluid img-thumbnail" alt="">
+                        
+                            
+                          <div class="social">
                                 <p><?php echo $auto['sql_autoridad_email'] ?></p>
                             </div>
+
                         </div>
                         <div class="member-info">
+                            <div class="div-tam">
                             <h4><?php echo $auto['sql_autoridad_nombre'] ?></h4>
                             <span><?php echo $auto['sql_area_nombre']." (".$auto['sql_area_sigla'].")";?>  </span>
+
+                            </div>
+                    
                         </div>
+                        
                     </div>
                 </div>
                 <?php  } ?>

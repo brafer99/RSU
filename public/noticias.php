@@ -32,19 +32,12 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
         <div class="container">
 
             <div class="section-title">
+                <br/>
                 <h2>Noticias y Contenidos</h2>
             </div>
+            <br/>
 
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-12 d-flex justify-content-center">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
-                    </ul>
-                </div>
-            </div>
+
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
             <!--INICIO CODIGO PHP -->
@@ -55,10 +48,12 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
 
-
+                
             <div class="col-lg-6 col-md-6 portfolio-item filter-app">
+                <br/>
+
                 <div class="portfolio-wrap">
-                    <img src="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen']; ?>" class="img-fluid" alt="">
+                    <img src="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen']; ?>" class="img-fluid img-thumbnail" alt="">
                     <div class="portfolio-info">                                                 
                         <div class="portfolio-links">
                             <a href="../assets/img/noticias/<?php echo $noticia['sql_noticia_imagen'];?>" data-gallery="portfolioGallery"
@@ -67,13 +62,28 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-6 portfolio-item filter-web">
+                <br/>
+
                         <h2><?php echo $noticia['sql_noticia_titulo']?></h2>
                         <br/>
                         <p>
-                        <b><?php echo $noticia['sql_area_nombre']; ?></b> </br></br> <b>Fecha: </b> <?php echo $noticia['sql_noticia_fecha']; ?> </br><b>Hora: </b> <?php echo $noticia['sql_noticia_hora']; ?> </br>
-                        <b>Estado de Evento: </b> <?php echo $noticia['sql_estado_nombre']; ?> </br> 
+                        <b><?php echo $noticia['sql_area_nombre']; ?></b> </br></br> 
 
+                         <b>Estado de Evento: </b> <?php echo $noticia['sql_estado_nombre']; ?> </br> 
+
+
+                       <?php if($noticia['sql_noticia_fecha']!=""){ ?>
+                       <b>Fecha: </b> <?php echo $noticia['sql_noticia_fecha']; ?> </br>
+                       <?php }?>
+
+                        <?php if($noticia['sql_noticia_hora']!=""){ ?>
+                     <b>Hora: </b> <?php echo $noticia['sql_noticia_hora']; ?> </br>
+                       <?php }?>
+
+                        
+                       
                         <?php if($noticia['sql_noticia_enlace']!="") {?>
                         <b>Enlace de transmisión: </b> <a href="
                         <?php 
@@ -91,7 +101,7 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                         <?php }?>
                        
                        <?php if($noticia['sql_noticia_descripcion']!=""){ ?>
-                       <b>Descripcion: </b> <?php echo $noticia['sql_noticia_descripcion']; ?> </br> 
+                       <b>Descripcion Adicional: </b> <?php echo $noticia['sql_noticia_descripcion']; ?> </br> 
                        <?php }?>
                         
                        <?php if($noticia['sql_noticia_lugar']!="") {?>    
@@ -102,6 +112,7 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                         <!--<img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">-->
                     </div>
                 </div>
+                
 
             <?php } ?>
             <!-- FIN CODIGO PHP-->

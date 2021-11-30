@@ -438,19 +438,19 @@ INSERT INTO `drsu_noticia` (`sql_noticia_id`, `sql_noticia_titulo`, `sql_noticia
 (3, 'XX Juegos Florales Basadrinos 2021', '1636918983_noticia3.png', '', '07 y 08 de Octubre de 2020', '15:00 horas', 'https://www.google.com/', '', 3, 1);
 
 INSERT INTO `drsu_autoridad` (`sql_autoridad_id`, `sql_autoridad_nombre`, `sql_autoridad_email`, `sql_autoridad_imagen`, `sql_autoridad_area_id`) VALUES
-(1, 'Dra. Elizabeth Luisa Medina Soto', 'emedinas@unjbg.edu.pe', '1637192645_team-4.jpg', 1),
+(1, 'Dra. Elizabeth Luisa Medina Soto', 'emedinas@unjbg.edu.pe', '1638041006_1.jpg', 1),
 (2, 'Dra. Karimen Jetsabel Mutter Cuellar', 'kmutterc@unjbg.edu.pe', '1637366227_team-2.jpg', 2),
 (3, 'Mgr. Gina Maribel Valle Castro', 'gvallec@unjbg.edu.pe', '1637366246_team-2.jpg', 3),
 (4, 'Mgr. Edgardo Javier Berrios Quina', 'eberriosq@unjbg.edu.pe', '1637634119_berrios.jpg', 4),
-(5, 'Mgr. Milton Saúl Flor Rodriguez', 'mflorr@unjbg.edu.pe', '1637634177_team-1.jpg', 5),
+(5, 'Mgr. Milton Saúl Flor Rodriguez', 'mflorr@unjbg.edu.pe', '1638040546_images.jpg', 5),
 (6, 'SAP. Carmen Noemí Ríos Adrianzen', 'criosa@unjbg.edu.pe', '1637634195_carmenrios.jpg', 6),
 (7, 'Lic. Sandra Monasterio Pazos', 'smonasteriop@unjbg.edu.pe', '1637634206_team-4.jpg', 7);
 
 INSERT INTO `drsu_nosotros` (`sql_nosotros_id`, `sql_nosotros_titulo`, `sql_nosotros_descripcion`, `sql_nosotros_imagen`, `sql_nosotros_pdf`, `sql_nosotros_categoria_id`) VALUES
-(1, 'LEY UNIVERSITARIA PERUANA Nº 30220 (2014)', 'Artículo 124. Responsabilidad social universitaria La responsabilidad social universitaria es la gestión ética y eficaz del impacto generado por la universidad en la sociedad debido al ejercicio de sus funciones: académica, de investigación y de servicios de extensión y participación en el desarrollo nacional en sus diferentes niveles y dimensiones; incluye la gestión del impacto producido por las relaciones entre los miembros de la comunidad universitaria, sobre el ambiente, y sobre otras organizaciones públicas y privadas que se constituyen en partes interesadas. La responsabilidad social universitaria es fundamento de la vida universitaria, contribuye al desarrollo sostenible y al bienestar de la sociedad. Compromete a toda la comunidad universitaria.', '1637644599_diario.jpg','',1),
-(2, '', 'Direccionar la transversalización de la responsabilidad social universitaria en la gestión institucional y en la investigación y formación académica, guiando la participación y compromiso social de la universidad en la construcción de una comunidad sostenible.', '1637675515_mision.png','',2),
-(3, '', 'Ser referentes de responsabilidad social universitaria a nivel nacional e internacional, mediante la gestión de políticas performativas y la articulación de acciones coherentes que fortalezcan el gobierno institucional, orienten la continua generación de conocimientos transdisciplinarios y dinamicen el desarrollo de competencias personales, profesionales y ciudadanas.', '1637675536_vision.png','', 3),
-(4, '', 'Para ingresar a nuestro reglamento.', '1637675545_reglamento.png','1637677488_ReglamentoDRSU.pdf', 4);
+(1, 'LEY UNIVERSITARIA PERUANA Nº 30220 (2014)', 'Artículo 124. Responsabilidad social universitaria La responsabilidad social universitaria es la gestión ética y eficaz del impacto generado por la universidad en la sociedad debido al ejercicio de sus funciones: académica, de investigación y de servicios de extensión y participación en el desarrollo nacional en sus diferentes niveles y dimensiones; incluye la gestión del impacto producido por las relaciones entre los miembros de la comunidad universitaria, sobre el ambiente, y sobre otras organizaciones públicas y privadas que se constituyen en partes interesadas. La responsabilidad social universitaria es fundamento de la vida universitaria, contribuye al desarrollo sostenible y al bienestar de la sociedad. Compromete a toda la comunidad universitaria.', '1638253414_diario.jpg', '', 1),
+(2, '', 'Direccionar la transversalización de la responsabilidad social universitaria en la gestión institucional y en la investigación y formación académica, guiando la participación y compromiso social de la universidad en la construcción de una comunidad sostenible.', '1637675515_mision.png', '', 2),
+(3, '', 'Ser referentes de responsabilidad social universitaria a nivel nacional e internacional, mediante la gestión de políticas performativas y la articulación de acciones coherentes que fortalezcan el gobierno institucional, orienten la continua generación de conocimientos transdisciplinarios y dinamicen el desarrollo de competencias personales, profesionales y ciudadanas.', '1637675536_vision.png', '', 3),
+(4, '', 'Para ingresar a nuestro reglamento.', '1637675545_reglamento.png', '1637677488_ReglamentoDRSU.pdf', 4);
 
 /*registros de Piero*/
 

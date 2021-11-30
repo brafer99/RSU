@@ -1,7 +1,4 @@
-<?php
-require("header.php");
-?>
-
+<?php require('header.php');?>
 <!--CARDS SELECTION BY AREAS-->
 <div class="boxesContainer">
 
@@ -37,7 +34,7 @@ require("header.php");
                 <p>Dirección Académica de Responsabilidad Social Universitaria</p>
             </div>
             <div class="back">
-                <a href="../drsu/noticia.php">Ir</a>
+                <a href="../drsu/index.php">Ir</a>
             </div>
         </div>
     </div>
