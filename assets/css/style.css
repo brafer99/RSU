@@ -1110,7 +1110,7 @@ section {
   width: 100%;
   max-width: 350px;
 }
-.div-tam{
+.div-tam {
   max-width: 350px;
   height: auto;
   padding: 0px 12px 0px 12px;
@@ -1187,8 +1187,8 @@ section {
 .contact .info-box {
   color: #444444;
   text-align: center;
-  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
-  padding: 30px 10px 32px 10px;
+  box-shadow: 0 0 30px rgba(174, 174, 175, 0.6);
+  padding: 35px;
   border-radius: 4px;
 }
 .contact .info-box i {
@@ -1199,10 +1199,18 @@ section {
   border: 2px dotted #f8d4d5;
 }
 .contact .info-box h3 {
-  font-size: 20px;
+  font-size: 30px;
   color: #777777;
   font-weight: 700;
   margin: 10px 0;
+  text-align: center;
+}
+.contact .info-box h5 {
+  color: #000000;
+  text-align: center;
+}
+.contact .info-box h6 {
+  color: #000000;
   text-align: center;
 }
 .contact .info-box p {
@@ -1217,10 +1225,10 @@ section {
 asdasdasd
 */
 .contact .info-box2 {
-  color: #444444;
+  color: #000000;
   text-align: left;
-  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
-  padding: 30px 10px 32px 10px;
+  box-shadow: 0 0 30px rgba(174, 174, 175, 0.6);
+  padding: 50px;
   border-radius: 4px;
 }
 .contact .info-box2 i {
@@ -1231,9 +1239,9 @@ asdasdasd
   border: 2px dotted #f8d4d5;
 }
 .contact .info-box2 h3 {
-  font-size: 20px;
-  color: #777777;
-  font-weight: 700;
+  font-size: 30px;
+  color: #636363;
+  font-weight: 800;
   margin: 10px 0;
   text-align: center;
 }

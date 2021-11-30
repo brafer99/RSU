@@ -221,6 +221,7 @@ iframe {
 }
 
 .cambio_boton input {
+  margin: 3px;
   width: 100%;
 }
 

@@ -6,9 +6,6 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
-
-
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Enlaces de interés</h4>
                         <ul>
@@ -32,7 +29,7 @@
                     <div class="col-lg-4 col-md-6 footer-newsletter">
                         <h4>Regresar a página web DRSU</h4>
         
-                        <a href="../index.php" class="button-contact">Regresar</a>
+                        <a href="../../index.php" class="button-contact">Regresar</a>
                     </div>
 
                 </div>

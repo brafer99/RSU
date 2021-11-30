@@ -1,7 +1,7 @@
 <?php require('../config/db.php');?>
 <?php
   if(isset($_SESSION['valida_usuario']) && $_SESSION['valida_usuario']=="ok"){
-    header('Location:noticia.php');
+    header('Location:noticias/noticia.php');
   }
   else{ 
 $var_login_id=(isset($_POST['login_id']))?$_POST['login_id']:"";
@@ -10,16 +10,11 @@ $var_login_pass=(isset($_POST['login_pass']))?$_POST['login_pass']:"";
 $validacion_usuario=false;
 $validacion_pas=false;
 
-
 if($_POST){
-
     if($var_login_email!='' && $var_login_pass!=''){
-
         $sentencia_sql= $conexion->prepare("SELECT * from drsu_usuario");
         $sentencia_sql->execute();
         $lista_usuarios=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
-        
-
         //$hash = $usuario['sql_usuario_pass'];
          $hash = "";
         foreach($lista_usuarios as $usuario) {
@@ -30,16 +25,13 @@ if($_POST){
                 $usuario_rol=$usuario['sql_usuario_rol_id'];
             }
         }
-
-
         if($validacion_usuario==true){
-
             if(password_verify($var_login_pass,$hash)){
                 $validacion_pas=true;
                 $_SESSION['valida_usuario']="ok";
                 $_SESSION['nombre_usuario']=$var_login_email;
                 $_SESSION['rol_usuario']=$usuario_rol;
-                header('Location:noticia.php');
+                header('Location:noticias/noticia.php');
             } else{
                 $mensaje1="Contraseña Incorrecta";
             }
@@ -60,17 +52,12 @@ if($_POST){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="../assets/css/style.css" rel="stylesheet">
-
   </head>
   <body>
-      
-      
       <div class="container">
           <div class="row">
-
           <div class="col-md-4">
           </div>
-
               <div class="col-md-4"> 
                   <br/>
                   <h3><center>SISTEMA INTERNO DRSU</center></h3>
@@ -99,17 +86,13 @@ if($_POST){
                             <?php echo $mensaje3; ?>
                         </div>
                         <?php } ?>
-
                         <form method="POST">
-
                         <div class = "form-group">
                             <label>Usuario</label>
                             <input required type="email" class="form-control" name="login_email" id="login_email" placeholder="Escribe tu email">
-                        </div>
-                        
+                        </div>             
                         <div class="form-group">
                             <label>Contraseña:</label>
-
                             <div class="juntar">                            
                                 <input required type="password" class="form-control" name="login_pass" id="login_pass" placeholder="Escribe tu contraseña">
                                 <span class="boton_ver"><button class="btn btn-primary" type="button" id="boton2">ver</button></span>  
@@ -128,7 +111,7 @@ if($_POST){
                                 }
                             </script>                         
 
-                        <button type="submit" class="btn btn-primary">Entrar al Adiministrador</button>
+                        <button type="submit" class="btn btn-primary">Entrar al Administrador</button>
                         </form>
                     </div>
                 </div>
