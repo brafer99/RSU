@@ -19,10 +19,10 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Nuestras Oficinas</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AVO</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AES</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">ACI</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AEP</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../../public/areas.php">AVO</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../../public/areas.php">AES</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="../../public/areas.php">DRSU</a></li>
+
                         </ul>
                     </div>
 

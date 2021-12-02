@@ -435,16 +435,17 @@ INSERT INTO drsu_estado(sql_estado_nombre) VALUES
 INSERT INTO `drsu_noticia` (`sql_noticia_id`, `sql_noticia_titulo`, `sql_noticia_imagen`, `sql_noticia_descripcion`, `sql_noticia_fecha`, `sql_noticia_hora`, `sql_noticia_enlace`, `sql_noticia_lugar`, `sql_noticia_area_id`, `sql_noticia_estado_id`) VALUES
 (1, 'Estado Situacional del Covid en la region Tacna y vacunación', '1636913727_noticia1.jpg', NULL, '03 de Septiembre de 2021', '19:00 horas', 'https://www.google.com/', NULL, 2, 2),
 (2, 'La voz Basadrina', '1636918900_noticia2.jpg', NULL, '20 de Agosto de 2020', '12:00 horas', 'https://www.youtube.com/', NULL, 2, 1),
-(3, 'XX Juegos Florales Basadrinos 2021', '1636918983_noticia3.png', '', '07 y 08 de Octubre de 2020', '15:00 horas', 'https://www.google.com/', '', 3, 1);
+(3, 'XX Juegos Florales Basadrinos 2021', '1636918983_noticia3.png', '', '07 y 08 de Octubre de 2020', '15:00 horas', 'https://www.google.com/', '', 1, 1),
+(4, 'Capacitación a las escuelas: \"Documentación DRSU\"', '1638453028_logo_oficial.jpg', '', '', '', '', '', 1, 1);
 
 INSERT INTO `drsu_autoridad` (`sql_autoridad_id`, `sql_autoridad_nombre`, `sql_autoridad_email`, `sql_autoridad_imagen`, `sql_autoridad_area_id`) VALUES
-(1, 'Dra. Elizabeth Luisa Medina Soto', 'emedinas@unjbg.edu.pe', '1638041006_1.jpg', 1),
-(2, 'Dra. Karimen Jetsabel Mutter Cuellar', 'kmutterc@unjbg.edu.pe', '1637366227_team-2.jpg', 2),
-(3, 'Mgr. Gina Maribel Valle Castro', 'gvallec@unjbg.edu.pe', '1637366246_team-2.jpg', 3),
+(1, 'Dra. Elizabeth Luisa Medina Soto', 'emedinas@unjbg.edu.pe', '1638452120_user9.jpg', 1),
+(2, 'Dra. Karimen Jetsabel Mutter Cuellar', 'kmutterc@unjbg.edu.pe', '1638452126_user9.jpg', 2),
+(3, 'Mgr. Gina Maribel Valle Castro', 'gvallec@unjbg.edu.pe', '1638452131_user9.jpg', 3),
 (4, 'Mgr. Edgardo Javier Berrios Quina', 'eberriosq@unjbg.edu.pe', '1637634119_berrios.jpg', 4),
-(5, 'Mgr. Milton Saúl Flor Rodriguez', 'mflorr@unjbg.edu.pe', '1638040546_images.jpg', 5),
+(5, 'Mgr. Milton Saúl Flor Rodriguez', 'mflorr@unjbg.edu.pe', '1638452139_user9.jpg', 5),
 (6, 'SAP. Carmen Noemí Ríos Adrianzen', 'criosa@unjbg.edu.pe', '1637634195_carmenrios.jpg', 6),
-(7, 'Lic. Sandra Monasterio Pazos', 'smonasteriop@unjbg.edu.pe', '1637634206_team-4.jpg', 7);
+(7, 'Lic. Sandra Monasterio Pazos', 'smonasteriop@unjbg.edu.pe', '1638452148_user9.jpg', 7);
 
 INSERT INTO `drsu_nosotros` (`sql_nosotros_id`, `sql_nosotros_titulo`, `sql_nosotros_descripcion`, `sql_nosotros_imagen`, `sql_nosotros_pdf`, `sql_nosotros_categoria_id`) VALUES
 (1, 'LEY UNIVERSITARIA PERUANA Nº 30220 (2014)', 'Artículo 124. Responsabilidad social universitaria La responsabilidad social universitaria es la gestión ética y eficaz del impacto generado por la universidad en la sociedad debido al ejercicio de sus funciones: académica, de investigación y de servicios de extensión y participación en el desarrollo nacional en sus diferentes niveles y dimensiones; incluye la gestión del impacto producido por las relaciones entre los miembros de la comunidad universitaria, sobre el ambiente, y sobre otras organizaciones públicas y privadas que se constituyen en partes interesadas. La responsabilidad social universitaria es fundamento de la vida universitaria, contribuye al desarrollo sostenible y al bienestar de la sociedad. Compromete a toda la comunidad universitaria.', '1638253414_diario.jpg', '', 1),
