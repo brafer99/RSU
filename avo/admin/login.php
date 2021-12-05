@@ -62,6 +62,7 @@ if (isset($_POST['submit'])) {
                <div class="field_error"><?php echo $msg ?></div>
             </div>
          </div>
+         <center><a href="../index.php"><button type="button" class="btn btn-info">Volver a AVO</button></a></center>
       </div>
    </div>
    <script src="assets/js/vendor/jquery-2.1.4.min.js" type="text/javascript"></script>
