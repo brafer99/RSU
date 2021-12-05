@@ -34,17 +34,16 @@ require('functions.inc.php');
                 <div class="container">
                     <div class="row">
                         <div class="menumenu__container clearfix">
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-5">
                                 <div class="logo">
                                     <a href="index.php"><img src="./source/images/logo/main.png" alt="logo images"></a>
                                 </div>
                             </div>
-                            <div class="col-md-7 col-lg-6 col-sm-5 col-xs-3">
+                            <div class="col-md-7 col-lg-6 col-sm-6 col-xs-3">
                                 <nav class="main__menu__nav hidden-xs hidden-sm">
                                     <ul class="main__menu">
                                         <li class="drop"><a href="index.php">Inicio</a></li>
                                         <li class="drop"><a href="publicaciones.php">Noticias y eventos</a></li>
-                                        <li><a href="contact.php">Autoridades</a></li>
                                         <li><a href="contact.php">Contacto</a></li>
                                     </ul>
                                 </nav>
@@ -53,7 +52,6 @@ require('functions.inc.php');
                                         <ul>
                                             <li><a href="index.php">Inicio</a></li>
                                             <li><a href="publicaciones.php">Noticias y Eventos</a></li>
-                                            <li><a href="contact.php">Autoridades</a></li>
                                             <li><a href="contact.php">Contacto</a></li>
                                         </ul>
                                     </nav>
@@ -66,6 +64,9 @@ require('functions.inc.php');
                                     </div>
                                     <div class="header__account">
                                         <a href="./admin/login.php">Ingresar</a>
+                                    </div>
+                                    <div>
+                                    <center><a href="../index.php"><button type="button" class="btn btn-info">Volver a DRSU</button></a></center>
                                     </div>
                                 </div>
                             </div>

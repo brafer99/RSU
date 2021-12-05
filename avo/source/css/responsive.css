@@ -60,9 +60,29 @@
   } 
 }
 
+/* Normal desktop :768px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+
+  .col-md-2 {
+    width: 10%;
+  }
+  .col-md-3 {
+    width: 30%;
+  }
+}
+
+/* Normal desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .header__top__area, .menumenu__container {
+    
+    padding-left: 0;
+    padding-right: 50px;
+  }
+}
+
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1169px) {
-
 
 .ht__testimonial__activation {
   padding: 70px 52px;
@@ -253,12 +273,8 @@ nav.off__canvars--menu ul li {
 .box__layout {
   margin: 0;
 }
-
-
-
-
-
 }
+
 
  
 /* Tablet desktop :768px. */
@@ -294,7 +310,7 @@ nav.off__canvars--menu ul li {
 }
 .header__top__area, .menumenu__container {
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 50px;
 }
 .ht__header__right li + li {
   margin-left: 19px;
@@ -1196,7 +1212,7 @@ nav.off__canvars--menu ul li {
 }    
 .header__top__area, .menumenu__container {
   padding-left: 0;
-  padding-right: 20px;
+  padding-right: 50px;
 } 
 .header__account a {
   font-size: 16px;

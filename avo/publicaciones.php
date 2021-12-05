@@ -76,7 +76,7 @@ $get_publicacion = $data;
                     </div>
                 </div>
             <?php } else {
-                echo "Platillos no encontrados. Gracias por su visita.";
+                echo "Datos no encontrados, intente nuevamente.";
             } ?>
 
         </div>

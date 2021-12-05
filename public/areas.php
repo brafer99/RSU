@@ -22,7 +22,7 @@
                 <p>Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés</p>
             </div>
             <div class="back">
-                <a href="../avo/index.php">Ingresar</a>
+                <a href="../avo/index.php">Ir</a>
             </div>
         </div>
     </div>
@@ -38,19 +38,6 @@
             </div>
         </div>
     </div>
-
-    <div class="cardBox">
-        <div class="card">
-            <div class="front">
-                <h3>Card Four</h3>
-                <p>Hover to flip</p>
-            </div>
-            <div class="back">
-                <a href="#">Button 4</a>
-            </div>
-        </div>
-    </div>
-
 </div>
 <!-- END CARDS SELECTION BY AREAS-->
 
