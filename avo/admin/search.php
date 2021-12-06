@@ -1,20 +1,13 @@
 <?php
 require('top.inc.php');
-
-if(isset($_POST['submit'])) {
-	$anio = $_POST['anio'];
-}else{
-	if ($_GET['flag']==1){
-		$anio = $_GET['anio'];
-	}else{
-		$anio=date('Y');
-	}
-}
-
+$search = mysqli_real_escape_string($con, $_POST['search']);
+$anio = mysqli_real_escape_string($con, $_POST['anio']);
 $sql = "SELECT avo_voluntarios.id, avo_voluntarios.nombres, avo_voluntarios.apellidos, avo_tipo_voluntario.t_nombre, avo_facultad.f_siglas, avo_escuela.e_siglas 
-		FROM avo_voluntarios, avo_tipo_voluntario, avo_escuela, avo_facultad, avo_anio
- 		WHERE (avo_voluntarios.tipo = avo_tipo_voluntario.id AND avo_voluntarios.id_escuela = avo_escuela.id 
-		AND avo_escuela.id_facultad = avo_facultad.id AND avo_voluntarios.anio = avo_anio.anio) AND (avo_voluntarios.anio = '$anio')";
+				FROM avo_voluntarios, avo_tipo_voluntario, avo_escuela, avo_facultad
+				 WHERE (avo_voluntarios.tipo = avo_tipo_voluntario.id AND avo_voluntarios.id_escuela = avo_escuela.id 
+				AND avo_escuela.id_facultad = avo_facultad.id) AND (avo_voluntarios.anio = '$anio')
+				AND (avo_voluntarios.nombres LIKE '%$search%'OR avo_voluntarios.apellidos LIKE '%$search%' OR avo_facultad.f_siglas LIKE '%$search%' 
+				OR avo_escuela.e_siglas LIKE '%$search%' OR avo_tipo_voluntario.t_nombre LIKE '%$search%')";
 $res = mysqli_query($con, $sql);
 ?>
 <div class="content pb-0">
@@ -23,17 +16,17 @@ $res = mysqli_query($con, $sql);
 			<div class="col-xl-12">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="box-title">Voluntarios <?php echo ($anio); ?></h4>
+						<h4 class="box-title">Voluntarios  <?php echo ($anio); ?></h4>
 						<h4 class="box-link"><button class="add-cat"><a href="manage_voluntario.php"> + Agregar</a> </h4></button>
 					</div>
 
 					<div class="search-container">
-						<form action="search.php" method="post">
-							<input type="text" placeholder="Buscar..." name="search">
-							<input type="hidden" name="anio" value="<?php echo $anio; ?>">
-							<button type="submit"><i class="fa fa-search"></i></button>
-						</form>
+							<input type="text" placeholder="<?php echo ($search); ?>" name="search">
+							<a href="voluntarios.php">
+								<button">&#10006;</button>
+							</a>
 					</div>
+
 					<div class="card-body--">
 						<div class="table-stats order-table ov-h">
 							<table class="table ">
@@ -61,7 +54,7 @@ $res = mysqli_query($con, $sql);
 											<td><?php echo $row['f_siglas'] ?></td>
 											<td>
 												<?php
-												echo "<span class='badge badge-edit'><a href='manage_voluntario.php?id=" . $row['id'] . "&anio=". $anio ."'>Editar</a></span>&nbsp;";
+												echo "<span class='badge badge-edit'><a href='manage_voluntario.php?id=" . $row['id'] . "'>Editar</a></span>&nbsp;";
 												echo "<span class='badge badge-delete'><a href='?type=delete&id=" . $row['id'] . "'>ELIMINAR</a></span>";
 												?>
 											</td>

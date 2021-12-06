@@ -10,12 +10,14 @@ $codigo = '';
 $celular = '';
 $email = '';
 $tipo = '';
+$anio = '';
 
 $msg = '';
 
 if (isset($_GET['id']) && $_GET['id'] != '') {
 
 	$id = get_safe_value($con, $_GET['id']);
+	$anio = get_safe_value($con, $_GET['anio']);
 	$res = mysqli_query($con, "select * from avo_voluntarios where id='$id'");
 	$check = mysqli_num_rows($res);
 	if ($check > 0) {
@@ -25,12 +27,16 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
 		$apellidos = $row['apellidos'];
 		$dni = $row['dni'];
 		$fecha_nac = $row['fecha_nac'];
-		$codigo = $row['codigo'];
 		$celular = $row['celular'];
 		$email = $row['email'];
+		$anio = $row['anio'];
 		$tipo = $row['tipo'];
 	} else {
-		header('location:voluntarios.php');
+?>
+		<script>
+			window.location.href = "voluntarios.php";
+		</script>
+	<?php
 		die();
 	}
 }
@@ -41,9 +47,9 @@ if (isset($_POST['submit'])) {
 	$apellidos = get_safe_value($con, $_POST['apellidos']);
 	$dni = get_safe_value($con, $_POST['dni']);
 	$fecha_nac = get_safe_value($con, $_POST['fecha_nac']);
-	$codigo = get_safe_value($con, $_POST['codigo']);
 	$celular = get_safe_value($con, $_POST['celular']);
 	$email = get_safe_value($con, $_POST['email']);
+	$anio = get_safe_value($con, $_POST['anio']);
 	$tipo = get_safe_value($con, $_POST['tipo']);
 
 	$res = mysqli_query($con, "SELECT * FROM avo_voluntarios WHERE dni='$dni'");
@@ -60,25 +66,25 @@ if (isset($_POST['submit'])) {
 			$msg = "Voluntario ya registrado";
 		}
 	}
-		if ($msg == '') {
-			if (isset($_GET['id']) && $_GET['id'] != '') {
-				$update_sql = "UPDATE avo_voluntarios SET id_escuela='$id_escuela',nombres='$nombres',apellidos='$apellidos',
-				dni='$dni',fecha_nac='$fecha_nac',celular='$celular',email='$email',tipo='$tipo' WHERE id='$id'";
-				mysqli_query($con, $update_sql);
-			} else {
-				mysqli_query($con, "INSERT INTO avo_voluntarios(id_escuela,nombres,apellidos,dni,fecha_nac,celular,email,tipo) 
-				VALUES('$id_escuela','$nombres','$apellidos','$dni','$fecha_nac','$celular','$email','$tipo')");					
-			}	
-			?>
-			<script>
-				window.location.href = "voluntarios.php";
-			</script>
-			<?php
-				die();
+	if ($msg == '') {
+		if (isset($_GET['id']) && $_GET['id'] != '') {
+			$update_sql = "UPDATE avo_voluntarios SET id_escuela='$id_escuela',nombres='$nombres',apellidos='$apellidos',
+				dni='$dni',fecha_nac='$fecha_nac',celular='$celular',email='$email',anio='$anio' ,tipo='$tipo' WHERE id='$id'";
+			mysqli_query($con, $update_sql);
+		} else {
+			mysqli_query($con, "INSERT INTO avo_voluntarios(id_escuela,nombres,apellidos,dni,fecha_nac,celular,email,anio,tipo) 
+				VALUES('$id_escuela','$nombres','$apellidos','$dni','$fecha_nac','$celular','$email','$anio','$tipo')");
 		}
+	?>
+		<script>
+			window.location.href = "voluntarios.php";
+		</script>
+<?php
+		die();
 	}
+}
 ?>
-		
+
 <div class="content pb-0">
 	<div class="animated fadeIn">
 		<div class="row">
@@ -97,7 +103,7 @@ if (isset($_POST['submit'])) {
 										if ($row['id'] == $id_escuela) {
 											echo "<option selected value=" . $row['id'] . ">" . $row['e_nombre'] . "</option>";
 										} else {
-											echo "<option value=" . $row['id'] . ">" . "[".$row['e_siglas'] . "] ". $row['e_nombre'] . "</option>";
+											echo "<option value=" . $row['id'] . ">" . "[" . $row['e_siglas'] . "] " . $row['e_nombre'] . "</option>";
 										}
 									}
 									?>
@@ -115,6 +121,23 @@ if (isset($_POST['submit'])) {
 											echo "<option selected value=" . $row['id'] . ">" . $row['t_nombre'] . "</option>";
 										} else {
 											echo "<option value=" . $row['id'] . ">" . $row['t_nombre'] . "</option>";
+										}
+									}
+									?>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="categories" class=" form-control-label">Año</label>
+								<select class="form-control" name="anio">
+									<option>Seleccione año actual</option>
+									<?php
+									$res2 = mysqli_query($con, "select * from avo_anio order by anio asc");
+									while ($row = mysqli_fetch_assoc($res2)) {
+										if ($row['anio'] == $anio) {
+											echo "<option selected value=" . $row['anio'] . ">" . $row['anio'] . "</option>";
+										} else {
+											echo "<option value=" . $row['anio'] . ">" . $row['anio'] . "</option>";
 										}
 									}
 									?>

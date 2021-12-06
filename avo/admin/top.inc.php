@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require('../../config/connection.inc.php');
 require('functions.inc.php');
 if (isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN'] != '') {
@@ -35,15 +36,16 @@ if (isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN'] != '') {
                <li class="menu-title">AVO</li>
 
                <li class="menu-item-has-children dropdown">
+                  <a href="anio.php">Año</a>
+               </li>
+
+               <li class="menu-item-has-children dropdown">
                   <a href="voluntarios.php">Voluntarios</a>
                </li>
+
                <li class="menu-item-has-children dropdown">
                   <a href="publicaciones.php">Publicaciones</a>
                </li>
-               <li class="menu-item-has-children dropdown">
-                  <a href="contact_mailbox.php">Buzón</a>
-               </li>
-
             </ul>
          </div>
       </nav>

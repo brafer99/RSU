@@ -10,13 +10,17 @@ if (isset($_POST['submit'])) {
    $count = mysqli_num_rows($res);
 
    if ($count > 0) {
-         $row = mysqli_fetch_assoc($res);
-         $dbpassword = $row['password'];
-         if (password_verify($password, $dbpassword)) {
-            $_SESSION['ADMIN_LOGIN'] = 'yes';
-            $_SESSION['ADMIN_LOGIN'] = 'admin';
-            header('location:voluntarios.php');
-         }
+      $row = mysqli_fetch_assoc($res);
+      $dbpassword = $row['password'];
+      if (password_verify($password, $dbpassword)) {
+         $_SESSION['ADMIN_LOGIN'] = 'yes';
+         $_SESSION['ADMIN_LOGIN'] = 'admin';
+         ?>
+         <script>
+               window.location.href = "index.php";
+            </script>
+         <?php
+      }
    } else {
       $msg = "Por favor ingrese los detalles de inicio de sesión correctos";
    }
@@ -54,9 +58,24 @@ if (isset($_POST['submit'])) {
                      <input type="text" name="username" class="form-control" placeholder="E-mail" required>
                   </div>
                   <div class="form-group">
-                     <label>Contraseña</label>
-                     <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+                     <div class="passform">
+                        <label>Contraseña</label>
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña" id="login_pass" required>
+                        <span class="boton_ver"><button class="btn btn-primary" type="button" id="boton2">ver contraseña</button></span>
+                     </div>
                   </div>
+                  <script type="text/javascript">
+                     var ver = document.getElementById('boton2');
+                     ver.addEventListener('click', mostrarContraseña);
+
+                     function mostrarContraseña() {
+                        if (document.getElementById("login_pass").type == "password") {
+                           document.getElementById("login_pass").type = "text";
+                        } else {
+                           document.getElementById("login_pass").type = "password";
+                        }
+                     }
+                  </script>
                   <button type="submit" name="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Iniciar sesión</button>
                </form>
                <div class="field_error"><?php echo $msg ?></div>
@@ -70,4 +89,5 @@ if (isset($_POST['submit'])) {
    <script src="assets/js/plugins.js" type="text/javascript"></script>
    <script src="assets/js/main.js" type="text/javascript"></script>
 </body>
+
 </html>
