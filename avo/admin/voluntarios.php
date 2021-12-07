@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
 $sql = "SELECT avo_voluntarios.id, avo_voluntarios.nombres, avo_voluntarios.apellidos, avo_tipo_voluntario.t_nombre, avo_facultad.f_siglas, avo_escuela.e_siglas 
 		FROM avo_voluntarios, avo_tipo_voluntario, avo_escuela, avo_facultad, avo_anio
  		WHERE (avo_voluntarios.tipo = avo_tipo_voluntario.id AND avo_voluntarios.id_escuela = avo_escuela.id 
-		AND avo_escuela.id_facultad = avo_facultad.id AND avo_voluntarios.anio = avo_anio.anio) AND (avo_voluntarios.anio = '$anio')";
+		AND avo_escuela.id_facultad = avo_facultad.id AND avo_voluntarios.anio = avo_anio.anio) AND (avo_voluntarios.anio = $anio)";
 $res = mysqli_query($con, $sql);
 ?>
 <div class="content pb-0">
