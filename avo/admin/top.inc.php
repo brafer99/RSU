@@ -33,7 +33,7 @@ if (isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN'] != '') {
       <nav class="navbar navbar-expand-sm navbar-default">
          <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-               <li class="menu-title">AVO</li>
+               <li class="menu-title"><a href="index.php">BIENVENIDO A AVO</a></li>
 
                <li class="menu-item-has-children dropdown">
                   <a href="anio.php">Año</a>
