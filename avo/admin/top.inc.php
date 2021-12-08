@@ -36,7 +36,7 @@ if (isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN'] != '') {
                <li class="menu-title"><a href="index.php">BIENVENIDO A AVO</a></li>
 
                <li class="menu-item-has-children dropdown">
-                  <a href="anio.php">Año</a>
+                  <a href="index.php">Año</a>
                </li>
 
                <li class="menu-item-has-children dropdown">
