@@ -3376,7 +3376,7 @@ footer.site-footer .footer-inner a {
 
 .search-container {
     margin-left: 10px;
-    width: 20%;
+    width: 31%;
   }
   
   .search-container input[type=text] {
@@ -3398,3 +3398,12 @@ footer.site-footer .footer-inner a {
   .search-container button:hover {
     background: #ccc;
   }
+
+/*MODAL*/
+  #myBtn{
+      background:none;
+      color: white;
+      border-color:transparent;
+      padding: 0px;
+  }
+

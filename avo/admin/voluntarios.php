@@ -1,22 +1,24 @@
 <?php
 require('top.inc.php');
 
-if(isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 	$anio = $_POST['anio'];
-}else{
-	if ($_GET['flag']==1){
+} else {
+	if ($_GET['flag'] == 1) {
 		$anio = $_GET['anio'];
-	}else{
-		$anio=date('Y');
+	} else {
+		$anio = date('Y');
 	}
 }
 
 $sql = "SELECT avo_voluntarios.id, avo_voluntarios.nombres, avo_voluntarios.apellidos, avo_tipo_voluntario.t_nombre, avo_facultad.f_siglas, avo_escuela.e_siglas 
 		FROM avo_voluntarios, avo_tipo_voluntario, avo_escuela, avo_facultad, avo_anio
  		WHERE (avo_voluntarios.tipo = avo_tipo_voluntario.id AND avo_voluntarios.id_escuela = avo_escuela.id 
-		AND avo_escuela.id_facultad = avo_facultad.id AND avo_voluntarios.anio = avo_anio.anio) AND (avo_voluntarios.anio = $anio)";
+		AND avo_escuela.id_facultad = avo_facultad.id AND avo_voluntarios.anio = avo_anio.anio) AND (avo_voluntarios.anio = $anio)
+		ORDER BY avo_voluntarios.id";
 $res = mysqli_query($con, $sql);
 ?>
+
 <div class="content pb-0">
 	<div class="orders">
 		<div class="row">
@@ -61,7 +63,7 @@ $res = mysqli_query($con, $sql);
 											<td><?php echo $row['f_siglas'] ?></td>
 											<td>
 												<?php
-												echo "<span class='badge badge-edit'><a href='manage_voluntario.php?id=" . $row['id'] . "&anio=". $anio ."'>Editar</a></span>&nbsp;";
+												echo "<span class='badge badge-complete'><a href='manage_voluntario.php?id=" . $row['id'] . "&anio=" . $anio . "'>Ver / Editar</a></span>&nbsp;";
 												echo "<span class='badge badge-delete'><a href='?type=delete&id=" . $row['id'] . "'>ELIMINAR</a></span>";
 												?>
 											</td>
@@ -77,6 +79,7 @@ $res = mysqli_query($con, $sql);
 		</div>
 	</div>
 </div>
+
 <?php
 require('footer.inc.php');
 ?>
