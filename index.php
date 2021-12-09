@@ -187,19 +187,7 @@
         </div>
       </li>
 
-      <li>
-        <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">¿CÓMO ESTA CONFORMADO EL ÁREA DE EXTENSIÓN Y PROYECCIÓN CULTURAL (AEP) ?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-        <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-          <p>
-            <br> El Área de Extensión y Proyección Cultural está conformado por:
-            <br>
-            <br>- El Taller de Danza
-            <br>- El Grupo Criollo Afro Peruano
-            <br>- El Grupo Folklórico
-            <br>- La Tuna Universitaria
-          </p>
-        </div>
-      </li>
+      
 
     </ul>
 

@@ -595,6 +595,7 @@ nav.off__canvars--menu ul li ul li a:hover {
   text-align: center;
 }
 .search__area .search__inner form input[type="text"] {
+  font-family: 'Poppins';
   background: #fff none repeat scroll 0 0;
   border: medium none;
   color: #333;

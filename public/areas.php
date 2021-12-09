@@ -22,7 +22,7 @@
                 <p>Área de Programas de Voluntariado Basadrino y Vinculación con Grupos de Interés</p>
             </div>
             <div class="back">
-                <a href="../avo/index.php">Ingresar</a>
+                <a href="../avo/index.php">Ir</a>
             </div>
         </div>
     </div>
@@ -38,12 +38,8 @@
             </div>
         </div>
     </div>
-
 </div>
 <!-- END CARDS SELECTION BY AREAS-->
-
-
-
 <?php
 require("logos.php");
 require("footer.php")

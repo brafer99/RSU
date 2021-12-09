@@ -105,7 +105,8 @@ if (isset($_GET['id'])) {
                                     <div class="ht__pro__details__content" style="margin-top: -30px;">
                                         <!-- Start Single Content -->
                                         <div role="tabpanel" id="description" class="pro__single__content tab-pane fade in active">
-                                            <div class="pro__tab__content__inner" style="font-size: 20px;">
+                                            <div class="pro__tab__content__inner" style="font-size: 18px;   text-align: justify;
+  text-justify: inter-word; padding: 10px">
                                                 <?php echo $get_publicacion['0']['descripcion'] ?>
                                             </div>
                                         </div>

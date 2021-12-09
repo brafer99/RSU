@@ -83,7 +83,7 @@ html {
     }
 }
 body {
-    font-family: 'Old Standard TT', serif;
+    font-family: Poppins;
     color: #666666;
     font-weight: 400;
     font-size: 14px;
@@ -92,7 +92,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 p{
-    font-family: 'Old Standard TT', serif;
+    font-family: Poppins;
     color: #666666;
     font-weight: 400;
     font-size: 16px;

@@ -244,7 +244,7 @@
 }
 .fr__product__inner h4 a {
     color: #444;
-    font-family: Old Standard TT;
+    font-family: Poppins;
     font-size: 17px;
     font-weight: 600;
     text-transform: capitalize;
@@ -1883,7 +1883,7 @@ select.ht__select {
 .sin__desc p span {
     color: #100d13;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: capitalize;
 }
 .pro__color {
@@ -3567,5 +3567,7 @@ ul.htc__instagram__posts.owl-carousel li img {
     outline: none;
 }
 
-
+center a button{
+    font-family: Poppins;
+}
 
