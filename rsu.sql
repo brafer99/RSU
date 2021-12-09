@@ -917,13 +917,13 @@ CREATE TABLE `drsu_autoridad` (
 --
 
 INSERT INTO `drsu_autoridad` (`sql_autoridad_id`, `sql_autoridad_nombre`, `sql_autoridad_email`, `sql_autoridad_imagen`, `sql_autoridad_area_id`) VALUES
-(1, 'Dra. Elizabeth Luisa Medina Soto', 'emedinas@unjbg.edu.pe', '1638041006_1.jpg', 1),
-(2, 'Dra. Karimen Jetsabel Mutter Cuellar', 'kmutterc@unjbg.edu.pe', '1637366227_team-2.jpg', 2),
-(3, 'Mgr. Gina Maribel Valle Castro', 'gvallec@unjbg.edu.pe', '1637366246_team-2.jpg', 3),
+(1, 'Dra. Elizabeth Luisa Medina Soto', 'emedinas@unjbg.edu.pe', '1638452120_user9.jpg', 1),
+(2, 'Dra. Karimen Jetsabel Mutter Cuellar', 'kmutterc@unjbg.edu.pe', '1638452126_user9.jpg', 2),
+(3, 'Mgr. Gina Maribel Valle Castro', 'gvallec@unjbg.edu.pe', '1638452131_user9.jpg', 3),
 (4, 'Mgr. Edgardo Javier Berrios Quina', 'eberriosq@unjbg.edu.pe', '1637634119_berrios.jpg', 4),
-(5, 'Mgr. Milton Saúl Flor Rodriguez', 'mflorr@unjbg.edu.pe', '1638040546_images.jpg', 5),
+(5, 'Mgr. Milton Saúl Flor Rodriguez', 'mflorr@unjbg.edu.pe', '1638452139_user9.jpg', 5),
 (6, 'SAP. Carmen Noemí Ríos Adrianzen', 'criosa@unjbg.edu.pe', '1637634195_carmenrios.jpg', 6),
-(7, 'Lic. Sandra Monasterio Pazos', 'smonasteriop@unjbg.edu.pe', '1637634206_team-4.jpg', 7);
+(7, 'Lic. Sandra Monasterio Pazos', 'smonasteriop@unjbg.edu.pe', '1638452148_user9.jpg', 7);
 
 -- --------------------------------------------------------
 
@@ -1017,7 +1017,8 @@ CREATE TABLE `drsu_noticia` (
 INSERT INTO `drsu_noticia` (`sql_noticia_id`, `sql_noticia_titulo`, `sql_noticia_imagen`, `sql_noticia_descripcion`, `sql_noticia_fecha`, `sql_noticia_hora`, `sql_noticia_enlace`, `sql_noticia_lugar`, `sql_noticia_area_id`, `sql_noticia_estado_id`) VALUES
 (1, 'Estado Situacional del Covid en la region Tacna y vacunación', '1636913727_noticia1.jpg', NULL, '03 de Septiembre de 2021', '19:00 horas', 'https://www.google.com/', NULL, 2, 2),
 (2, 'La voz Basadrina', '1636918900_noticia2.jpg', NULL, '20 de Agosto de 2020', '12:00 horas', 'https://www.youtube.com/', NULL, 2, 1),
-(3, 'XX Juegos Florales Basadrinos 2021', '1636918983_noticia3.png', '', '07 y 08 de Octubre de 2020', '15:00 horas', 'https://www.google.com/', '', 3, 1);
+(3, 'XX Juegos Florales Basadrinos 2021', '1636918983_noticia3.png', '', '07 y 08 de Octubre de 2020', '15:00 horas', 'https://www.google.com/', '', 1, 1),
+(4, 'Capacitación a las escuelas: \"Documentación DRSU\"', '1638453028_logo_oficial.jpg', '', '', '', '', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1056,7 +1057,8 @@ CREATE TABLE `drsu_usuario` (
 --
 
 INSERT INTO `drsu_usuario` (`sql_usuario_id`, `sql_usuario_email`, `sql_usuario_pass`, `sql_usuario_rol_id`) VALUES
-(1, 'sistema@gmail.com', '$2y$10$v/H7d2MBvoYeJHvbcW3IDOAk4BisOg763c6m9wST0X11.V0mXaJuO', 1);
+(1, 'modulodrsumaster@gmail.com', '$2y$10$R94xC.M/RM76/n5QBmI2w.2AMS9Z.RCTmhFS.oF1tU6DsqfHxduEK', 1),
+(2, 'drsu@unjbg.edu.pe', '$2y$10$VOo2wYbbVdv6UUJ/AF43j.3TOgBaZviO9oNGG1OoYm/CL846O/xYO', 1);
 
 --
 -- Índices para tablas volcadas
@@ -1319,13 +1321,11 @@ ALTER TABLE `drsu_categoria`
 --
 ALTER TABLE `drsu_estado`
   MODIFY `sql_estado_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `drsu_nosotros`
 --
 ALTER TABLE `drsu_nosotros`
   MODIFY `sql_nosotros_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT de la tabla `drsu_noticia`
 --
@@ -1343,7 +1343,6 @@ ALTER TABLE `drsu_rol`
 --
 ALTER TABLE `drsu_usuario`
   MODIFY `sql_usuario_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- Restricciones para tablas volcadas
 --
@@ -1353,6 +1352,7 @@ ALTER TABLE `drsu_usuario`
 --
 ALTER TABLE `drsu_autoridad`
   ADD CONSTRAINT `drsu_autoridad_ibfk_1` FOREIGN KEY (`sql_autoridad_area_id`) REFERENCES `drsu_area` (`sql_area_id`) ON UPDATE CASCADE;
+
 
 --
 -- Filtros para la tabla `drsu_nosotros`

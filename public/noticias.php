@@ -65,15 +65,12 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="col-lg-6 col-md-6 portfolio-item filter-web">
                 <br/>
-
                         <h2><?php echo $noticia['sql_noticia_titulo']?></h2>
                         <br/>
                         <p>
                         <b><?php echo $noticia['sql_area_nombre']; ?></b> </br></br> 
 
                          <b>Estado de Evento: </b> <?php echo $noticia['sql_estado_nombre']; ?> </br> 
-
-
                        <?php if($noticia['sql_noticia_fecha']!=""){ ?>
                        <b>Fecha: </b> <?php echo $noticia['sql_noticia_fecha']; ?> </br>
                        <?php }?>
@@ -81,9 +78,6 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                         <?php if($noticia['sql_noticia_hora']!=""){ ?>
                      <b>Hora: </b> <?php echo $noticia['sql_noticia_hora']; ?> </br>
                        <?php }?>
-
-                        
-                       
                         <?php if($noticia['sql_noticia_enlace']!="") {?>
                         <b>Enlace de transmisión: </b> <a href="
                         <?php 
@@ -99,11 +93,9 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                             
                         ?>" target="_blank"">Click aquí</a> </br> 
                         <?php }?>
-                       
                        <?php if($noticia['sql_noticia_descripcion']!=""){ ?>
                        <b>Descripcion Adicional: </b> <?php echo $noticia['sql_noticia_descripcion']; ?> </br> 
                        <?php }?>
-                        
                        <?php if($noticia['sql_noticia_lugar']!="") {?>    
                        <b>Lugar: </b> <?php echo $noticia['sql_noticia_lugar']; ?> </br> 
                         <?php }?>
@@ -112,8 +104,6 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                         <!--<img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">-->
                     </div>
                 </div>
-                
-
             <?php } ?>
             <!-- FIN CODIGO PHP-->
             </div>

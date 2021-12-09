@@ -32,6 +32,6 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
         $sentencia_sql->execute();
         //echo "Presionado Boton Borrar";
         //header("Location:productos.php");
-        header("Location:noticia.php");
+        echo "<script>location.href='noticia.php';</script>";
     }
 ?>

@@ -1,5 +1,4 @@
-<?php require('../drsu_template/header.php');?>
-
+<?php require('../drsu_template/header.php');?> 
 <?php 
 $sentencia_sql= $conexion->prepare("SELECT 
     drsu_noticia.sql_noticia_id, 
@@ -29,6 +28,11 @@ $sentencia_sql_3= $conexion->prepare("SELECT * FROM drsu_estado");
 $sentencia_sql_3->execute();
 $lista_estados=$sentencia_sql_3->fetchAll(PDO::FETCH_ASSOC);  
 ?>
+    
+
+
+
+
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
@@ -51,7 +55,7 @@ $lista_estados=$sentencia_sql_3->fetchAll(PDO::FETCH_ASSOC);
                                 <br/>
                                 
                                 <div class="table-responsive">
-                                <table class="table  table-hover ">
+                                <table class="table  table-hover" id="example">
                                     <thead class="thead-light " >
                                         <tr>
                                             <th>Imagen</th>
@@ -70,7 +74,7 @@ $lista_estados=$sentencia_sql_3->fetchAll(PDO::FETCH_ASSOC);
                                         <td><h6><?php echo "<br/>".$noti['sql_area_sigla']?></h6></td>
                                         <td><h6><?php echo "<br/>".$noti['sql_estado_nombre']?></h6></td>
                                     <td>
-                                        <br/>
+                                       
                                         <form action="selec.php" method="post">
                                             <div class="cambio_boton">
                                             <input type="hidden" name="noticia_id" id="noticia_id" value="<?php echo $noti['sql_noticia_id'] ?>"/>
@@ -81,7 +85,7 @@ $lista_estados=$sentencia_sql_3->fetchAll(PDO::FETCH_ASSOC);
                                           <form action="eliminar.php" method="post">
                                             <div class="cambio_boton">
                                             <input type="hidden" name="noticia_id" id="noticia_id" value="<?php echo $noti['sql_noticia_id'] ?>"/>
-                                            <input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>                                                
+                                            <input type="submit" name="accion" value="Borrar" class="btn btn-danger" onclick="return ConfirmDelete()"/>                                                
                                             </div>
                                         </form>                                                                                                               
                                     </td>
@@ -102,4 +106,65 @@ $lista_estados=$sentencia_sql_3->fetchAll(PDO::FETCH_ASSOC);
     </section><!-- End Contact Section -->
 <?php
 require('../drsu_template/footer.php');
+?>
+<script>
+    $(document).ready( function () {
+$('#example').DataTable({
+    ordering: false,
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
+
+                "language": {
+
+                        "sProcessing": "Procesando ...",
+    "sLengthMenu": "Mostrar _MENU_ registros",
+    "sZeroRecords": "No se encontraron resultados",
+    "sEmptyTable": "Ningún dato disponible en esta tabla",
+    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+    "sInfoPostFix": "",
+    "sSearch": "Buscar:",
+    "sUrl": "",
+    "sInfoThousands": ",",
+    "sLoadingRecords": "Cargando ...",
+    "oPaginate": {
+        "sFirst": "Primero",
+        "sLast": "Último",
+        "sNext": "Siguiente",
+        "sPrevious": "Anterior"
+    },
+    "oAria": {
+        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+    },
+    "botones": {
+        "copiar": "Copiar",
+        "colvis": "Visibilidad"
+    }
+                    
+        }
+    });
+} );
+
+</script>
+<script>
+    function ConfirmDelete(){
+        var respuesta = confirm("¿Seguro que deseas ELIMINAR?");
+        if(respuesta==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+<?php
+    if(isset($_GET['action'])){
+    if($_GET['action']=="modificar"){
+        echo "<script>alert('Se guardaron los datos!');</script>";
+        echo "<script>location.href='noticia.php';</script>";
+    }
+    if($_GET['action']=="agregar"){
+        echo "<script>alert('Se Agregó nueva noticia!');</script>"; 
+        echo "<script>location.href='noticia.php';</script>";
+    }}
 ?>

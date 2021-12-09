@@ -2,7 +2,7 @@
 <?php
     if (isset($_SESSION['valida_usuario']) && $_SESSION['valida_usuario']!=''){
     }else{
-        header('Location:../index.php');
+        echo "<script>location.href='../index.php';</script>";
     }
 ?>
 
@@ -34,9 +34,10 @@
     <link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/datatables.css" rel="stylesheet">
+    
     <!-- Template Main CSS File -->
     <link href="../../assets/css/style.css" rel="stylesheet">
     <!--UTILIZAR ESTE CSS PARA DAR ESTILOS PERSONALIZADOS-->
@@ -45,13 +46,12 @@
 
   ======================================================== -->
 </head>
-
 <body>
 
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center">
-            <h1 class="logo me-auto"><a href="../../public/index.php"><img src="../../assets/img/rrsu.png" alt="logo">  DRSU</a></h1>
+            <h1 class="logo me-auto"><a href="../../index.php"><img src="../../assets/img/rrsu.png" alt="logo">  DRSU</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
             <nav id="navbar" class="navbar order-last order-lg-0">
