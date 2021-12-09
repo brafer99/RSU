@@ -50,7 +50,8 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
         $sentencia_sql->bindParam(':param_noticia_estado_id',$var_noticia_estado_id);
 
         $sentencia_sql->execute();
-        header("Location:noticia.php");
+        $var="agregar";
+        echo "<script>location.href='noticia.php?action=".$var."';</script>";
     }
     $sentencia_sql_2= $conexion->prepare("SELECT * FROM drsu_area WHERE sql_area_jefatura=1");
     $sentencia_sql_2->execute();

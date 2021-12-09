@@ -68,7 +68,8 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             $sentencia_sql->execute();
         }
         //fin modificacion imagen
-
-        header("Location:noticia.php");  
+        $var="modificar";
+        echo "<script>location.href='noticia.php?action=".$var."';</script>";
+  
     }
 ?>

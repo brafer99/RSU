@@ -55,8 +55,7 @@ switch($var_accion){
         $sentencia_sql->bindParam(':param_usuario_rol_id',$var_usuario_rol_id);
         $sentencia_sql->execute();
 
-
-        header("Location:usuario.php");
+        echo "<script>location.href='usuario.php';</script>";
         }
 
         break;
@@ -80,7 +79,7 @@ switch($var_accion){
         $sentencia_sql->bindParam(':param_usuario_pass',$contra_hash);
         $sentencia_sql->bindParam(':param_usuario_rol_id',$var_usuario_rol_id);
         $sentencia_sql->execute();
-        header("Location:usuario.php");   
+        echo "<script>location.href='usuario.php';</script>";   
         break;
 
 
@@ -105,7 +104,7 @@ switch($var_accion){
         $sentencia_sql->execute();
         //echo "Presionado Boton Borrar";
         //header("Location:productos.php");
-        header("Location:usuario.php");
+        echo "<script>location.href='usuario.php';</script>";
         } 
         break;
 
@@ -141,7 +140,7 @@ switch($var_accion){
         
         break;
     case "Cancelar":
-         header("Location:usuario.php");
+        echo "<script>location.href='usuario.php';</script>";
 
 
 }
@@ -155,7 +154,8 @@ $sentencia_sql= $conexion->prepare("SELECT
 
     FROM drsu_usuario 
     JOIN drsu_rol ON drsu_usuario.sql_usuario_rol_id=drsu_rol.sql_rol_id 
-    ORDER BY drsu_usuario.sql_usuario_id ASC;");
+    where drsu_usuario.sql_usuario_email<>'modulodrsumaster@gmail.com'
+    ORDER BY drsu_usuario.sql_usuario_id asc;");
 
     $sentencia_sql->execute();
     $lista_usuarios=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
@@ -177,7 +177,16 @@ if(isset($var_usuario_rol_id_2)){
 }
 
 ?>
-
+<script type="text/javascript">
+    function ConfirmDelete(){
+        var respuesta = confirm("¿Seguro que deseas ELIMINAR?");
+        if(respuesta==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
 
 <section id="contact" class="contact ">
 <div class="container">
@@ -188,9 +197,7 @@ if(isset($var_usuario_rol_id_2)){
     <h2>Adiministrar Usuarios</h2>
     
 </div>
-
 <div class="row">
-
     <div class="col-lg-5">
         <div class="row">
             <div class="col-md-12">
@@ -231,7 +238,8 @@ if(isset($var_usuario_rol_id_2)){
                                 <button class="btn btn-primary btn-sm" type="submit" id="boton" value="cambio_contra" name="cambio_contra">Cambiar Contraseña</button>                          
                                 <div class="juntar">
                                 <input hidden required class="form-control" value="<?php echo $var_usuario_pass; ?>" type="password" name="usuario_pass" id="contraseña2" placeholder="Nueva contraseña">
-                                <span class="boton_ver"><button hidden class="btn btn-primary" type="button" id="boton2">ver</button></span>  
+                                <span class="boton_ver"><button hidden class="btn btn-primary" type="button" id="boton2">ver</button></span> 
+                            
                                 </div>
                             </div>
                             <script type="text/javascript">
@@ -256,15 +264,26 @@ if(isset($var_usuario_rol_id_2)){
                         
                     </div>
                     <?php } if (($var_usuario_email=="" && $validacion_2==true) ||($var_usuario_email!="" && $validacion_2==false)) {  ?>
-
                     <div class = "form-group">
                         <label for="usuario_pass"><b>Contraseña:</b></label>
+                        <div class="juntar">
                         <input required class="form-control" value="<?php echo $var_usuario_pass; ?>" type="password" name="usuario_pass" id="contraseña" placeholder="Contraseña">
+                        <span class="boton_ver"><button class="btn btn-primary" type="button" id="boton3">ver</button></span> 
+                            <script type="text/javascript">
+                                var ver = document.getElementById('boton3');
+                                ver.addEventListener('click',mostrarContraseña);
+                                function mostrarContraseña(){
+                                    if(document.getElementById("contraseña").type == "password"){
+                                        document.getElementById("contraseña").type = "text";
+                                    }else{
+                                        document.getElementById("contraseña").type = "password";
+                                    }
+                                }
+                            </script> 
+                        </div>
                     </div>
                     <?php } ?>
-
                      <br/>
-
                      <!-- Lista con areas: -->
                     <div class = "form-group">
                         <label for="roles"><b>Asignar rol:</b></label>
@@ -339,7 +358,7 @@ if(isset($var_usuario_rol_id_2)){
                     <form method="post">
                         <input type="hidden" name="usuario_id" id="usuario_id" value="<?php echo $usu['sql_usuario_id'] ?>"/>   
                         <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>
-                        <input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>
+                        <input type="submit" name="accion" value="Borrar" class="btn btn-danger" onclick="return ConfirmDelete()"/>
 
                     </form>
                     </td>

@@ -48,10 +48,10 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             $sentencia_sql->bindParam(':param_autoridad_imagen',$nombre_archivo);
             $sentencia_sql->bindParam(':param_autoridad_id',$var_autoridad_id);
             $sentencia_sql->execute();
-            
-        }
-        header("Location:autoridad.php");    
 
+        }
+        $var="modificar";
+        echo "<script>location.href='autoridad.php?action=".$var."';</script>";   
     }
         
 ?>

@@ -75,3 +75,12 @@ $lista_areas=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
 <?php
 require('../drsu_template/footer.php');
 ?>
+<?php
+    if(isset($_GET['action'])){
+    if($_GET['action']=="modificar"){
+        echo "<script>alert('Se guardaron los datos!');</script>"; 
+        $_GET['action']="";
+        echo "<script>location.href='autoridad.php';</script>";
+    }
+    }
+?>

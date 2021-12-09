@@ -416,7 +416,8 @@ INSERT INTO drsu_categoria(sql_categoria_nombre) VALUES
     ('REGLAMENTO');
 
 INSERT INTO drsu_usuario(sql_usuario_email,sql_usuario_pass,sql_usuario_rol_id) VALUES
-    ('sistema@gmail.com','$2y$10$NY0eD.NBCsMzTKvRi3xTpOnk8kWrh4STjUhl6DzoVtUnJS1uoAHDS',1);
+('modulodrsumaster@gmail.com', '$2y$10$R94xC.M/RM76/n5QBmI2w.2AMS9Z.RCTmhFS.oF1tU6DsqfHxduEK', 1),
+('drsu@unjbg.edu.pe', '$2y$10$VOo2wYbbVdv6UUJ/AF43j.3TOgBaZviO9oNGG1OoYm/CL846O/xYO', 1);
 
 
 INSERT INTO drsu_area(sql_area_nombre,sql_area_sigla,sql_area_jefatura) VALUES

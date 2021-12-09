@@ -78,6 +78,7 @@ if($var_accion=="Modificar"){
             $sentencia_sql->execute();  
         }  
 }      
-        header("Location:nosotros.php");    
+        $var="modificar";
+        echo "<script>location.href='nosotros.php?action=".$var."';</script>";   
 
 ?>
