@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
 									$res = mysqli_query($con, "select id,e_nombre,e_siglas from avo_escuela order by e_nombre asc");
 									while ($row = mysqli_fetch_assoc($res)) {
 										if ($row['id'] == $id_escuela) {
-											echo "<option selected value=" . $row['id'] . ">" . $row['e_nombre'] . "</option>";
+											echo "<option selected value=" . $row['id'] . ">" . "[" . $row['e_siglas'] . "] ". $row['e_nombre'] . "</option>";
 										} else {
 											echo "<option value=" . $row['id'] . ">" . "[" . $row['e_siglas'] . "] " . $row['e_nombre'] . "</option>";
 										}
