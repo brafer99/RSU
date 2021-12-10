@@ -1,0 +1,2 @@
+#Bloqueo de carpetas sin index
+Options All -Indexes

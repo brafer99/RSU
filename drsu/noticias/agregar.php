@@ -39,7 +39,7 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
         $fecha=new DateTime();
         $nombre_archivo=($var_noticia_imagen!="") ? $fecha->getTimestamp()."_".$_FILES["noticia_imagen"]['name'] :"imagen.jpg";
         $temporal_imagen = $_FILES["noticia_imagen"]["tmp_name"];
-        if($temporal_imagen!=""){move_uploaded_file($temporal_imagen,"../../assets/img/noticias/".$nombre_archivo);}
+        if($temporal_imagen!=""){move_uploaded_file($temporal_imagen,"../assets/img/noticias/".$nombre_archivo);}
         $sentencia_sql->bindParam(':param_noticia_imagen',$nombre_archivo);
         $sentencia_sql->bindParam(':param_noticia_fecha',$var_noticia_fecha);
         $sentencia_sql->bindParam(':param_noticia_hora',$var_noticia_hora);

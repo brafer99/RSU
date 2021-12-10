@@ -47,7 +47,7 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             $fecha=new DateTime();
             $nombre_archivo=($var_noticia_imagen!="") ? $fecha->getTimestamp()."_".$_FILES["noticia_imagen"]['name'] :"imagen.jpg";           
             $temporal_imagen = $_FILES["noticia_imagen"]["tmp_name"];
-            move_uploaded_file($temporal_imagen,"../../assets/img/noticias/".$nombre_archivo); 
+            move_uploaded_file($temporal_imagen,"../assets/img/noticias/".$nombre_archivo); 
             
             //ahora eliminamos el FILE (similar a DELETE)
             $sentencia_sql = $conexion->prepare("SELECT sql_noticia_imagen FROM drsu_noticia WHERE sql_noticia_id=:param_noticia_id;");
@@ -56,8 +56,8 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             $noticia = $sentencia_sql->fetch(PDO::FETCH_LAZY);
 
             if(isset($noticia["sql_noticia_imagen"]) && ($noticia["sql_noticia_imagen"]!="imagen.jpg")){
-                if(file_exists("../../assets/img/noticias/".$noticia["sql_noticia_imagen"])){
-                    unlink("../../assets/img/noticias/".$noticia["sql_noticia_imagen"]);
+                if(file_exists("../assets/img/noticias/".$noticia["sql_noticia_imagen"])){
+                    unlink("../assets/img/noticias/".$noticia["sql_noticia_imagen"]);
                 }
             }        
             //ACTUALIZAMOS LOS NUEVOS PARAMETROS
