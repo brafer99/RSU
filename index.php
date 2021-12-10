@@ -79,7 +79,7 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="public/areas.php" class="get-started-btn scrollto">Iniciar Sesión</a>
+            <a href="public/areas.php" class="get-started-btn scrollto">DRSU</a>
         </div>
     </header><!-- End Header -->
     </br></br>
