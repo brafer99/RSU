@@ -33,7 +33,7 @@
                                 <div class = "form-group">
                                     <label for="autoridad_imagen"><b>3. Imagen:</b></label><br/> 
                                     <?php if($var_autoridad_imagen!=""){ ?>
-                                        <img class="img-thumbnail rounded" src="../../assets/img/autoridades/<?php echo $var_autoridad_imagen;?>" width="200" alt="">    
+                                        <img class="img-thumbnail rounded" src="../assets/img/autoridades/<?php echo $var_autoridad_imagen;?>" width="200" alt="">    
                                     <?php } ?><br/><br/>
                                     <input type="file" class="form-control" name="autoridad_imagen" id="autoridad_imagen" placeholder="ID">
                                 </div>

@@ -36,7 +36,7 @@ $lista_autoridades=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
-                            <img src="../assets/img/autoridades/<?php echo $auto['sql_autoridad_imagen'] ?>" class="img-fluid img-thumbnail" alt="">
+                            <img src="../drsu/assets/img/autoridades/<?php echo $auto['sql_autoridad_imagen'] ?>" class="img-fluid img-thumbnail" alt="">
                         
                             
                           <div class="social">

@@ -68,7 +68,7 @@ $lista_estados=$sentencia_sql_3->fetchAll(PDO::FETCH_ASSOC);
                                     <tbody>
                                     <?php foreach($lista_noticias as $noti) { ?>
                                     <tr>
-                                        <td><img class="img-thumbnail rounded" src="../../assets/img/noticias/<?php echo $noti['sql_noticia_imagen'];?>" width="150px" alt=""></td>
+                                        <td><img class="img-thumbnail rounded" src="../assets/img/noticias/<?php echo $noti['sql_noticia_imagen'];?>" width="150px" alt=""></td>
                                         <td><h5><?php echo "<br/>".$noti['sql_noticia_titulo']?></h5></td>
 
                                         <td><h6><?php echo "<br/>".$noti['sql_area_sigla']?></h6></td>

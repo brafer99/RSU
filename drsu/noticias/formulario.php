@@ -57,7 +57,7 @@
                                 <div class ="form-group">
                                     <label for="noticia_imagen"><b>4. Imagen:</b></label><br/>    
                                     <?php if($var_noticia_imagen!=""){ ?>
-                                        <img class="img-thumbnail rounded" src="../../assets/img/noticias/<?php echo $var_noticia_imagen;?>" width="150" alt="">    
+                                        <img class="img-thumbnail rounded" src="../assets/img/noticias/<?php echo $var_noticia_imagen;?>" width="150" alt="">    
                                     <?php } ?><br/>                                  
                                     <input type="file" class="form-control" name="noticia_imagen" id="noticia_imagen" placeholder="ID">
                                 </div>
