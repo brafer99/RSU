@@ -5,7 +5,7 @@ session_start();
 //AQUÍ CAMBIAR DATOS DE SERVIDOR////
 
 $host="localhost";
-$base_datos="rsu";
+$base_datos="drsu";
 $usuario="root";
 $contrasenia="";
 
