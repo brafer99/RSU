@@ -47,10 +47,9 @@
                         <h2 class="title__line--2">Oficinas de DRSU</h2>
                         <div class="ft__inner">
                             <ul class="ft__list">
-                                <li><a href="#">AVO</a></li>
-                                <li><a href="#">AES</a></li>
-                                <li><a href="#">ACI</a></li>
-                                <li><a href="#">AEP</a></li>
+                                <li><a href="http://drsu.unjbg.edu.pe/">DRSU</a></li>
+                                <li><a href="http://drsu.unjbg.edu.pe/avo/">AVO</a></li>
+                                <li><a href="http://drsu.unjbg.edu.pe/aep/">AEP</a></li>
                             </ul>
                         </div>
                     </div>
