@@ -53,7 +53,7 @@
                                 <div class = "form-group">
                                     <label for="nosotros_imagen"><b>4. Imagen:</b> </label><br/> 
                                     <?php if($var_nosotros_imagen!=""){ ?>
-                                        <img class="img-thumbnail rounded" src="../../assets/img/nosotros/<?php echo $var_nosotros_imagen;?>" width="200" alt="">    
+                                        <img class="img-thumbnail rounded" src="../assets/img/nosotros/<?php echo $var_nosotros_imagen;?>" width="200" alt="">    
                                     <?php } ?><br/><br/>
                                     <input type="file" class="form-control" name="nosotros_imagen" id="nosotros_imagen" placeholder="ID">
                                 </div><br/>  

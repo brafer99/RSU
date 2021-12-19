@@ -79,7 +79,7 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="public/areas.php" class="get-started-btn scrollto">Iniciar Sesión</a>
+            <a href="public/areas.php" class="get-started-btn scrollto">DRSU</a>
         </div>
     </header><!-- End Header -->
     </br></br>
@@ -114,12 +114,6 @@
                 </div>
                 <div class="swiper-slide"><a href="http://coel.unjbg.edu.pe/"><img src="assets/img/oficinaslogo/oficina05.png" class="img-fluid" alt="COEL"></a>
                 </div>                       
-                <div class="swiper-slide"><a href="/avo/index.php"><img src="assets/img/oficinaslogo/oficina06.png" class="img-fluid" alt="AVO"></a>
-                </div>
-                <div class="swiper-slide"><a href="/aci/index.php"><img src="assets/img/oficinaslogo/oficina07.png" class="img-fluid" alt="ACI"></a>
-                </div>
-                <div class="swiper-slide"><a href="/aes/index.php"><img src="assets/img/oficinaslogo/oficina08.png" class="img-fluid" alt="OTRAOFICINA"></a>
-                </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>

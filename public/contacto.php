@@ -32,7 +32,7 @@ require_once("header.php");
                             <div class="info-box mt-4">
                                 <i class="bx bx-phone-call"></i>
                                 <h3>Teléfono</h3>
-                                <p>(052) 544563</p>
+                                <p>052-583000</p>
                             </div>
                         </div>
                     </div>

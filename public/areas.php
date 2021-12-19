@@ -40,9 +40,6 @@
     </div>
 </div>
 <!-- END CARDS SELECTION BY AREAS-->
-
-
-
 <?php
 require("logos.php");
 require("footer.php")

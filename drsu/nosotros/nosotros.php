@@ -1,6 +1,5 @@
 <?php require('../drsu_template/header.php');?>
 <?php 
-
 $sentencia_sql= $conexion->prepare("SELECT 
     drsu_nosotros.sql_nosotros_id,
     drsu_nosotros.sql_nosotros_titulo, 
@@ -78,4 +77,13 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
 
 <?php
 require('../drsu_template/footer.php');
+?>
+<?php
+    if(isset($_GET['action'])){
+    if($_GET['action']=="modificar"){
+        echo "<script>alert('Se guardaron los datos!');</script>"; 
+        $_GET['action']="";
+        echo "<script>location.href='nosotros.php';</script>";
+    }
+    }
 ?>

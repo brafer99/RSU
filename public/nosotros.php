@@ -93,7 +93,7 @@ $lista_reglamento=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                             </br>
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                            <img src="../assets/img/nosotros/<?php echo $presentacion['sql_nosotros_imagen'] ?>" alt="" class="img-fluid">
+                            <img src="../drsu/assets/img/nosotros/<?php echo $presentacion['sql_nosotros_imagen'] ?>" alt="" class="img-fluid">
                         </div>
                         <?php  } ?>
                     </div>
@@ -108,7 +108,7 @@ $lista_reglamento=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                             </br>
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                            <img src="../assets/img/nosotros/<?php echo $mision['sql_nosotros_imagen'] ?>" alt="" class="img-fluid">
+                            <img src="../drsu/assets/img/nosotros/<?php echo $mision['sql_nosotros_imagen'] ?>" alt="" class="img-fluid">
                         </div>
                         <?php  } ?>
                     </div>
@@ -123,7 +123,7 @@ $lista_reglamento=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                             </br>
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                            <img src="../assets/img/nosotros/<?php echo $vision['sql_nosotros_imagen'] ?>" alt="" class="img-fluid">
+                            <img src="../drsu/assets/img/nosotros/<?php echo $vision['sql_nosotros_imagen'] ?>" alt="" class="img-fluid">
                         </div>
                         <?php  } ?>
                     </div>
@@ -138,7 +138,7 @@ $lista_reglamento=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                             </br>
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                            <img src="../assets/img/nosotros/<?php echo $reglamento['sql_nosotros_imagen'] ?>" alt="" class="img-fluid">
+                            <img src="../drsu/assets/img/nosotros/<?php echo $reglamento['sql_nosotros_imagen'] ?>" alt="" class="img-fluid">
                         </div>
                         <?php  } ?>
                     </div>

@@ -30,7 +30,7 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             $fecha=new DateTime();
             $nombre_archivo=($var_autoridad_imagen!="") ? $fecha->getTimestamp()."_".$_FILES["autoridad_imagen"]['name'] :"imagen.jpg";           
             $temporal_imagen = $_FILES["autoridad_imagen"]["tmp_name"];
-            move_uploaded_file($temporal_imagen,"../../assets/img/autoridades/".$nombre_archivo); 
+            move_uploaded_file($temporal_imagen,"../assets/img/autoridades/".$nombre_archivo); 
             
             //ahora eliminamos el FILE (similar a DELETE)
             $sentencia_sql = $conexion->prepare("SELECT sql_autoridad_imagen FROM drsu_autoridad WHERE sql_autoridad_id=:param_autoridad_id;");
@@ -39,8 +39,8 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             $autoridad = $sentencia_sql->fetch(PDO::FETCH_LAZY);
 
             if(isset($autoridad["sql_autoridad_imagen"]) && ($autoridad["sql_autoridad_imagen"]!="imagen.jpg")){
-                if(file_exists("../../assets/img/autoridades/".$autoridad["sql_autoridad_imagen"])){
-                    unlink("../../assets/img/autoridades/".$autoridad["sql_autoridad_imagen"]);
+                if(file_exists("../assets/img/autoridades/".$autoridad["sql_autoridad_imagen"])){
+                    unlink("../assets/img/autoridades/".$autoridad["sql_autoridad_imagen"]);
                 }
             }        
             $sentencia_sql = $conexion->prepare("UPDATE drsu_autoridad SET sql_autoridad_imagen=:param_autoridad_imagen  WHERE sql_autoridad_id=:param_autoridad_id;");
@@ -48,10 +48,10 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             $sentencia_sql->bindParam(':param_autoridad_imagen',$nombre_archivo);
             $sentencia_sql->bindParam(':param_autoridad_id',$var_autoridad_id);
             $sentencia_sql->execute();
-            
-        }
-        header("Location:autoridad.php");    
 
+        }
+        $var="modificar";
+        echo "<script>location.href='autoridad.php?action=".$var."';</script>";   
     }
         
 ?>

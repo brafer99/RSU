@@ -27,7 +27,7 @@ if($var_accion=="Modificar"){
             $fecha=new DateTime();
             $nombre_archivo=($var_nosotros_imagen!="") ? $fecha->getTimestamp()."_".$_FILES["nosotros_imagen"]['name'] :"imagen.jpg";           
             $temporal_imagen = $_FILES["nosotros_imagen"]["tmp_name"];
-            move_uploaded_file($temporal_imagen,"../../assets/img/nosotros/".$nombre_archivo); 
+            move_uploaded_file($temporal_imagen,"../assets/img/nosotros/".$nombre_archivo); 
             
             //ahora eliminamos el FILE (similar a DELETE)
             $sentencia_sql = $conexion->prepare("SELECT sql_nosotros_imagen FROM drsu_nosotros WHERE sql_nosotros_id=:param_nosotros_id;");
@@ -36,8 +36,8 @@ if($var_accion=="Modificar"){
             $nosotros = $sentencia_sql->fetch(PDO::FETCH_LAZY);
 
             if(isset($nosotros["sql_nosotros_imagen"]) && ($nosotros["sql_nosotros_imagen"]!="imagen.jpg")){
-                if(file_exists("../../assets/img/nosotros/".$nosotros["sql_nosotros_imagen"])){
-                    unlink("../../assets/img/nosotros/".$nosotros["sql_nosotros_imagen"]);
+                if(file_exists("../assets/img/nosotros/".$nosotros["sql_nosotros_imagen"])){
+                    unlink("../assets/img/nosotros/".$nosotros["sql_nosotros_imagen"]);
                 }
             }        
 
@@ -78,6 +78,7 @@ if($var_accion=="Modificar"){
             $sentencia_sql->execute();  
         }  
 }      
-        header("Location:nosotros.php");    
+        $var="modificar";
+        echo "<script>location.href='nosotros.php?action=".$var."';</script>";   
 
 ?>

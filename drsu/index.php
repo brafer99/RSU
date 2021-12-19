@@ -1,7 +1,8 @@
 <?php require('../config/db.php');?>
 <?php
   if(isset($_SESSION['valida_usuario']) && $_SESSION['valida_usuario']=="ok"){
-    header('Location:noticias/noticia.php');
+    echo "<script>location.href='noticias/noticia.php';</script>";
+    
   }
   else{ 
 $var_login_id=(isset($_POST['login_id']))?$_POST['login_id']:"";
@@ -31,7 +32,8 @@ if($_POST){
                 $_SESSION['valida_usuario']="ok";
                 $_SESSION['nombre_usuario']=$var_login_email;
                 $_SESSION['rol_usuario']=$usuario_rol;
-                header('Location:noticias/noticia.php');
+                echo "<script>location.href='noticias/noticia.php';</script>";
+                
             } else{
                 $mensaje1="Contraseña Incorrecta";
             }
@@ -99,7 +101,6 @@ if($_POST){
                             </div>                        
                         </div>
                             <script type="text/javascript">
-
                                 var ver = document.getElementById('boton2');
                                 ver.addEventListener('click',mostrarContraseña);
                                 function mostrarContraseña(){
@@ -110,7 +111,6 @@ if($_POST){
                                     }
                                 }
                             </script>                         
-
                         <button type="submit" class="btn btn-primary">Entrar al Administrador</button>
                         </form>
                     </div>
