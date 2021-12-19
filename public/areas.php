@@ -3,7 +3,7 @@
 <div class="boxesContainer">
 
     <div class="cardBox">
-        <div class="card">
+        <div class="card_area">
             <div class="front">
                 <h3>AEP</h3>
                 <p>Área de Extensión y Proyección Cultural</p>
@@ -15,7 +15,7 @@
     </div>
 
     <div class="cardBox">
-        <div class="card">
+        <div class="card_area">
             <!--COLOCAR ID A SU AREA-->
             <div class="front" id="avo">
                 <h3>AVO</h3>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="cardBox">
-        <div class="card">
+        <div class="card_area">
             <div class="front">
                 <h3>DRSU</h3>
                 <p>Dirección Académica de Responsabilidad Social Universitaria</p>

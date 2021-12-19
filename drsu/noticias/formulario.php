@@ -73,7 +73,7 @@
                                     </div>
 
                                     <div class="col form-group">
-                                        <label for="noticia_hora"><b>Fecha:</b>  (opcional)</label>
+                                        <label for="noticia_hora"><b>Hora:</b>  (opcional)</label>
                                         <input type="text" class="form-control" value="<?php echo $var_noticia_hora; ?>" name="noticia_hora" id="noticia_hora"  placeholder="Hora">
                                     </div>
                                 </div>                
