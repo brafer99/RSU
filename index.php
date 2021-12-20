@@ -201,8 +201,7 @@
                             Av. Miraflores S/N  <br>
                             Miraflores 23000<br>
                             Tacna, Perú <br><br>
-                            <strong>Teléfono:</strong> (052) 544563<br>
-                            <strong>Email:</strong> drsu@unjbg.edu.pe<br>
+                            <strong>Teléfono:</strong> (052) - 583000<br>
                         </p>
                     </div>
 

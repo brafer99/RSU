@@ -6,6 +6,7 @@ $var_noticia_imagen = (isset($_FILES['noticia_imagen']['name'])) ? $_FILES['noti
 $var_noticia_fecha = (isset($_POST['noticia_fecha']))?$_POST['noticia_fecha']:"";
 $var_noticia_hora = (isset($_POST['noticia_hora']))?$_POST['noticia_hora']:"";
 $var_noticia_enlace = (isset($_POST['noticia_enlace']))?$_POST['noticia_enlace']:"";
+$var_noticia_graba = (isset($_POST['noticia_graba']))?$_POST['noticia_graba']:"";
 $var_noticia_lugar = (isset($_POST['noticia_lugar']))?$_POST['noticia_lugar']:"";
 $var_noticia_descripcion = (isset($_POST['noticia_descripcion']))?$_POST['noticia_descripcion']:"";
 $var_noticia_area_id = (isset($_POST['noticia_area_id']))?$_POST['noticia_area_id']:"";
@@ -20,6 +21,7 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             sql_noticia_fecha,
             sql_noticia_hora,
             sql_noticia_enlace,
+            sql_noticia_graba,
             sql_noticia_descripcion,
             sql_noticia_lugar,
             sql_noticia_area_id,
@@ -30,6 +32,7 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
             :param_noticia_fecha,
             :param_noticia_hora,
             :param_noticia_enlace,
+            :param_noticia_graba,
             :param_noticia_descripcion,
             :param_noticia_lugar,
             :param_noticia_area_id,
@@ -44,6 +47,7 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
         $sentencia_sql->bindParam(':param_noticia_fecha',$var_noticia_fecha);
         $sentencia_sql->bindParam(':param_noticia_hora',$var_noticia_hora);
         $sentencia_sql->bindParam(':param_noticia_enlace',$var_noticia_enlace);
+        $sentencia_sql->bindParam(':param_noticia_graba',$var_noticia_graba);
         $sentencia_sql->bindParam(':param_noticia_descripcion',$var_noticia_descripcion);
         $sentencia_sql->bindParam(':param_noticia_lugar',$var_noticia_lugar);
         $sentencia_sql->bindParam(':param_noticia_area_id',$var_noticia_area_id);

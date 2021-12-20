@@ -1005,6 +1005,7 @@ CREATE TABLE `drsu_noticia` (
   `sql_noticia_fecha` varchar(200) DEFAULT NULL,
   `sql_noticia_hora` varchar(200) DEFAULT NULL,
   `sql_noticia_enlace` varchar(200) DEFAULT NULL,
+  `sql_noticia_graba` varchar(200) DEFAULT NULL,
   `sql_noticia_lugar` varchar(200) DEFAULT NULL,
   `sql_noticia_area_id` int(10) UNSIGNED NOT NULL,
   `sql_noticia_estado_id` int(10) UNSIGNED NOT NULL
@@ -1014,11 +1015,10 @@ CREATE TABLE `drsu_noticia` (
 -- Volcado de datos para la tabla `drsu_noticia`
 --
 
-INSERT INTO `drsu_noticia` (`sql_noticia_id`, `sql_noticia_titulo`, `sql_noticia_imagen`, `sql_noticia_descripcion`, `sql_noticia_fecha`, `sql_noticia_hora`, `sql_noticia_enlace`, `sql_noticia_lugar`, `sql_noticia_area_id`, `sql_noticia_estado_id`) VALUES
-(1, 'Estado Situacional del Covid en la region Tacna y vacunación', '1636913727_noticia1.jpg', NULL, '03 de Septiembre de 2021', '19:00 horas', 'https://www.google.com/', NULL, 2, 2),
-(2, 'La voz Basadrina', '1636918900_noticia2.jpg', NULL, '20 de Agosto de 2020', '12:00 horas', 'https://www.youtube.com/', NULL, 2, 1),
-(3, 'XX Juegos Florales Basadrinos 2021', '1636918983_noticia3.png', '', '07 y 08 de Octubre de 2020', '15:00 horas', 'https://www.google.com/', '', 1, 1),
-(4, 'Capacitación a las escuelas: \"Documentación DRSU\"', '1638453028_logo_oficial.jpg', '', '', '', '', '', 1, 1);
+INSERT INTO `drsu_noticia` (`sql_noticia_id`, `sql_noticia_titulo`, `sql_noticia_imagen`, `sql_noticia_descripcion`, `sql_noticia_fecha`, `sql_noticia_hora`, `sql_noticia_enlace`,`sql_noticia_graba`, `sql_noticia_lugar`, `sql_noticia_area_id`, `sql_noticia_estado_id`) VALUES
+(1, 'Estado Situacional del Covid en la region Tacna y vacunación', '1636913727_noticia1.jpg', NULL, '03 de Septiembre de 2021', '19:00 horas','https://www.google.com/',NULL, NULL, 2, 2),
+(2, 'La voz Basadrina', '1636918900_noticia2.jpg', NULL, '20 de Agosto de 2020', '12:00 horas', 'https://www.youtube.com/',NULL, NULL, 2, 1),
+(3, 'XX Juegos Florales Basadrinos 2021', '1636918983_noticia3.png', '', '07 y 08 de Octubre de 2020', '15:00 horas', 'https://www.google.com/',NULL ,'', 1, 1);
 
 -- --------------------------------------------------------
 

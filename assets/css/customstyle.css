@@ -206,3 +206,11 @@ iframe {
   width: 100%;
   height: 97.5vh;
 }
+
+.botones_drsu {
+  display: flex;
+}
+
+.boton_drsu {
+  margin: 6px;
+}

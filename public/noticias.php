@@ -8,7 +8,8 @@ drsu_noticia.sql_noticia_titulo,
 drsu_noticia.sql_noticia_imagen, 
 drsu_noticia.sql_noticia_fecha, 
 drsu_noticia.sql_noticia_hora, 
-drsu_noticia.sql_noticia_enlace, 
+drsu_noticia.sql_noticia_enlace,
+drsu_noticia.sql_noticia_graba,
 drsu_noticia.sql_noticia_area_id,
 drsu_area.sql_area_sigla,  
 drsu_area.sql_area_nombre,
@@ -30,7 +31,7 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
 
-    <table class="table table-borderless">
+    <table class="table table-borderless" id="example">
         <thead>
             <tr>
                 <th>
@@ -59,17 +60,20 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                                     <h2><?php echo $noticia['sql_noticia_titulo']?></h2>
                                 </div>
                                 <div class="card-body">
-                                <p>
-                                    <b><?php echo $noticia['sql_area_nombre']; ?></b></br></br> 
-                                    <b>Estado de Evento: </b> <?php echo $noticia['sql_estado_nombre'];?></br> 
+                                
+                                    <p class="text-center"><b><?php echo $noticia['sql_area_nombre']; ?></b></p></br>
+
+                                    <p ><b>Estado: </b> <?php echo $noticia['sql_estado_nombre'].'.';?></p>
+
                                     <?php if($noticia['sql_noticia_fecha']!=""){ ?>
-                                    <b>Fecha: </b> <?php echo $noticia['sql_noticia_fecha']; ?> </br>
+                                    <p><b>Fecha: </b> <?php echo $noticia['sql_noticia_fecha']; ?></p>
                                     <?php }?>
                                     <?php if($noticia['sql_noticia_hora']!=""){ ?>
-                                    <b>Hora: </b> <?php echo $noticia['sql_noticia_hora']; ?> </br>
+                                    <p><b>Hora: </b> <?php echo $noticia['sql_noticia_hora']; ?></p>
                                     <?php }?>
+
                                     <?php if($noticia['sql_noticia_enlace']!="") {?>
-                                    <b>Enlace de transmisión: </b> <a href="
+                                    <p><b>Enlace de transmisión: </b> <a href="
                                     <?php 
                                     $url = $noticia['sql_noticia_enlace'];
                                     $array = explode('/',$url);
@@ -78,15 +82,29 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
                                     echo $noticia['sql_noticia_enlace'];   
                                     }else{
                                     echo "https://".$noticia['sql_noticia_enlace'];}
-                                    ?>"target="_blank"">Click aquí</a> </br> 
-                                    <?php }?>                                  
-                                    <?php if($noticia['sql_noticia_descripcion']!=""){ ?>
-                                    <b>Descripcion Adicional: </b> <?php echo $noticia['sql_noticia_descripcion']; ?> </br> 
-                                    <?php }?>                
+                                    ?>"target="_blank"">Click aquí!</a></p> 
+                                    <?php }?> 
+
+                                    <?php if($noticia['sql_noticia_graba']!="") {?>
+                                    <p><b>Grabación: </b> <a href="
+                                    <?php 
+                                    $url = $noticia['sql_noticia_graba'];
+                                    $array = explode('/',$url);
+                                    $primer = $array[0];
+                                    if($primer=="https:" or $primer=="http:"){
+                                    echo $noticia['sql_noticia_graba'];   
+                                    }else{
+                                    echo "https://".$noticia['sql_noticia_graba'];}
+                                    ?>"target="_blank"">Click aquí!</a></p> 
+                                    <?php }?> 
                                     <?php if($noticia['sql_noticia_lugar']!="") {?>    
-                                    <b>Lugar: </b> <?php echo $noticia['sql_noticia_lugar']; ?> </br> 
+                                    <p><b>Lugar: </b> <?php echo $noticia['sql_noticia_lugar']; ?></p> 
                                     <?php }?>
-                                </p>                                    
+                                    <?php if($noticia['sql_noticia_descripcion']!=""){ ?>
+                                    <p><b>Descripcion Adicional: </b> <?php echo $noticia['sql_noticia_descripcion']; ?></p> 
+                                    <?php }?>                
+
+                                                                    
                                 </div>
                             </div>                                       
                             </div>
@@ -103,3 +121,51 @@ $lista_noticias=$sentencia_sql->fetchAll(PDO::FETCH_ASSOC);
 require("logos.php");
 require("footer.php");
 ?>
+<script>
+    $(document).ready( function () {
+$('#example').DataTable({
+    ordering: false,
+    "searching": false,
+    bInfo: false,
+    bLengthChange: false,
+    
+    
+    
+    
+    
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
+
+                "language": {
+
+                        "sProcessing": "Procesando ...",
+    "sLengthMenu": "Mostrar _MENU_ registros",
+    "sZeroRecords": "No se encontraron resultados",
+    "sEmptyTable": "Ningún dato disponible en esta tabla",
+    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+    "sInfoPostFix": "",
+    "sSearch": "Buscar:",
+    "sUrl": "",
+    "sInfoThousands": ",",
+    "sLoadingRecords": "Cargando ...",
+    "oPaginate": {
+        "sFirst": "Primero",
+        "sLast": "Último",
+        "sNext": "Siguiente",
+        "sPrevious": "Anterior"
+    },
+    "oAria": {
+        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+    },
+    "botones": {
+        "copiar": "Copiar",
+        "colvis": "Visibilidad"
+    }
+                    
+        }
+    });
+} );
+
+</script>

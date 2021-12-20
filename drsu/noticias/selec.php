@@ -6,6 +6,7 @@ $var_noticia_imagen = (isset($_FILES['noticia_imagen']['name'])) ? $_FILES['noti
 $var_noticia_fecha = (isset($_POST['noticia_fecha']))?$_POST['noticia_fecha']:"";
 $var_noticia_hora = (isset($_POST['noticia_hora']))?$_POST['noticia_hora']:"";
 $var_noticia_enlace = (isset($_POST['noticia_enlace']))?$_POST['noticia_enlace']:"";
+$var_noticia_graba = (isset($_POST['noticia_graba']))?$_POST['noticia_graba']:"";
 $var_noticia_lugar = (isset($_POST['noticia_lugar']))?$_POST['noticia_lugar']:"";
 $var_noticia_descripcion = (isset($_POST['noticia_descripcion']))?$_POST['noticia_descripcion']:"";
 $var_noticia_area_id = (isset($_POST['noticia_area_id']))?$_POST['noticia_area_id']:"";
@@ -20,6 +21,7 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
         drsu_noticia.sql_noticia_fecha, 
         drsu_noticia.sql_noticia_hora, 
         drsu_noticia.sql_noticia_enlace,
+        drsu_noticia.sql_noticia_graba,
         drsu_noticia.sql_noticia_descripcion, 
         drsu_noticia.sql_noticia_lugar,
         drsu_noticia.sql_noticia_area_id,
@@ -41,6 +43,7 @@ $var_accion = (isset($_POST['accion']))?$_POST['accion']:"";
         $var_noticia_fecha=$noticia['sql_noticia_fecha'];
         $var_noticia_hora=$noticia['sql_noticia_hora'];
         $var_noticia_enlace=$noticia['sql_noticia_enlace'];
+        $var_noticia_graba=$noticia['sql_noticia_graba'];
 
         $var_noticia_descripcion=$noticia['sql_noticia_descripcion'];
         $var_noticia_lugar=$noticia['sql_noticia_lugar'];
@@ -58,6 +61,7 @@ $sentencia_sql= $conexion->prepare("SELECT
     drsu_noticia.sql_noticia_fecha, 
     drsu_noticia.sql_noticia_hora, 
     drsu_noticia.sql_noticia_enlace,
+    drsu_noticia.sql_noticia_graba,
     drsu_noticia.sql_noticia_descripcion,
     drsu_noticia.sql_noticia_lugar,
     drsu_noticia.sql_noticia_area_id,

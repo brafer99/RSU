@@ -31,7 +31,11 @@
     <link href="../assets/css/style.css" rel="stylesheet">
     <!--UTILIZAR ESTE CSS PARA DAR ESTILOS PERSONALIZADOS-->
     <link href="../assets/css/customstyle.css" rel="stylesheet">
+
+    <link href="../assets/css/datatables.css" rel="stylesheet">
+
     <!-- =======================================================
+    
 
   ======================================================== -->
 </head>
