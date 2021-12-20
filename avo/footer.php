@@ -8,7 +8,7 @@
                     <div class="footer">
                         <h2 class="title__line--2">Contáctenos</h2>
                         <div class="ft__details">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</p>
+                            <p>Conectamos voluntarios basadrinos y empresas que quieran hacer voluntariado y/o realizar donaciones con organizaciones solidarias que necesiten de su ayuda, transformando su intención en acción</p>
                             <div class="ft__social__link">
                                 <ul class="social__link">
                                     <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
