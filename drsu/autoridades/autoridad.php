@@ -35,13 +35,14 @@ $lista_areas=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                             <div class="info-box">          
                                 <h3>Lista de Autoridades</h3>
                                 <br/>
+                                <div class="table-responsive">
                                 <table class="table table-hover">
                                    <thead class="thead-light " >
                                         <tr>
                                             <th>Nombre</th>
                                             <th>Sigla</th>
                                             <th>Área</th>
-                                            <th>Accion</th>
+                                            <th>Opciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -55,7 +56,8 @@ $lista_areas=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                                             <div class ="form-group">
                                                 <div class="cambio_boton">
                                                 <input type="hidden" name="autoridad_id" id="autoridad_id" value="<?php echo $auto['sql_autoridad_id']; ?>"/>
-                                                <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>                                                                                            
+                                                <button type="submit" name="accion" value= "Seleccionar" class="btn btn-warning btn-sm"><img src="../../assets/img/icons/editar.png"></button>  
+                                                                                                                             
                                             </div>                                            
                                             </div>                                 
                                         </form>
@@ -64,6 +66,7 @@ $lista_areas=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                                     <?php  } ?>
                                     </tbody>
                                 </table>
+                                    </div>
                             </div>
                         </div>
                     </div>

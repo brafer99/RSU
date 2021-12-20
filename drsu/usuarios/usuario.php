@@ -93,7 +93,7 @@ switch($var_accion){
 
         $validacion_borrar=true;
         
-        if($cantidad_usuario==1){
+        if($cantidad_usuario==2){
             $validacion_borrar=false;
         }
 
@@ -324,7 +324,7 @@ if(isset($var_usuario_rol_id_2)){
                             <div class="info-box">          
                                 <h3>Lista de Usuarios</h3>
                                 <br/>
-        
+        <div class="table-responsive">
         <table class="table table-hover">
             
             <?php if(isset($validacion_borrar)){
@@ -353,21 +353,32 @@ if(isset($var_usuario_rol_id_2)){
                     <td><?php echo $usu['sql_usuario_email'] ?> </td>
                     <td><?php echo $usu['sql_rol_nombre'] ?></td>
                    
-
                     <td>
-                    <form method="post">
-                        <input type="hidden" name="usuario_id" id="usuario_id" value="<?php echo $usu['sql_usuario_id'] ?>"/>   
-                        <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>
-                        <input type="submit" name="accion" value="Borrar" class="btn btn-danger" onclick="return ConfirmDelete()"/>
+                    <div class="botones_drsu">
 
+                    <div class="boton_drsu">                           
+                    <form method="post">
+                    <input type="hidden" name="usuario_id" id="usuario_id" value="<?php echo $usu['sql_usuario_id'] ?>"/>   
+                     <button type="submit" name="accion" value= "Seleccionar" class="btn btn-warning btn-sm"><img src="../../assets/img/icons/editar.png"></button>  
+
+                    </form> 
+                     </div>  
+                     <div class="boton_drsu">                        
+                    <form method="post">
+                    <input type="hidden" name="usuario_id" id="usuario_id" value="<?php echo $usu['sql_usuario_id'] ?>"/>   
+
+                    <button type="submit" name="accion" value= "Borrar" class="btn btn-danger btn-sm" onclick="return ConfirmDelete()"><img src="../../assets/img/icons/eliminar.png"></button> 
                     </form>
+                    </div>
+                    </div>                     
+                    
                     </td>
                 
                 </tr>
             <?php  } ?>
             </tbody>
         </table>
-
+         </div>       
                     
         </div>
              </div>

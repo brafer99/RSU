@@ -65,7 +65,7 @@ if($_POST){
                   <h3><center>SISTEMA INTERNO DRSU</center></h3>
                   <br/>
                   <center><a href="../index.php"><button type="button" class="btn btn-info" ">Regresar a Página Web</button></a></center>
-                  <br/>        
+                  <br/>  <br/>       
                 <div class="card">
                     <div class="card-header">
                         Login
@@ -110,8 +110,9 @@ if($_POST){
                                         document.getElementById("login_pass").type = "password";
                                     }
                                 }
-                            </script>                         
-                        <button type="submit" class="btn btn-primary">Entrar al Administrador</button>
+                            </script> 
+                            <center><button type="submit" class="btn btn-primary">Ingresar</button></center>                        
+                        
                         </form>
                     </div>
                 </div>

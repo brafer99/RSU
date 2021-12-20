@@ -81,7 +81,7 @@
 
                                 
                                 <div class="btn-group" role="group" aria-label="">                                 
-                                    <button type="submit" name="accion" <?php echo ($var_accion!="Seleccionar")? "disabled":""?> value= "Modificar" class="btn btn-warning btn-lg">Modificar</button>                                 
+                                    <button type="submit" name="accion" <?php echo ($var_accion!="Seleccionar")? "disabled":""?> value= "Modificar" class="btn btn-warning btn-lg">Guardar</button>                                 
                                 </div>
                                 <div class="btn-group" role="group" aria-label="">                                 
                                     <a href="nosotros.php"><button type="button" class="btn btn-info btn-lg">Cancelar</button></a>

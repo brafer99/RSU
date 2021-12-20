@@ -49,20 +49,19 @@ $lista_estados=$sentencia_sql_3->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="info-box">
-                                      
-                               
-                                <br/>
-                                
+                            <div class="info-box">                                                                                                                        
                                 <div class="table-responsive">
+                                    </br>
                                 <table class="table  table-hover" id="example">
+                                   
                                     <thead class="thead-light " >
+                                    
                                         <tr>
                                             <th>Imagen</th>
                                             <th>Título</th>
                                             <th>Área</th>
                                             <th>Estado</th>
-                                            <th>Accion</th>
+                                            <th>Opciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -74,20 +73,22 @@ $lista_estados=$sentencia_sql_3->fetchAll(PDO::FETCH_ASSOC);
                                         <td><h6><?php echo "<br/>".$noti['sql_area_sigla']?></h6></td>
                                         <td><h6><?php echo "<br/>".$noti['sql_estado_nombre']?></h6></td>
                                     <td>
-                                       
-                                        <form action="selec.php" method="post">
-                                            <div class="cambio_boton">
-                                            <input type="hidden" name="noticia_id" id="noticia_id" value="<?php echo $noti['sql_noticia_id'] ?>"/>
-                                            <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>                                              
-                                            </div>
-                                        </form>
-                                                                           
-                                          <form action="eliminar.php" method="post">
-                                            <div class="cambio_boton">
-                                            <input type="hidden" name="noticia_id" id="noticia_id" value="<?php echo $noti['sql_noticia_id'] ?>"/>
-                                            <input type="submit" name="accion" value="Borrar" class="btn btn-danger" onclick="return ConfirmDelete()"/>                                                
-                                            </div>
-                                        </form>                                                                                                               
+                                        <div class="botones_drsu">
+
+                                        <div class="boton_drsu">                           
+                                            <form action="selec.php" method="post">
+                                            <input type="hidden" name="noticia_id" id="noticia_id" value="<?php echo $noti['sql_noticia_id'] ?>"/>      
+                                            <button type="submit" name="accion" value= "Seleccionar" class="btn btn-warning btn-sm"><img src="../../assets/img/icons/editar.png"></button>  
+                                            </form>  
+                                        </div>  
+                                        <div class="boton_drsu">                        
+                                            <form action="eliminar.php" method="post">
+                                            <input type="hidden" name="noticia_id" id="noticia_id" value="<?php echo $noti['sql_noticia_id'] ?>"/>                                
+                                            <button type="submit" name="accion" value= "Borrar" class="btn btn-danger btn-sm" onclick="return ConfirmDelete()"><img src="../../assets/img/icons/eliminar.png"></button>                       
+                                            </form>
+                                        </div>
+
+                                        </div>                                                                                                               
                                     </td>
                                     </tr>
                                     <?php } ?>
@@ -111,6 +112,7 @@ require('../drsu_template/footer.php');
     $(document).ready( function () {
 $('#example').DataTable({
     ordering: false,
+    bInfo: false,
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
 
                 "language": {

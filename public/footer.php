@@ -13,8 +13,8 @@
                             Av. Miraflores S/N  <br>
                             Miraflores 23000<br>
                             Tacna, Perú <br><br>
-                            <strong>Teléfono:</strong> (052) 544563<br>
-                            <strong>Email:</strong> drsu@unjbg.edu.pe<br>
+                            <strong>Teléfono:</strong> (052) - 583000<br>
+
                         </p>
                     </div>
 
@@ -33,15 +33,16 @@
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AVO</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AES</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">DRSU</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">ACI</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="areas.php">AEP</a></li>
 
                         </ul>
                     </div>
 
                     <div class="col-lg-4 col-md-6 footer-newsletter">
                         <h4>¿Necesita ayuda?</h4>
-                        <p>Presione el botón para enviarnos un mensaje</p>
-                        <a href="contacto.php" class="button-contact">Enviénos un mensaje</a>
+                        </br>
+                        <a href="contacto.php" class="button-contact">Contáctanos</a>
                     </div>
 
                 </div>
@@ -86,6 +87,9 @@
 
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/datatables.js"></script>
 
 </body>
 

@@ -6,6 +6,7 @@ $var_noticia_imagen = (isset($_FILES['noticia_imagen']['name'])) ? $_FILES['noti
 $var_noticia_fecha = (isset($_POST['noticia_fecha']))?$_POST['noticia_fecha']:"";
 $var_noticia_hora = (isset($_POST['noticia_hora']))?$_POST['noticia_hora']:"";
 $var_noticia_enlace = (isset($_POST['noticia_enlace']))?$_POST['noticia_enlace']:"";
+$var_noticia_graba = (isset($_POST['noticia_graba']))?$_POST['noticia_graba']:"";
 $var_noticia_lugar = (isset($_POST['noticia_lugar']))?$_POST['noticia_lugar']:"";
 $var_noticia_descripcion = (isset($_POST['noticia_descripcion']))?$_POST['noticia_descripcion']:"";
 $var_noticia_area_id = (isset($_POST['noticia_area_id']))?$_POST['noticia_area_id']:"";

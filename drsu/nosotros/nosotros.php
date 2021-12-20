@@ -36,6 +36,7 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                             <div class="info-box">          
                                 <h3>Lista de Nosotros</h3>
                                 <br/>
+                                <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead class="thead-light " >
                                         <tr>
@@ -52,7 +53,7 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                                             <div class = "form-group">
                                                 
                                                 <input type="hidden" name="nosotros_id" id="nosotros_id" value="<?php echo $noso['sql_nosotros_id'] ?>"/>
-                                                <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>                                                                                            
+                                                <button type="submit" name="accion" value= "Seleccionar" class="btn btn-warning btn-sm"><img src="../../assets/img/icons/editar.png"></button>                                                                                           
                                                                                         
                                             </div>                                 
                                         </form>
@@ -62,6 +63,7 @@ $lista_categorias=$sentencia_sql_2->fetchAll(PDO::FETCH_ASSOC);
                                     </tbody>
 
                                 </table>
+                                </div>
                             </div>
 
                         </div>

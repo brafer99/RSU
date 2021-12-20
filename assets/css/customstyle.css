@@ -33,7 +33,7 @@
 /*--------FOOTER ---------*/
 a.button-contact {
   margin-left: 0px;
-  background: #e03a3c;
+  background: #22a197;
   color: #fff;
   border-radius: 4px;
   padding: 8px 25px;
@@ -62,12 +62,12 @@ a.button-contact {
   width: 32%;
 }
 
-.cardBox:hover .card {
+.cardBox:hover .card_area {
   transform: rotateY(180deg);
   border: none;
 }
 
-.card {
+.card_area {
   background: #222;
   cursor: default;
   height: 300px;
@@ -78,12 +78,12 @@ a.button-contact {
   animation: giro 1s 1;
 }
 
-.card p {
+.card_area p {
   margin: 10px 30px;
 }
 
-.card .front,
-.card .back {
+.card_area .front,
+.card_area .back {
   backface-visibility: hidden;
   box-sizing: border-box;
   color: white;
@@ -99,11 +99,11 @@ a.button-contact {
   width: 100%;
 }
 
-.card .back {
+.card_area .back {
   transform: rotateY(180deg);
 }
 
-.card .back a {
+.card_area .back a {
   padding: 0.3em 0.5em;
   background: #e03a3c;
   color: #fff;
@@ -115,39 +115,39 @@ a.button-contact {
   margin: 100px;
 }
 
-.card .back a:hover {
+.card_area .back a:hover {
   background: #fff;
   color: #333;
   text-shadow: 0 0 1px #333;
 }
 
-.cardBox:nth-child(1) .card .back {
+.cardBox:nth-child(1) .card_area .back {
   background: cornflowerblue;
 }
 
-.cardBox:nth-child(2) .card .back {
+.cardBox:nth-child(2) .card_area .back {
   background: tomato;
 }
 
-.cardBox:nth-child(3) .card .back {
+.cardBox:nth-child(3) .card_area .back {
   background: yellowgreen;
 }
 
-.cardBox:nth-child(4) .card .back {
+.cardBox:nth-child(4) .card_area .back {
   background: tomato;
 }
 
-.cardBox:nth-child(2) .card {
+.cardBox:nth-child(2) .card_area {
   -webkit-animation: giro 1.5s 1;
   animation: giro 1.5s 1;
 }
 
-.cardBox:nth-child(3) .card {
+.cardBox:nth-child(3) .card_area {
   -webkit-animation: giro 2s 1;
   animation: giro 2s 1;
 }
 
-.cardBox:nth-child(4) .card {
+.cardBox:nth-child(4) .card_area {
   -webkit-animation: giro 2.5s 1;
   animation: giro 2.5s 1;
 }
@@ -176,7 +176,7 @@ a.button-contact {
     margin-top: 3%;
     width: 100%;
   }
-  .card {
+  .card_area {
     height: 285px;
   }
   .cardBox:last-child {
@@ -188,7 +188,7 @@ a.button-contact {
   .cardBox {
     width: 94.5%;
   }
-  .card {
+  .card_area {
     height: 260px;
   }
 }
@@ -205,4 +205,12 @@ a.button-contact {
 iframe {
   width: 100%;
   height: 97.5vh;
+}
+
+.botones_drsu {
+  display: flex;
+}
+
+.boton_drsu {
+  margin: 6px;
 }
