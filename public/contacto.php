@@ -14,25 +14,19 @@ require_once("header.php");
 
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="info-box">
-                                <i class="bx bx-map"></i>
-                                <h3>Nuestra dirección</h3>
-                                <p>Avenidad Miraflores S/N, Miraflores 23000</p>
-                            </div>
-                        </div>
+
                         <div class="col-md-6">
                             <div class="info-box mt-4">
-                                <i class="bx bx-envelope"></i>
-                                <h3>Correo</h3>
-                                <p>drsu@unjbg.edu.pe</p>
+                                <i class="bx bx-map"></i>
+                                <h3>Nuestra dirección</h3>
+                                <p>Avenidad Miraflores S/N, Miraflores 23000, Tacna - Perú</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info-box mt-4">
                                 <i class="bx bx-phone-call"></i>
                                 <h3>Teléfono</h3>
-                                <p>052-583000</p>
+                                <p>(052) - 583000</p>
                             </div>
                         </div>
                     </div>
